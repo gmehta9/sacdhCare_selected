@@ -18,27 +18,27 @@ function Header() {
                             <div className="top-right text-center text-md-right">
                                 <ul className="social-links">
                                     <li>
-                                        <Link to="https://themefisher.com/" aria-label="facebook">
+                                        <Link to="https://themefisher.com/" >
                                             <i className="fab fa-facebook-f"></i>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="https://themefisher.com/" aria-label="twitter">
+                                        <Link to="https://themefisher.com/" >
                                             <i className="fab fa-twitter"></i>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="https://themefisher.com/" aria-label="google-plus">
+                                        <Link to="https://themefisher.com/">
                                             <i className="fab fa-google-plus-g"></i>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="https://themefisher.com/" aria-label="instagram">
+                                        <Link to="https://themefisher.com/">
                                             <i className="fab fa-instagram"></i>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="https://themefisher.com/" aria-label="pinterest">
+                                        <Link to="https://themefisher.com/">
                                             <i className="fab fa-pinterest-p"></i>
                                         </Link>
                                     </li>
@@ -53,9 +53,9 @@ function Header() {
                     <div className="row align-items-center">
                         <div className="col-xl-4 col-lg-3">
                             <div className="logo">
-                                <a href="index.html">
+                                <Link to="/">
                                     <img loading="lazy" className="img-fluid" width={"110px"} src={mainLogo} alt="logo" />
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-xl-8 col-lg-9">
@@ -67,8 +67,8 @@ function Header() {
                                         </div>
                                         <strong>Email</strong>
                                         <br />
-                                        <a href="mailto:info@medic.com">
-                                            <span>info@medic.com</span>
+                                        <a href="mailto:info@sadhcare.org">
+                                            <span>info@sadhcare.org</span>
                                         </a>
                                     </li>
                                     <li className="item text-left">
