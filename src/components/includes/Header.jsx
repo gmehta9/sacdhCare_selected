@@ -100,21 +100,24 @@ function Header() {
                                 <NavLink className="nav-link" to="index.html">Home</NavLink>
                             </li>
                             <li className="nav-item @@about">
-                                <NavLink className="nav-link" to="about.html">About</NavLink>
+                                <NavLink className="nav-link" to="about.html">Our Doctors</NavLink>
                             </li>
                             <li className="nav-item @@service">
-                                <NavLink className="nav-link" to="service.html">Service</NavLink>
+                                <NavLink className="nav-link" to="service.html">Our Services</NavLink>
                             </li>
                             <li className="nav-item @@gallery">
                                 <NavLink className="nav-link" to="gallery.html">Gallery</NavLink>
                             </li>
                             <li className="nav-item @@team">
-                                <NavLink className="nav-link" to="team.html">Team</NavLink>
+                                <NavLink className="nav-link" to="team.html">Login | Register</NavLink>
                             </li>
                             <li className="nav-item @@appointment">
-                                <NavLink className="nav-link" to="appointment.html">Appointment</NavLink>
+                                <NavLink className="nav-link" to="appointment.html">Donate</NavLink>
                             </li>
-                            <li className="nav-item dropdown @@blogs">
+                            <li className="nav-item @@contact">
+                                <NavLink className="nav-link" to="appointment.html">Contact Us</NavLink>
+                            </li>
+                            {/* <li className="nav-item dropdown @@blogs">
                                 <NavLink className="nav-link dropdown-toggle" to="#!" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blogs</NavLink>
 
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -140,7 +143,7 @@ function Header() {
                             </li>
                             <li className="nav-item @@contact">
                                 <NavLink className="nav-link" to="contact.html">Contact</NavLink>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>

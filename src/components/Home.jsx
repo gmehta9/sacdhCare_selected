@@ -1,5 +1,9 @@
 import React from "react";
 import Banner from "./includes/Banner";
+import Orthopedics from "../assets/images/resource/1.png";
+import Diaginostic from "../assets/images/resource/2.png";
+import Psycology from "../assets/images/resource/3.png";
+import GeneralTreatment from "../assets/images/resource/4.png";
 
 
 function Home() {
@@ -54,7 +58,7 @@ function Home() {
                                             <div className="icon-box">
                                                 <figure>
                                                     <a href="services.html">
-                                                        <img loading="lazy" src="images/resource/1.png" alt="features" />
+                                                        <img loading="lazy" src={Orthopedics} alt="features" />
                                                     </a>
                                                 </figure>
                                             </div>
@@ -69,7 +73,7 @@ function Home() {
                                             <div className="icon-box">
                                                 <figure>
                                                     <a href="services.html">
-                                                        <img loading="lazy" src="images/resource/2.png" alt="features " />
+                                                        <img loading="lazy" src={Diaginostic} alt="features " />
                                                     </a>
                                                 </figure>
                                             </div>
@@ -84,7 +88,7 @@ function Home() {
                                             <div className="icon-box">
                                                 <figure>
                                                     <a href="services.html">
-                                                        <img loading="lazy" src="images/resource/3.png" alt="features " />
+                                                        <img loading="lazy" src={Psycology} alt="features " />
                                                     </a>
                                                 </figure>
                                             </div>
@@ -99,7 +103,7 @@ function Home() {
                                             <div className="icon-box">
                                                 <figure>
                                                     <a href="services.html">
-                                                        <img loading="lazy" src="images/resource/4.png" alt="features " />
+                                                        <img loading="lazy" src={GeneralTreatment} alt="features " />
                                                     </a>
                                                 </figure>
                                             </div>
