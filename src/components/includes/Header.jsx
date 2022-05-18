@@ -18,30 +18,16 @@ function Header() {
                             <div className="top-right text-center text-md-right">
                                 <ul className="social-links">
                                     <li>
-                                        <Link to="https://themefisher.com/" >
+                                        <a href="https://www.facebook.com/sadhcare/">
                                             <i className="fab fa-facebook-f"></i>
-                                        </Link>
+                                        </a>
                                     </li>
                                     <li>
-                                        <Link to="https://themefisher.com/" >
-                                            <i className="fab fa-twitter"></i>
-                                        </Link>
+                                        <a href="https://www.linkedin.com/company/sadh-care-hospital/" >
+                                            <i className="fab fa-linkedin"></i>
+                                        </a>
                                     </li>
-                                    <li>
-                                        <Link to="https://themefisher.com/">
-                                            <i className="fab fa-google-plus-g"></i>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="https://themefisher.com/">
-                                            <i className="fab fa-instagram"></i>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="https://themefisher.com/">
-                                            <i className="fab fa-pinterest-p"></i>
-                                        </Link>
-                                    </li>
+
                                 </ul>
                             </div>
                         </div>
@@ -96,26 +82,26 @@ function Header() {
 
                     <div className="collapse navbar-collapse" id="navbarLinks">
                         <ul className="navbar-nav">
-                            <li className="nav-item active">
-                                <NavLink className="nav-link" to="index.html">Home</NavLink>
+                            <li className={`nav-item`} >
+                                <NavLink activeClassName="active" className="nav-link" to="/">Home</NavLink>
                             </li>
-                            <li className="nav-item @@about">
-                                <NavLink className="nav-link" to="about.html">Our Doctors</NavLink>
+                            <li className={`nav-item`}>
+                                <NavLink activeClassName="active" className="nav-link" to="our-doctors">Our Doctors</NavLink>
                             </li>
-                            <li className="nav-item @@service">
-                                <NavLink className="nav-link" to="service.html">Our Services</NavLink>
+                            <li className={`nav-item`}>
+                                <NavLink activeClassName="active" className="nav-link" to="service">Our Services</NavLink>
                             </li>
-                            <li className="nav-item @@gallery">
-                                <NavLink className="nav-link" to="gallery.html">Gallery</NavLink>
+                            <li className={`nav-item`}>
+                                <NavLink activeClassName="active" className="nav-link" to="gallery">Gallery</NavLink>
                             </li>
-                            <li className="nav-item @@team">
-                                <NavLink className="nav-link" to="team.html">Login | Register</NavLink>
+                            <li className={`nav-item`}>
+                                <NavLink activeClassName="active" className="nav-link" to="login">Login | Register</NavLink>
                             </li>
-                            <li className="nav-item @@appointment">
-                                <NavLink className="nav-link" to="appointment.html">Donate</NavLink>
+                            <li className={`nav-item`}>
+                                <NavLink activeClassName="active" className="nav-link" to="donations">Donate</NavLink>
                             </li>
-                            <li className="nav-item @@contact">
-                                <NavLink className="nav-link" to="appointment.html">Contact Us</NavLink>
+                            <li className={`nav-item`}>
+                                <NavLink activeClassName="active" className="nav-link" to="contact-us">Contact Us</NavLink>
                             </li>
                             {/* <li className="nav-item dropdown @@blogs">
                                 <NavLink className="nav-link dropdown-toggle" to="#!" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blogs</NavLink>

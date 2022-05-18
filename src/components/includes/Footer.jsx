@@ -19,70 +19,103 @@ function Footer() {
                                         </Link>
                                     </figure>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, temporibus?</p>
+                                {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, temporibus?</p> */}
                                 <ul className="location-link">
                                     <li className="item">
                                         <i className="fas fa-map-marker-alt"></i>
-                                        <p>Modamba, NY 80021, United States</p>
+                                        <p>Swami Amar Dev Hospital, Ashram Hari Mandir, Pataudi<br />
+                                            Gurugram, Haryana<br />
+                                            122503, INDIA<br />
+                                        </p>
                                     </li>
                                     <li className="item">
                                         <i className="far fa-envelope" aria-hidden="true"></i>
-                                        <Link to="mailto:support@sadhcare.org">
-                                            <p>support@sadhcare.org</p>
+                                        <Link to="mailto:info@sadhcare.org">
+                                            <p>info@sadhcare.org</p>
                                         </Link>
                                     </li>
                                     <li className="item">
                                         <i className="fas fa-phone" aria-hidden="true"></i>
-                                        <p>(88017) +123 4567</p>
+                                        <p>
+                                            <a href="tel:01242970919">0124 2970919</a> | <a href="tel:01242671918">0124-2671918</a> <br />
+                                            <a href="tel:01242671919">0124-2671919</a> | <a href="tel:+919812008765">+91-9812008765</a>
+                                        </p>
                                     </li>
                                 </ul>
                                 <ul className="list-inline social-icons">
                                     <li className="list-inline-item">
-                                        <Link to="https://facebook.com/themefisher" aria-label="facebook"><i className="fab fa-facebook-f"></i>
-                                        </Link>
+                                        <a href="https://www.facebook.com/sadhcare/" aria-label="facebook">
+                                            <i className="fab fa-facebook-f"></i>
+                                        </a>
                                     </li>
                                     <li className="list-inline-item">
-                                        <Link to="https://twitter.com/themefisher" aria-label="twitter">
-                                            <i className="fab fa-twitter"></i>
-                                        </Link>
-                                    </li>
-                                    <li className="list-inline-item">
-                                        <Link to="https://instagram.com/themefisher" aria-label="instagram"><i className="fab fa-instagram"></i>
-                                        </Link>
-                                    </li>
-                                    <li className="list-inline-item">
-                                        <Link to="https://github.com/themefisher" aria-label="github">
-                                            <i className="fab fa-github"></i>
-                                        </Link>
+                                        <a href="https://www.linkedin.com/company/sadh-care-hospital/" aria-label="twitter">
+                                            <i className="fab fa-linkedin"></i>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-5 mb-3 mb-md-0">
+                            <h2>Quick Links</h2>
+                            <ul className="menu-link">
+                                <li>
+                                    <Link to="/assets/pdf/HSPCB-BMW-GUIDELINES-COVID.pdf">
+                                        <i className="fa fa-angle-right" aria-hidden="true"></i>
+                                        Haryana Govt. Policy Guideline
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="service.html">
+                                        <i className="fa fa-angle-right" aria-hidden="true"></i>
+                                        Biomedical Waste Type & Disposal
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="service.html">
+                                        <i className="fa fa-angle-right" aria-hidden="true"></i>
+                                        Biomedical Waste Management Training
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="service.html">
+                                        <i className="fa fa-angle-right" aria-hidden="true"></i>
+                                        COVID-19
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="service.html">
+                                        <i className="fa fa-angle-right" aria-hidden="true"></i>
+                                        Donate To SADH
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="service.html">
+                                        <i className="fa fa-angle-right" aria-hidden="true"></i>
+                                        Contact SADH
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="col-lg-4 col-md-7">
                             <h2>Services</h2>
                             <ul className="menu-link">
                                 <li>
                                     <Link to="service.html">
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
-                                        Orthopadic Liabilities
+                                        Outpatient Surgery
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to="service.html">
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
-                                        Dental Clinic
+                                        Cardiac Clinic
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to="service.html">
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
-                                        Dormamu Clinic
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="service.html">
-                                        <i className="fa fa-angle-right" aria-hidden="true"></i>
-                                        Psycological Clinic
+                                        Ophthalmology Clinic
                                     </Link>
                                 </li>
                                 <li>
@@ -91,10 +124,14 @@ function Footer() {
                                         Gynaecological Clinic
                                     </Link>
                                 </li>
+                                <li>
+                                    <Link to="service.html">
+                                        <i className="fa fa-angle-right" aria-hidden="true"></i>
+                                        Outpatient Rehabilitation
+                                    </Link>
+                                </li>
                             </ul>
-                        </div>
-                        <div className="col-lg-4 col-md-7">
-                            <div className="social-links">
+                            {/* <div className="social-links">
                                 <h2>Recent Posts</h2>
                                 <ul>
                                     <li className="item">
@@ -127,7 +164,7 @@ function Footer() {
                                         </div>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

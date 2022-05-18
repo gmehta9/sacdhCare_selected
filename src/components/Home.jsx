@@ -518,8 +518,7 @@ function Home() {
                         <div className="col-lg-6">
                             <div className="contact-area pl-0 pl-lg-5">
                                 <div className="section-title">
-                                    <h3>Request
-                                        <span>Appointment</span>
+                                    <h3>Request <span>Appointment</span>
                                     </h3>
                                 </div>
                                 <form name="contact_form" className="default-form contact-form" action="!#" method="post">

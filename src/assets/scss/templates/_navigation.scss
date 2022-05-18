@@ -29,15 +29,13 @@
         }
       }
 
-      &.active> {
-        a {
-          background: transparent;
-          font-weight: 600;
-          text-decoration: underline;
+      a.active {
+        background: transparent;
+        font-weight: 600;
+        text-decoration: underline;
 
-          &:hover {
-            background: transparent;
-          }
+        &:hover {
+          background: transparent;
         }
       }
     }

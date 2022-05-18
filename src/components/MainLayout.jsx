@@ -8,7 +8,11 @@ function MainLayout() {
     return (
         <>
             <Header />
-            <Outlet />
+            <section className="story">
+                <div className="container">
+                    <Outlet />
+                </div>
+            </section>
             <Footer />
         </>
     );
