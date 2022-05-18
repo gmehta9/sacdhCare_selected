@@ -1,6 +1,10 @@
 import React from "react";
 import { Slide } from 'react-slideshow-image';
 
+import testimonials1 from "../../assets/images/testimonials/1.jpg";
+import testimonials2 from "../../assets/images/testimonials/2.png";
+import testimonials3 from "../../assets/images/testimonials/3.png";
+
 function TestimonialsSlider() {
     const properties = {
         duration: 3000,
@@ -17,7 +21,7 @@ function TestimonialsSlider() {
                 <div className="inner-box text-center">
                     <div className="image-box">
                         <figure>
-                            <img loading="lazy" src="images/testimonials/1.png" alt="" />
+                            <img loading="lazy" src={testimonials1} alt="" />
                         </figure>
                     </div>
                     <h6>Adam Rose</h6>
@@ -30,7 +34,7 @@ function TestimonialsSlider() {
                 <div className="inner-box text-center">
                     <div className="image-box">
                         <figure>
-                            <img loading="lazy" src="images/testimonials/2.png" alt="" />
+                            <img loading="lazy" src={testimonials2} alt="" />
                         </figure>
                     </div>
                     <h6>David Warner</h6>
@@ -43,7 +47,7 @@ function TestimonialsSlider() {
                 <div className="inner-box text-center">
                     <div className="image-box">
                         <figure>
-                            <img loading="lazy" src="images/testimonials/3.png" alt="" />
+                            <img loading="lazy" src={testimonials3} alt="" />
                         </figure>
                     </div>
                     <h6>Amy Adams</h6>
@@ -56,7 +60,7 @@ function TestimonialsSlider() {
                 <div className="inner-box text-center">
                     <div className="image-box">
                         <figure>
-                            <img loading="lazy" src="images/testimonials/1.png" alt="" />
+                            <img loading="lazy" src={testimonials1} alt="" />
                         </figure>
                     </div>
                     <h6>Adam Rose</h6>
@@ -69,7 +73,7 @@ function TestimonialsSlider() {
                 <div className="inner-box text-center">
                     <div className="image-box">
                         <figure>
-                            <img loading="lazy" src="images/testimonials/2.png" alt="" />
+                            <img loading="lazy" src={testimonials2} alt="" />
                         </figure>
                     </div>
                     <h6>David Warner</h6>
@@ -82,7 +86,7 @@ function TestimonialsSlider() {
                 <div className="inner-box text-center">
                     <div className="image-box">
                         <figure>
-                            <img loading="lazy" src="images/testimonials/3.png" alt="" />
+                            <img loading="lazy" src={testimonials3} alt="" />
                         </figure>
                     </div>
                     <h6>Amy Adams</h6>
@@ -95,7 +99,7 @@ function TestimonialsSlider() {
                 <div className="inner-box text-center">
                     <div className="image-box">
                         <figure>
-                            <img loading="lazy" src="images/testimonials/1.png" alt="" />
+                            <img loading="lazy" src={testimonials1} alt="" />
                         </figure>
                     </div>
                     <h6>Adam Rose</h6>
@@ -108,7 +112,7 @@ function TestimonialsSlider() {
                 <div className="inner-box text-center">
                     <div className="image-box">
                         <figure>
-                            <img loading="lazy" src="images/testimonials/2.png" alt="" />
+                            <img loading="lazy" src={testimonials2} alt="" />
                         </figure>
                     </div>
                     <h6>David Warner</h6>
@@ -121,7 +125,7 @@ function TestimonialsSlider() {
                 <div className="inner-box text-center">
                     <div className="image-box">
                         <figure>
-                            <img loading="lazy" src="images/testimonials/3.png" alt="" />
+                            <img loading="lazy" src={testimonials3} alt="" />
                         </figure>
                     </div>
                     <h6>Amy Adams</h6>

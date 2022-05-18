@@ -7,6 +7,15 @@ import GeneralTreatment from "../assets/images/resource/4.png";
 import TestimonialsSlider from "./includes/TestimonialsSlider";
 import ServicesProvided from "./includes/ServicesProvided";
 
+import doctor1 from "../assets/images/team/mt-dr-Col-tarun-kaul.jpg";
+import doctor2 from "../assets/images/team/dr.majroli_tewari.jpg";
+import doctor3 from "../assets/images/team/dr.colshashi_shukla.jpg";
+
+import serviceone from "../assets/images/services/service-one.jpg";
+import servicetwo from "../assets/images/services/service-two.jpg";
+import servicethree from "../assets/images/services/service-three.jpg"
+import servicefour from "../assets/images/services/service-four.jpg";
+import servicefive from "../assets/images/services/service-five.jpg"
 
 function Home() {
 
@@ -153,7 +162,7 @@ function Home() {
                                     <div className="service-box tab-pane fade show active" id="dormitory">
                                         <div className="row">
                                             <div className="col-lg-6">
-                                                <img loading="lazy" className="img-fluid" src="images/services/service-one.jpg" alt="service" />
+                                                <img loading="lazy" className="img-fluid" src={serviceone} alt="service" />
                                             </div>
                                             <div className="col-lg-6">
                                                 <div className="contents">
@@ -189,7 +198,7 @@ function Home() {
                                     <div className="service-box tab-pane fade" id="orthopedic">
                                         <div className="row">
                                             <div className="col-lg-6">
-                                                <img loading="lazy" className="img-fluid" src="images/services/service-two.jpg" alt="service" />
+                                                <img loading="lazy" className="img-fluid" src={servicetwo} alt="service" />
                                             </div>
                                             <div className="col-lg-6">
                                                 <div className="contents">
@@ -225,7 +234,7 @@ function Home() {
                                     <div className="service-box tab-pane fade" id="sonogram">
                                         <div className="row">
                                             <div className="col-lg-6">
-                                                <img loading="lazy" className="img-fluid" src="images/services/service-three.jpg" alt="service" />
+                                                <img loading="lazy" className="img-fluid" src={servicethree} alt="service" />
                                             </div>
                                             <div className="col-lg-6">
                                                 <div className="contents">
@@ -261,7 +270,7 @@ function Home() {
                                     <div className="service-box tab-pane fade" id="x-ray">
                                         <div className="row">
                                             <div className="col-lg-6">
-                                                <img loading="lazy" className="img-fluid" src="images/services/service-four.jpg" alt="service" />
+                                                <img loading="lazy" className="img-fluid" src={servicefour} alt="service" />
                                             </div>
                                             <div className="col-lg-6">
                                                 <div className="contents">
@@ -297,7 +306,7 @@ function Home() {
                                     <div className="service-box tab-pane fade" id="diagnostic">
                                         <div className="row">
                                             <div className="col-lg-6">
-                                                <img loading="lazy" className="img-fluid" src="images/services/service-five.jpg" alt="service" />
+                                                <img loading="lazy" className="img-fluid" src={servicefive} alt="service" />
                                             </div>
                                             <div className="col-lg-6">
                                                 <div className="contents">
@@ -370,31 +379,28 @@ function Home() {
                     <div className="row justify-content-center">
                         <div className="col-lg-4 col-md-6">
                             <div className="team-member">
-                                <img loading="lazy" src="images/team/doctor-2.jpg" alt="doctor" className="img-fluid" />
+                                <img loading="lazy" src={doctor1} alt="doctor" className="img-fluid" />
                                 <div className="contents text-center">
-                                    <h4>Dr. Robert Barrethion</h4>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p>
-                                    <a href="appointment.html" className="btn btn-main">Book Appointment</a>
+                                    <h4>Dr. (Col.) Tarun Kaul</h4>
+                                    {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p> */}
                                 </div>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6">
                             <div className="team-member">
-                                <img loading="lazy" src="images/team/doctor-lab-3.jpg" alt="doctor" className="img-fluid" />
+                                <img loading="lazy" src={doctor2} alt="doctor" className="img-fluid" />
                                 <div className="contents text-center">
-                                    <h4>Dr. Marry Lou</h4>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p>
-                                    <a href="appointment.html" className="btn btn-main">Book Appointment</a>
+                                    <h4>Dr. (Col.) Shashi Shukla</h4>
+                                    {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p> */}
                                 </div>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6">
                             <div className="team-member">
-                                <img loading="lazy" src="images/team/event-2.jpg" alt="doctor" className="img-fluid" />
+                                <img loading="lazy" src={doctor3} alt="doctor" className="img-fluid" />
                                 <div className="contents text-center">
-                                    <h4>Dr. Sansa Stark</h4>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p>
-                                    <a href="appointment.html" className="btn btn-main">Book Appointment</a>
+                                    <h4>Dr. (Maj.) Roli Tewari</h4>
+                                    {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p> */}
                                 </div>
                             </div>
                         </div>

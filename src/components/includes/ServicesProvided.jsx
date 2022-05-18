@@ -1,5 +1,8 @@
 import React from "react";
 import { Slide } from 'react-slideshow-image';
+import gallery1 from "../../assets/images/gallery/1.jpg";
+import gallery2 from "../../assets/images/gallery/2.jpg";
+import gallery3 from "../../assets/images/gallery/3.jpg";
 
 function ServicesProvided() {
     const properties = {
@@ -15,7 +18,7 @@ function ServicesProvided() {
                 <div className="inner-box">
                     <div className="img_holder">
                         <a href="service.html">
-                            <img loading="lazy" src="images/gallery/1.jpg" alt="images" className="img-fluid" />
+                            <img loading="lazy" src={gallery1} alt="images" className="img-fluid" />
                         </a>
                     </div>
                     <div className="image-content text-center">
@@ -31,7 +34,7 @@ function ServicesProvided() {
                 <div className="inner-box">
                     <div className="img_holder">
                         <a href="service.html">
-                            <img loading="lazy" src="images/gallery/2.jpg" alt="images" className="img-fluid" />
+                            <img loading="lazy" src={gallery2} alt="images" className="img-fluid" />
                         </a>
                     </div>
                     <div className="image-content text-center">
@@ -47,7 +50,7 @@ function ServicesProvided() {
                 <div className="inner-box">
                     <div className="img_holder">
                         <a href="service.html">
-                            <img loading="lazy" src="images/gallery/3.jpg" alt="images" className="img-fluid" />
+                            <img loading="lazy" src={gallery3} alt="images" className="img-fluid" />
                         </a>
                     </div>
                     <div className="image-content text-center">
@@ -63,7 +66,7 @@ function ServicesProvided() {
                 <div className="inner-box">
                     <div className="img_holder">
                         <a href="service.html">
-                            <img loading="lazy" src="images/gallery/1.jpg" alt="images" className="img-fluid" />
+                            <img loading="lazy" src={gallery1} alt="images" className="img-fluid" />
                         </a>
                     </div>
                     <div className="image-content text-center">
@@ -79,7 +82,7 @@ function ServicesProvided() {
                 <div className="inner-box">
                     <div className="img_holder">
                         <a href="service.html">
-                            <img loading="lazy" src="images/gallery/2.jpg" alt="images" className="img-fluid" />
+                            <img loading="lazy" src={gallery2} alt="images" className="img-fluid" />
                         </a>
                     </div>
                     <div className="image-content text-center">
@@ -95,7 +98,7 @@ function ServicesProvided() {
                 <div className="inner-box">
                     <div className="img_holder">
                         <a href="service.html">
-                            <img loading="lazy" src="images/gallery/3.jpg" alt="images" className="img-fluid" />
+                            <img loading="lazy" src={gallery3} alt="images" className="img-fluid" />
                         </a>
                     </div>
                     <div className="image-content text-center">
