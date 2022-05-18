@@ -4,6 +4,8 @@ import Orthopedics from "../assets/images/resource/1.png";
 import Diaginostic from "../assets/images/resource/2.png";
 import Psycology from "../assets/images/resource/3.png";
 import GeneralTreatment from "../assets/images/resource/4.png";
+import TestimonialsSlider from "./includes/TestimonialsSlider";
+import ServicesProvided from "./includes/ServicesProvided";
 
 
 function Home() {
@@ -347,102 +349,7 @@ function Home() {
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="items-container">
-                                <div className="item">
-                                    <div className="inner-box">
-                                        <div className="img_holder">
-                                            <a href="service.html">
-                                                <img loading="lazy" src="images/gallery/1.jpg" alt="images" className="img-fluid" />
-                                            </a>
-                                        </div>
-                                        <div className="image-content text-center">
-                                            <span>Better Service At Low Cost</span>
-                                            <a href="service.html">
-                                                <h6>Dormitory</h6>
-                                            </a>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vero.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="item">
-                                    <div className="inner-box">
-                                        <div className="img_holder">
-                                            <a href="service.html">
-                                                <img loading="lazy" src="images/gallery/2.jpg" alt="images" className="img-fluid" />
-                                            </a>
-                                        </div>
-                                        <div className="image-content text-center">
-                                            <span>Better Service At Low Cost</span>
-                                            <a href="service.html">
-                                                <h6>Germs Protection</h6>
-                                            </a>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vero.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="item">
-                                    <div className="inner-box">
-                                        <div className="img_holder">
-                                            <a href="service.html">
-                                                <img loading="lazy" src="images/gallery/3.jpg" alt="images" className="img-fluid" />
-                                            </a>
-                                        </div>
-                                        <div className="image-content text-center">
-                                            <span>Better Service At Low Cost</span>
-                                            <a href="service.html">
-                                                <h6>Psycology</h6>
-                                            </a>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vero.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="item">
-                                    <div className="inner-box">
-                                        <div className="img_holder">
-                                            <a href="service.html">
-                                                <img loading="lazy" src="images/gallery/1.jpg" alt="images" className="img-fluid" />
-                                            </a>
-                                        </div>
-                                        <div className="image-content text-center">
-                                            <span>Better Service At Low Cost</span>
-                                            <a href="service.html">
-                                                <h6>Dormitory</h6>
-                                            </a>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vero.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="item">
-                                    <div className="inner-box">
-                                        <div className="img_holder">
-                                            <a href="service.html">
-                                                <img loading="lazy" src="images/gallery/2.jpg" alt="images" className="img-fluid" />
-                                            </a>
-                                        </div>
-                                        <div className="image-content text-center">
-                                            <span>Better Service At Low Cost</span>
-                                            <a href="service.html">
-                                                <h6>Germs Protection</h6>
-                                            </a>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vero.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="item">
-                                    <div className="inner-box">
-                                        <div className="img_holder">
-                                            <a href="service.html">
-                                                <img loading="lazy" src="images/gallery/3.jpg" alt="images" className="img-fluid" />
-                                            </a>
-                                        </div>
-                                        <div className="image-content text-center">
-                                            <span>Better Service At Low Cost</span>
-                                            <a href="service.html">
-                                                <h6>Psycology</h6>
-                                            </a>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vero.</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                <ServicesProvided />
                             </div>
                         </div>
                     </div>
@@ -511,123 +418,7 @@ function Home() {
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="testimonial-carousel">
-                                {/* Slide Item */}
-                                <div className="slide-item">
-                                    <div className="inner-box text-center">
-                                        <div className="image-box">
-                                            <figure>
-                                                <img loading="lazy" src="images/testimonials/1.png" alt="" />
-                                            </figure>
-                                        </div>
-                                        <h6>Adam Rose</h6>
-                                        <p className="mb-0">Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem
-                                            ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
-                                    </div>
-                                </div>
-                                {/* Slide Item */}
-                                <div className="slide-item">
-                                    <div className="inner-box text-center">
-                                        <div className="image-box">
-                                            <figure>
-                                                <img loading="lazy" src="images/testimonials/2.png" alt="" />
-                                            </figure>
-                                        </div>
-                                        <h6>David Warner</h6>
-                                        <p className="mb-0">Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem
-                                            ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
-                                    </div>
-                                </div>
-                                {/* Slide Item */}
-                                <div className="slide-item">
-                                    <div className="inner-box text-center">
-                                        <div className="image-box">
-                                            <figure>
-                                                <img loading="lazy" src="images/testimonials/3.png" alt="" />
-                                            </figure>
-                                        </div>
-                                        <h6>Amy Adams</h6>
-                                        <p className="mb-0">Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem
-                                            ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
-                                    </div>
-                                </div>
-                                {/* Slide Item */}
-                                <div className="slide-item">
-                                    <div className="inner-box text-center">
-                                        <div className="image-box">
-                                            <figure>
-                                                <img loading="lazy" src="images/testimonials/1.png" alt="" />
-                                            </figure>
-                                        </div>
-                                        <h6>Adam Rose</h6>
-                                        <p className="mb-0">Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem
-                                            ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
-                                    </div>
-                                </div>
-                                {/* Slide Item */}
-                                <div className="slide-item">
-                                    <div className="inner-box text-center">
-                                        <div className="image-box">
-                                            <figure>
-                                                <img loading="lazy" src="images/testimonials/2.png" alt="" />
-                                            </figure>
-                                        </div>
-                                        <h6>David Warner</h6>
-                                        <p className="mb-0">Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem
-                                            ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
-                                    </div>
-                                </div>
-                                {/* Slide Item */}
-                                <div className="slide-item">
-                                    <div className="inner-box text-center">
-                                        <div className="image-box">
-                                            <figure>
-                                                <img loading="lazy" src="images/testimonials/3.png" alt="" />
-                                            </figure>
-                                        </div>
-                                        <h6>Amy Adams</h6>
-                                        <p className="mb-0">Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem
-                                            ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
-                                    </div>
-                                </div>
-                                {/* Slide Item */}
-                                <div className="slide-item">
-                                    <div className="inner-box text-center">
-                                        <div className="image-box">
-                                            <figure>
-                                                <img loading="lazy" src="images/testimonials/1.png" alt="" />
-                                            </figure>
-                                        </div>
-                                        <h6>Adam Rose</h6>
-                                        <p className="mb-0">Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem
-                                            ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
-                                    </div>
-                                </div>
-                                {/* Slide Item */}
-                                <div className="slide-item">
-                                    <div className="inner-box text-center">
-                                        <div className="image-box">
-                                            <figure>
-                                                <img loading="lazy" src="images/testimonials/2.png" alt="" />
-                                            </figure>
-                                        </div>
-                                        <h6>David Warner</h6>
-                                        <p className="mb-0">Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem
-                                            ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
-                                    </div>
-                                </div>
-                                {/* Slide Item */}
-                                <div className="slide-item">
-                                    <div className="inner-box text-center">
-                                        <div className="image-box">
-                                            <figure>
-                                                <img loading="lazy" src="images/testimonials/3.png" alt="" />
-                                            </figure>
-                                        </div>
-                                        <h6>Amy Adams</h6>
-                                        <p className="mb-0">Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem
-                                            ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
-                                    </div>
-                                </div>
+                                <TestimonialsSlider />
                             </div>
                         </div>
                     </div>
