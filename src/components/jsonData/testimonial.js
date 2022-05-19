@@ -1,0 +1,21 @@
+const testimonial = [
+    {
+        "id": 1,
+        "patientName": "Patients",
+        "image": `testimonialImg/Patient1.jpg`,
+        "testimonial": "The staff is professional and courteous and the knowledge of doctors and his team for the cardiac facilities is a great achievement. It is also heartening to note that the rooms are being upgraded regularly. "
+    },
+    {
+        "id": 2,
+        "patientName": "PRASHANT SINGH",
+        "image": "testimonialImg/Patient1.jpg",
+        "testimonial": "“I am feeling much better now (after the treatment). Doctors here helped me a lot and encouraged me (post the surgery).    I was given full care and attention during my treatment at the hospital"
+    },
+    {
+        "id": 3,
+        "patientName": "Patients",
+        "image": "testimonialImg/Patient1.jpg",
+        "testimonial": "We came to this hospital under recommendations of our friends. We have found this as an excellent hospital. Technical abilities and knowledge of the doctors and attached staff is superb. Strict discipline is maintained "
+    }
+]
+export default testimonial;

@@ -1,9 +1,9 @@
 import React from "react";
-import { Outlet } from "react-router";
+import { Outlet } from "react-router-dom";
 import Footer from "../includes/Footer";
 import Header from "../includes/Header";
 
-function OnboardingLayout() {
+function InnerPageLayout() {
 
     return (
         <>
@@ -17,4 +17,4 @@ function OnboardingLayout() {
         </>
     );
 }
-export default OnboardingLayout;
+export default InnerPageLayout;

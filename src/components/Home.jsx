@@ -381,7 +381,7 @@ function Home() {
                             <div className="team-member">
                                 <img loading="lazy" src={doctor1} alt="doctor" className="img-fluid" />
                                 <div className="contents text-center">
-                                    <h4>Dr. (Col.) Tarun Kaul</h4>
+                                    <h5>Dr. (Col.) Tarun Kaul</h5>
                                     {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p> */}
                                 </div>
                             </div>
@@ -390,7 +390,7 @@ function Home() {
                             <div className="team-member">
                                 <img loading="lazy" src={doctor2} alt="doctor" className="img-fluid" />
                                 <div className="contents text-center">
-                                    <h4>Dr. (Col.) Shashi Shukla</h4>
+                                    <h5>Dr. (Col.) Shashi Shukla</h5>
                                     {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p> */}
                                 </div>
                             </div>
@@ -399,7 +399,7 @@ function Home() {
                             <div className="team-member">
                                 <img loading="lazy" src={doctor3} alt="doctor" className="img-fluid" />
                                 <div className="contents text-center">
-                                    <h4>Dr. (Maj.) Roli Tewari</h4>
+                                    <h5>Dr. (Maj.) Roli Tewari</h5>
                                     {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p> */}
                                 </div>
                             </div>

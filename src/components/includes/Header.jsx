@@ -83,25 +83,25 @@ function Header() {
                     <div className="collapse navbar-collapse" id="navbarLinks">
                         <ul className="navbar-nav">
                             <li className={`nav-item`} >
-                                <NavLink activeClassName="active" className="nav-link" to="/">Home</NavLink>
+                                <NavLink activeclassname="active" className="nav-link" to="/">Home</NavLink>
                             </li>
                             <li className={`nav-item`}>
-                                <NavLink activeClassName="active" className="nav-link" to="our-doctors">Our Doctors</NavLink>
+                                <NavLink activeclassname="active" className="nav-link" to="/our-doctors">Our Doctors</NavLink>
                             </li>
                             <li className={`nav-item`}>
-                                <NavLink activeClassName="active" className="nav-link" to="service">Our Services</NavLink>
+                                <NavLink activeclassname="active" className="nav-link" to="/our-services">Our Services</NavLink>
                             </li>
                             <li className={`nav-item`}>
-                                <NavLink activeClassName="active" className="nav-link" to="gallery">Gallery</NavLink>
+                                <NavLink activeclassname="active" className="nav-link" to="/gallery">Gallery</NavLink>
                             </li>
                             <li className={`nav-item`}>
-                                <NavLink activeClassName="active" className="nav-link" to="login">Login | Register</NavLink>
+                                <NavLink activeclassname="active" className="nav-link" to="/user/login">Login | Register</NavLink>
                             </li>
                             <li className={`nav-item`}>
-                                <NavLink activeClassName="active" className="nav-link" to="donations">Donate</NavLink>
+                                <NavLink activeclassname="active" className="nav-link" to="/donations">Donate</NavLink>
                             </li>
                             <li className={`nav-item`}>
-                                <NavLink activeClassName="active" className="nav-link" to="contact-us">Contact Us</NavLink>
+                                <NavLink activeclassname="active" className="nav-link" to="/contact-us">Contact Us</NavLink>
                             </li>
                             {/* <li className="nav-item dropdown @@blogs">
                                 <NavLink className="nav-link dropdown-toggle" to="#!" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blogs</NavLink>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import postthumb from "../../assets/images/blog/post-thumb-small.jpg";
+// import postthumb from "../../assets/images/blog/post-thumb-small.jpg";
 import mainLogo from "../../assets/images/sadhcare.png"
 
 function Footer() {
@@ -60,7 +60,7 @@ function Footer() {
                             <h2>Quick Links</h2>
                             <ul className="menu-link">
                                 <li>
-                                    <Link to="/assets/pdf/HSPCB-BMW-GUIDELINES-COVID.pdf">
+                                    <Link to="/pdf/HSPCB-BMW-GUIDELINES-COVID.pdf">
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
                                         Haryana Govt. Policy Guideline
                                     </Link>
@@ -169,7 +169,7 @@ function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="footer-bottom">
+            {/* <div className="footer-bottom">
                 <div className="container clearfix">
                     <div className="copyright-text">
                         <p>&copy; Copyright 2021. Designed &amp; Developed by
@@ -188,7 +188,7 @@ function Footer() {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> */}
         </footer>
     );
 }

@@ -18,17 +18,28 @@ body {
 a {
   text-decoration: none;
   cursor: pointer;
-  &:hover, &:focus, &:visited {
+
+  &:hover,
+  &:focus,
+  &:visited {
     text-decoration: none;
     outline: none;
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0px;
 }
 
-input, button, select, textarea {
+input,
+button,
+select,
+textarea {
   font-family: $secondary-font;
 }
 
@@ -45,10 +56,12 @@ p {
     font-weight: 700;
     font-family: $primary-font;
   }
+
   span {
     color: #222222;
     font-weight: 400;
   }
+
   p {
     font-size: 15px;
     line-height: 25px;
@@ -87,7 +100,8 @@ li {
   margin: 0px;
 }
 
-.anim-3, .anim-3-all * {
+.anim-3,
+.anim-3-all * {
   transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
@@ -95,7 +109,8 @@ li {
   -o-transition: all 0.3s ease;
 }
 
-.anim-5, .anim-5-all * {
+.anim-5,
+.anim-5-all * {
   transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
@@ -103,7 +118,8 @@ li {
   -o-transition: all 0.5s ease;
 }
 
-.anim-7, .anim-7-all * {
+.anim-7,
+.anim-7-all * {
   transition: all 0.7s ease;
   -moz-transition: all 0.7s ease;
   -webkit-transition: all 0.7s ease;
@@ -127,6 +143,7 @@ li {
   -webkit-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
+
   &:hover {
     color: $primary-color;
     border: 1px solid $primary-color;
@@ -155,6 +172,7 @@ li {
   -webkit-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
+
   &:hover {
     color: #ffffff;
     border: 1px solid $primary-color;
@@ -167,22 +185,22 @@ li {
   }
 }
 
-.section{
-  padding: 100px 0;
+.section {
+  padding: 20px 0;
 }
 
-.pb-0{
+.pb-0 {
   padding-bottom: 0 !important;
 }
 
-.pt-0{
+.pt-0 {
   padding-top: 0 !important;
 }
 
-.p-0{
+.p-0 {
   padding: 0 !important;
 }
 
-.bg-gray{
+.bg-gray {
   background: #fafafa;
 }

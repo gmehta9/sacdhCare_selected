@@ -1,0 +1,117 @@
+[
+    {
+        "id": 1,
+        "name": "Dr. (Brig.) Amitava Banerjee",
+        "specialization": "Director & Radiologist"
+    },
+    {
+        "id": 2,
+        "name": "Dr.(Maj.) Roli Tiwari",
+        "specialization": "Dental Surgeon & Deputy MS"
+    },
+    {
+        "id": 3,
+        "name": "Dr. Parul Prinja",
+        "specialization": "Medical Specialist"
+    },
+    {
+        "id": 4,
+        "name": "Dr. Vipin",
+        "specialization": "Medical Specialist"
+    },
+    {
+        "id": 5,
+        "name": "Dr. Pankaj Khatana",
+        "specialization": "Medical Specialist"
+    },
+    {
+        "id": 6,
+        "name": "Dr. Umesh Kumari Yadav",
+        "specialization": "Gynaecologist & Obstetrician"
+    },
+    {
+        "id": 7,
+        "name": "Dr. Swarnima Saxena ",
+        "specialization": "Gynaecologist & Obstetrician"
+    },
+    {
+        "id": 8,
+        "name": "Dr. Aman Arora",
+        "specialization": "Pediatrician"
+    },
+    {
+        "id": 9,
+        "name": "Dr. Chander Mohan",
+        "specialization": "Pediatrician"
+    },
+    {
+        "id": 10,
+        "name": "Dr. Vishal Subhas Ambare",
+        "specialization": "Pediatrician"
+    },
+    {
+        "id": 11,
+        "name": "Dr. Naveen Taxak",
+        "specialization": "Orthopedic"
+    },
+    {
+        "id": 12,
+        "name": "Dr. Jatin Arora",
+        "specialization": "Orthopedic"
+    },
+    {
+        "id": 13,
+        "name": "Dr. Paras Gupta",
+        "specialization": "General Surgeon"
+    },
+    {
+        "id": 14,
+        "name": "Dr. Shashi Kant Mishra",
+        "specialization": "Cadiologist"
+    },
+    {
+        "id": 15,
+        "name": "Dr. Veena Singh",
+        "specialization": "General Physician"
+    },
+    {
+        "id": 16,
+        "name": "Dr. Akhil",
+        "specialization": "General Physician"
+    },
+    {
+        "id": 17,
+        "name": "Dr. Yogesh Sharma",
+        "specialization": "General Physician"
+    },
+    {
+        "id": 18,
+        "name": "Dr. Bhawna Sharma",
+        "specialization": "Pathologist"
+    },
+    {
+        "id": 19,
+        "name": "Dr. Preeti",
+        "specialization": "General Dentist"
+    },
+    {
+        "id": 20,
+        "name": "Dr. Priyank Banthia",
+        "specialization": "Periodontist"
+    },
+    {
+        "id": 21,
+        "name": "Dr. (Maj.) Rohit Bahri",
+        "specialization": "Orthodontist & Implantologist"
+    },
+    {
+        "id": 22,
+        "name": "Dr. Vimanyu Kataria",
+        "specialization": "Oral & maxillofacial Surgeon"
+    },
+    {
+        "id": 23,
+        "name": "Dr. J P Tak",
+        "specialization": "Anaesthetist"
+    }
+]
