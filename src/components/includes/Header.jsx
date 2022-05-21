@@ -63,7 +63,7 @@ function Header() {
                                         </div>
                                         <strong>Call Now</strong>
                                         <br />
-                                        <span>+ (88017) - 123 - 4567</span>
+                                        <a href="tel:01242970919">0124 2970919</a>
                                     </li>
                                 </ul>
                                 <div className="link-btn text-center text-lg-right">
@@ -91,6 +91,10 @@ function Header() {
                             <li className={`nav-item`}>
                                 <NavLink activeclassname="active" className="nav-link" to="/our-services">Our Services</NavLink>
                             </li>
+                            <li className={`nav-item`}>
+                                <NavLink activeclassname="active" className="nav-link" to="/our-programmes">Our Programmes</NavLink>
+                            </li>
+
                             <li className={`nav-item`}>
                                 <NavLink activeclassname="active" className="nav-link" to="/gallery">Gallery</NavLink>
                             </li>

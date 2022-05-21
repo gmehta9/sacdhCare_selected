@@ -6,7 +6,7 @@ function OurDoctors() {
             <p>
                 SADH has a team of doctors specialized in different fields of medicine, who have a deep desire to promote the welfare of others and help create a better world. Many of the doctors and support staff at SADH are ex-Army doctors and personnel, led by Dr.(Col.)Tarun Kaul.
             </p>
-            <table className="table">
+            <table className="table table-bordered">
                 <thead className="thead-dark">
                     <tr>
                         <th>Sr. No.</th>

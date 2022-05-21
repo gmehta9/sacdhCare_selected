@@ -59,12 +59,18 @@
   }
 }
 
+.table td,
+.table th {
+  padding: 0.50rem;
+  font-size: 13px;
+}
+
 .form-control {
   box-shadow: none;
-  border-radius: 0;
   padding: 8px 20px;
-  font-size: 14px;
+  font-size: 15px;
   border-radius: 30px;
+  height: 45px;
 
   &:focus {
     box-shadow: none;
@@ -74,4 +80,9 @@
   &.main {
     padding: 20px;
   }
+}
+
+button:disabled {
+  opacity: .7;
+  cursor: not-allowed;
 }

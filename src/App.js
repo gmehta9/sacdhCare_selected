@@ -14,6 +14,7 @@ import OurDoctors from './components/InnerPages/OurDoctors';
 import Gallery from './components/InnerPages/Gallery';
 import InnerPageLayout from './components/InnerPages/InnerPageLayout';
 import OurServices from './components/InnerPages/OurServices';
+import OurProgrammes from './components/InnerPages/OurProgrammes';
 
 function App() {
   return (
@@ -32,6 +33,8 @@ function App() {
 
         <Route path="" element={<InnerPageLayout />} >
           <Route path="about-us" element={<AboutUs />} />
+          <Route path="our-programmes" element={<OurProgrammes />} />
+
           <Route path="our-doctors" element={<OurDoctors />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="our-services" element={<OurServices />} />
