@@ -1,8 +1,5 @@
 .hero-slider {
-  height: 80vh;
-
   .slider-item {
-    height: 80vh;
     display: flex !important;
     justify-content: center;
     align-items: center;
@@ -25,8 +22,8 @@
     }
   }
 
-  .content {
-    position: relative;
+  .slider-content {
+    position: absolute;
     z-index: 2;
 
     &.style {

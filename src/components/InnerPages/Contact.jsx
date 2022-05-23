@@ -36,8 +36,7 @@ function ContactUs() {
                                     <div className="media-body">
                                         <h3>Email</h3>
                                         <p>
-                                            info@templatepath.com
-                                            <br />info@cleanxer.com
+                                            <a href="mailto:info@sadhcare.org">info@sadhcare.org</a>
                                         </p>
                                     </div>
                                 </div>

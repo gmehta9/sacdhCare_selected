@@ -1,5 +1,5 @@
 import React from "react";
-import { Slide, Zoom } from 'react-slideshow-image';
+import { Zoom } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import slide1 from "../../assets/images/slider/slider1.jpg"
 import slide2 from "../../assets/images/slider/slider2.jpg"
@@ -8,49 +8,76 @@ import slide3 from "../../assets/images/slider/slider3.jpg"
 function Banner() {
     const zoomInProperties = {
         indicators: true,
-        scale: 1.4
+        scale: 1.4,
+        autoplay: false
     }
     return (
         <>
-            <Zoom easing="ease"  {...zoomInProperties}>
+            <Zoom easing="ease" className="hero-slider"  {...zoomInProperties}>
                 <div className="slider-item slide1">
                     <img src={slide1} alt="" />
-                    {/* <div className="container">
-                        <div className="row">
-                            <div className="col-6">
-                                <div className="slider-content style text-center">
-                                    <h2 className="text-white text-bold mb-2" data-animation-in="slideInLeft">Our Best Surgeons</h2>
-                                    <p className="tag-text mb-4" data-animation-in="slideInRight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sunt animi sequi ratione quod at earum. <br /> Quis quos officiis numquam!</p>
+                    <div className="slider-content">
+                        <div className="row justify-content-center">
+                            <div className="col-12">
+                                <div className=" style text-center">
+                                    <h2 className="text-white text-bold mb-2" data-animation-in="slideInLeft">SADH Care hospital is the only</h2>
+                                    <p className="tag-text mb-4" data-animation-in="slideInRight">NABH certified hospital in Pataudi.</p>
                                 </div>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
                 <div className="slider-item slide1" >
                     <img src={slide2} alt="" />
-                    {/* <div className="container">
-                        <div className="row">
+                    <div className="slider-content">
+                        <div className="row justify-content-center">
                             <div className="col-12">
-                                <div className="content style text-center">
-                                    <h2 className="text-white text-bold mb-2" data-animation-in="slideInLeft">Our Best Surgeons</h2>
-                                    <p className="tag-text mb-4" data-animation-in="slideInRight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sunt animi sequi ratione quod at earum. <br /> Quis quos officiis numquam!</p>
+                                <div className=" style text-center">
+                                    <p className="tag-text mb-2" data-animation-in="slideInRight"> Entrust your health our doctors </p>
+                                    <h2 className="text-white text-bold mb-2" data-animation-in="slideInLeft">Exceptional people. Exceptional care.</h2>
                                 </div>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
                 <div className="slider-item slide1">
                     <img src={slide3} alt="" />
-                    {/* <div className="container">
-                        <div className="row">
+                    <div className="slider-content">
+                        <div className="row justify-content-center">
                             <div className="col-12">
-                                <div className="content style text-center">
-                                    <h2 className="text-white text-bold mb-2" data-animation-in="slideInLeft">Our Best Surgeons</h2>
-                                    <p className="tag-text mb-4" data-animation-in="slideInRight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sunt animi sequi ratione quod at earum. <br /> Quis quos officiis numquam!</p>
+                                <div className=" style text-center">
+                                    <p className="tag-text mb-2" data-animation-in="slideInRight"> Entrust your health our doctors </p>
+                                    <h2 className="text-white text-bold mb-2" data-animation-in="slideInLeft">Medical services that you can trust.</h2>
                                 </div>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
+                </div>
+                <div className="slider-item slide1">
+                    <img src={slide1} alt="" />
+                    <div className="slider-content">
+                        <div className="row justify-content-center">
+                            <div className="col-12">
+                                <div className=" style text-center">
+                                    <p className="tag-text mb-2" data-animation-in="slideInRight"> Entrust your health our doctors </p>
+                                    <h2 className="text-white text-bold mb-2" data-animation-in="slideInLeft">The Hospital of the Future, Today.</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="slider-item slide1">
+                    <img src={slide2} alt="" />
+                    <div className="slider-content">
+                        <div className="row justify-content-center">
+                            <div className="col-12">
+                                <div className=" style text-center">
+                                    <h2 className="text-white text-bold mb-2" data-animation-in="slideInLeft">We are now </h2>
+                                    <p className="tag-text mb-4" data-animation-in="slideInRight">Ayushman Bharat Empanelled.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </Zoom>
         </>

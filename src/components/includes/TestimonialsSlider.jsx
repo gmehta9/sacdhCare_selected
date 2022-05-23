@@ -33,7 +33,7 @@ function TestimonialsSlider() {
                     <div className="inner-box text-center">
                         <div className="image-box">
                             <figure>
-                                <img loading="lazy" src={elm.image} alt="" />
+                                <img loading="lazy" src={`${process.env.PUBLIC_URL}/${elm.image}`} alt="" />
                             </figure>
                         </div>
                         <h6>{elm.patientName}</h6>

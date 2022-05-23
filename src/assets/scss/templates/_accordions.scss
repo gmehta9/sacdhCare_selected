@@ -1,12 +1,10 @@
 .accordion-section {
   .accordion-holder {
-    margin-top: 60px;
-
     .card {
       box-shadow: none;
       border-radius: 0;
       margin-bottom: 10px;
-      border-bottom: 1px solid rgba(0,0,0,.125);
+      border-bottom: 1px solid rgba(0, 0, 0, .125);
 
       .card-header {
         background: $light;
@@ -17,18 +15,22 @@
           margin-bottom: 0;
         }
 
-        h4 {
+        h6 {
           position: relative;
 
           a {
             font-weight: bold;
             font-family: $primary-font;
-            font-size: 20px;
+            font-size: 16px;
             display: block;
-            background: $primary-color;
+            background: $secondry-color;
             color: $light;
-            padding: 20px 30px;
+            padding: 12px 30px;
             transition: all .3s ease;
+
+            &:hover {
+              color: $primary-color;
+            }
 
             &:before {
               content: '\f077';
@@ -39,9 +41,6 @@
             }
 
             &.collapsed {
-              background: $light;
-              color: $black;
-
               &:before {
                 content: '\f078';
                 position: absolute;
@@ -49,9 +48,7 @@
                 font-weight: bold;
               }
 
-              &:hover {
-                color: $primary-color;
-              }
+
             }
           }
         }

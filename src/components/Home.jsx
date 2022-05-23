@@ -5,7 +5,7 @@ import Diaginostic from "../assets/images/resource/2.png";
 import Psycology from "../assets/images/resource/3.png";
 import GeneralTreatment from "../assets/images/resource/4.png";
 import TestimonialsSlider from "./includes/TestimonialsSlider";
-import ServicesProvided from "./includes/ServicesProvided";
+import DepartmentsProvided from "./includes/DepartmentsProvided";
 
 import doctor1 from "../assets/images/team/mt-dr-Col-tarun-kaul.jpg";
 import doctor2 from "../assets/images/team/dr.majroli_tewari.jpg";
@@ -349,16 +349,14 @@ function Home() {
             <section className="service-section bg-gray section">
                 <div className="container">
                     <div className="section-title text-center">
-                        <h3>Provided
-                            <span>Services</span>
-                        </h3>
+                        <h3>HOSPITAL <span>INFRASTRUCTURE</span> </h3>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet. qui suscipit atque <br />
                             fugiat officia corporis rerum eaque neque totam animi, sapiente culpa. Architecto!</p>
                     </div>
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="items-container">
-                                <ServicesProvided />
+                                <DepartmentsProvided />
                             </div>
                         </div>
                     </div>

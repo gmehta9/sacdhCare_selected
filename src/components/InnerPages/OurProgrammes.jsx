@@ -4,7 +4,7 @@ import programData from "../jsonData/programData.json";
 function ourProgrammes() {
 
     return (
-        <div className="our-program">
+        <div className="our-program accordion-section">
             <div className="accordion-holder">
                 <div className="accordion" id="accordionGroup" role="tablist" aria-multiselectable="true">
                     {programData.map((prgm, index) =>
