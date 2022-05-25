@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Auth from "../auth/Auth";
 import { patterns, useForm } from "../helper/useForm";
+import { handleError, post } from "../httpService/http";
 import Input from "../widgets/Input";
 
 function Login() {
@@ -24,12 +26,22 @@ function Login() {
 
         },
     });
-    console.log('Values', values)
+
+    const loginHandler = async () => {
+        try {
+            const response = await handleError(await post(`sign-in`, values))
+            const data = response;
+            Auth.login(data)
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
     return (
         <div className="row justify-content-center">
 
             <div className="col-6">
-                <form>
+                <form onSubmit={loginHandler}>
                     <Input
                         labelTitle="Email"
                         type="email"
@@ -58,7 +70,7 @@ function Login() {
                         </div>
                     </div>
 
-                    <button disabled={!isValid()} type="button" className="btn btn-primary btn-block mb-4">Sign in</button>
+                    <button disabled={!isValid()} type="submit" className="btn btn-primary btn-block mb-4">Sign in</button>
 
                 </form>
                 <div className="row mb-4">

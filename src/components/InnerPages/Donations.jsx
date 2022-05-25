@@ -1,24 +1,42 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
 import { patterns, useForm } from "../helper/useForm";
 import Input from "../widgets/Input";
 
 function Donations() {
     const [registeredField, setRegisteredField] = useState(false)
+
     const { values, errors, bindField, isValid, setInitialValues } = useForm({
         validations: {
+            name: {
+                required: true,
+            },
+            amount: {
+                required: true,
+                pattern: {
+                    value: patterns.onlyNumber,
+                    message: "Enter vaild amount.",
+                },
+            },
+            phone_no: {
+                pattern: {
+                    value: patterns.onlyNumber,
+                    message: "Enter vaild Phone no.",
+                },
+                maxLength: {
+                    value: 10,
+                    messag1e: "Enter vaild Phone no.",
+                },
+                minLength: {
+                    value: 10,
+                    messag1e: "Enter vaild Phone no.",
+                },
+                required: true,
+            },
             email: {
                 pattern: {
                     value: patterns.email,
                     message: "Invalid email address.",
-                },
-                required: true,
-            },
-            password: {
-                minLength: {
-                    value: 6,
-                    message:
-                        "Password should be minimum 6 characters long.",
                 },
                 required: true,
             },
@@ -130,7 +148,7 @@ function Donations() {
                             labelTitle="Company Name"
                             type="text"
                             name="name"
-                            {...bindField("name")}
+                            {...bindField("company_name")}
                             placeholder="Enter your name"
                             id="namefill"
                             error={errors}

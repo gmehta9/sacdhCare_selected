@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { patterns, useForm } from "../helper/useForm";
+import { handleError, post } from "../httpService/http";
 import Input from "../widgets/Input";
 
 function ForgotPassword() {
@@ -17,12 +18,22 @@ function ForgotPassword() {
 
         },
     });
+
+    const forgotPasswordHandler = async () => {
+        try {
+            const response = await handleError(await post(`forgot-password`, values))
+            const data = response;
+            console.log('forgotPasswordHandler', data)
+        } catch (err) {
+            console.error(err);
+        }
+    }
     console.log('vlaues', values)
     return (
         <div className="row justify-content-center">
 
             <div className="col-6">
-                <form>
+                <form onSubmit={forgotPasswordHandler}>
                     <Input
                         labelTitle="Email"
                         type="email"
@@ -35,7 +46,7 @@ function ForgotPassword() {
                     />
                     <button
                         disabled={!isValid()}
-                        type="button"
+                        type="submit"
                         className="btn btn-primary btn-block mb-4">
                         Submit
                     </button>

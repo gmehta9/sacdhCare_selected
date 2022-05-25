@@ -1,6 +1,10 @@
 // import logo from './logo.svg';
 import './App.scss';
 import { Route, Routes, BrowserRouter, Navigate, HashRouter } from 'react-router-dom';
+
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import ContactUs from './components/InnerPages/Contact';
 import Home from './components/Home';
 import AboutUs from './components/InnerPages/AboutUs';
@@ -20,6 +24,7 @@ function App() {
   return (
     // <BrowserRouter basename="/sadhcare">
     <HashRouter>
+      <ToastContainer autoClose={3000} />
       <Routes>
         <Route path="user" element={<OnboardingLayout />}>
           <Route path="login" element={<Login />} />

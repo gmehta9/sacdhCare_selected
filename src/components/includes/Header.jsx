@@ -67,7 +67,7 @@ function Header() {
                                     </li>
                                 </ul>
                                 <div className="link-btn text-center text-lg-right">
-                                    <a href="contact.html" className="btn-style-one">Appoinment</a>
+                                    <Link to="/" className="btn-style-one">Appoinment</Link>
                                 </div>
                             </div>
                         </div>

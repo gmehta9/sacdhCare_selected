@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { patterns, useForm } from "../helper/useForm";
+import { handleError, post } from "../httpService/http";
 import Input from "../widgets/Input";
 
 function SignUp() {
-    const { values, errors, bindField, isValid } = useForm({
+    const { values, errors, bindField, isValid, setInitialValues } = useForm({
         validations: {
             name: {
                 required: true,
@@ -26,11 +27,25 @@ function SignUp() {
             },
         },
     });
+
+    const signUpHandler = async () => {
+        try {
+            const response = await handleError(await post(
+                `sign-up`,
+                values
+            ))
+            const data = response;
+            console.log('signUpHandler', data)
+            setInitialValues()
+        } catch (err) {
+            console.error(err);
+        }
+    }
     return (
         <div className="row justify-content-center">
 
             <div className="col-6">
-                <form>
+                <form onSubmit={signUpHandler}>
                     <Input
                         labelTitle="Name"
                         type="text"
@@ -42,6 +57,16 @@ function SignUp() {
                     // requried={true}
                     />
                     <Input
+                        labelTitle="phone_number"
+                        type="text"
+                        name="phone_number"
+                        {...bindField("phone_number")}
+                        placeholder="Enter your phone no"
+                        id="phone_number"
+                        error={errors}
+                        requried={true}
+                    />
+                    <Input
                         labelTitle="Email"
                         type="email"
                         name="email"
@@ -49,7 +74,7 @@ function SignUp() {
                         placeholder="Enter your email"
                         id="emailfill"
                         error={errors}
-                    // requried={true}
+                        requried={true}
                     />
                     <Input
                         labelTitle="Password"
@@ -57,22 +82,22 @@ function SignUp() {
                         name="password"
                         {...bindField("password")}
                         placeholder="Enter your password"
-                        id="Password"
+                        id="password"
                         error={errors}
                     // requried={true}
                     />
                     <Input
                         labelTitle="Confirm Password"
                         type="password"
-                        name="confirmPassword"
-                        {...bindField("confirmPassword")}
+                        name="password_confirmation"
+                        {...bindField("password_confirmation")}
                         placeholder="Enter your Confirm Password"
-                        id="confirmPassword"
+                        id="password_confirmation"
                         error={errors}
                     // requried={true}
                     />
                     <button
-                        type="button"
+                        type="submit"
                         disabled={!isValid()}
                         className="btn btn-primary btn-block mb-4">
                         Sign in
