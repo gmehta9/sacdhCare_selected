@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import { patterns, useForm } from "../helper/useForm";
 import { handleError, post } from "../httpService/http";
 import Input from "../widgets/Input";
 
 function SignUp() {
-    const { values, errors, bindField, isValid, setInitialValues } = useForm({
+    const { values, errors, bindField, isValid, setInitialValues, setErrors } = useForm({
         validations: {
             name: {
                 required: true,
@@ -19,28 +20,51 @@ function SignUp() {
             },
             password: {
                 minLength: {
-                    value: 6,
-                    message:
-                        "Password should be minimum 8 characters long.",
+                    value: 8,
+                    message: "Password should be minimum 8 characters long.",
                 },
                 required: true,
             },
+            password_confirmation: {
+                minLength: {
+                    value: 8,
+                    message: "Password should be minimum 8 characters long.",
+                },
+                required: true,
+            }
         },
     });
 
-    const signUpHandler = async () => {
+    const signUpHandler = async (e) => {
+        e.preventDefault()
+        console.log(values)
         try {
             const response = await handleError(await post(
                 `sign-up`,
                 values
             ))
-            const data = response;
-            console.log('signUpHandler', data)
-            setInitialValues()
+
+            if (response.status === 200) {
+                setInitialValues({})
+                toast.success(response.message, {
+                    autoClose: 5000,
+                })
+            }
+
         } catch (err) {
             console.error(err);
         }
     }
+    useEffect(() => {
+        if (values.password_confirmation && (values.password !== values.password_confirmation)) {
+            setErrors(pre => {
+                return { ...pre, password_confirmation: `Confirm Password must be matched.` }
+            })
+        }
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [values])
+
     return (
         <div className="row justify-content-center">
 
@@ -84,7 +108,8 @@ function SignUp() {
                         placeholder="Enter your password"
                         id="password"
                         error={errors}
-                    // requried={true}
+                        icons
+                        requried={true}
                     />
                     <Input
                         labelTitle="Confirm Password"
@@ -94,12 +119,13 @@ function SignUp() {
                         placeholder="Enter your Confirm Password"
                         id="password_confirmation"
                         error={errors}
-                    // requried={true}
+                        icons
+                        requried={true}
                     />
                     <button
                         type="submit"
                         disabled={!isValid()}
-                        className="btn btn-primary btn-block mb-4">
+                        className="btn btn-primary btn-block mt-5 mb-4">
                         Sign in
                     </button>
 
