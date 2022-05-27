@@ -28,11 +28,17 @@ function Login() {
         },
     });
 
-    const loginHandler = async () => {
+    const loginHandler = async (e) => {
+        e.preventDefault()
+        console.log(values)
         try {
             const response = await handleError(await post(`sign-in`, values))
-            const data = response;
-            Auth.login(data)
+
+            if (response.status === 200) {
+                console.log('response', response)
+                Auth.login(response)
+            }
+
         } catch (err) {
             console.error(err);
         }
@@ -58,7 +64,7 @@ function Login() {
 
                         <Input
                             labelTitle="Password"
-                            type="text"
+                            type="password"
                             name="password"
                             {...bindField("password")}
                             placeholder="Enter your password"
@@ -73,16 +79,21 @@ function Login() {
                             </div>
                         </div>
 
-                        <button disabled={!isValid()} type="submit" className="btn btn-primary btn-block mb-4">Sign in</button>
+                        <button
+                            disabled={!isValid()}
+                            type="submit"
+                            className="btn btn-primary btn-block mb-4">
+                            Sign in
+                        </button>
 
-                    </form>
+                    </form >
                     <div className="row mb-4">
                         <div className="col text-center">
                             <Link to="/user/sign-up">Sign Up</Link>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div >
+            </div >
         </>
     );
 }

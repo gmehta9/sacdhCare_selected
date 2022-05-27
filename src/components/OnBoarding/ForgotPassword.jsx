@@ -19,7 +19,8 @@ function ForgotPassword() {
         },
     });
 
-    const forgotPasswordHandler = async () => {
+    const forgotPasswordHandler = async (e) => {
+        e.preventDefault()
         try {
             const response = await handleError(await post(`forgot-password`, values))
             const data = response;

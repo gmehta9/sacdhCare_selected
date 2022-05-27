@@ -23,6 +23,7 @@ async function get(api) {
     });
 }
 async function post(api, data, header) {
+
     return fetch(`${process.env.REACT_APP_BASE_URL}${api}`, {
         headers: header || getToken(),
         method: "POST",
@@ -31,6 +32,7 @@ async function post(api, data, header) {
 }
 
 async function handleError(data) {
+
     const response = await data.json();
     let status = data.status;
     if (data.status === 401) {

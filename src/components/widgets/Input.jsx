@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { eye_hide_show } from "../../assets/images/eye_hide_show.svg";
+import { eye_hide } from "../../assets/images/eye_hide.svg";
 
 function Input({
     labelTitle,
@@ -10,26 +13,36 @@ function Input({
     value,
     requried,
     onChange,
+    icons
 }) {
-
+    const [showPassward, setshowPassward] = useState(false);
     return (
         <>
             <div className="form-outline mb-3">
                 <label
                     className="form-label"
                     htmlFor={id}>
-                    {labelTitle} {requried && <sub>*</sub>}
+                    {labelTitle} {requried && <sup>*</sup>}
                 </label>
                 <input
-                    type={type}
+                    type={showPassward ? 'text' : type}
                     onChange={onChange}
                     name={name}
                     value={value}
                     placeholder={placeholder}
-                    autoComplete={'off'}
+                    autoComplete="off"
                     id={id}
                     className="form-control"
                 />
+
+                {/* {icons &&
+                    <div onClick={() => setshowPassward(!showPassward)} className="input_icon">
+                        <img
+                            src={`${showPassward ? eye_hide_show : eye_hide}`}
+                            alt="hide eye"
+                            className="password-hide" />
+                    </div>
+                } */}
                 {error[name] &&
                     <span className="text-danger"> {error[name]}</span>}
             </div>
