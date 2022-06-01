@@ -1,8 +1,10 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import mainLogo from "../../assets/images/sadhcare.png"
+import Auth from "../auth/Auth";
 
 function Header() {
+    const auth = Auth.user()
 
     return (
         <>
@@ -99,7 +101,9 @@ function Header() {
                                 <NavLink activeclassname="active" className="nav-link" to="/gallery">Gallery</NavLink>
                             </li>
                             <li className={`nav-item`}>
-                                <NavLink activeclassname="active" className="nav-link" to="/user/login">Login | Register</NavLink>
+                                <NavLink activeclassname="active" className="nav-link" to="/user/login">
+                                    {auth ? 'My Account ' : 'Login | Register'}
+                                </NavLink>
                             </li>
                             <li className={`nav-item`}>
                                 <NavLink activeclassname="active" className="nav-link" to="/donations">Donate</NavLink>

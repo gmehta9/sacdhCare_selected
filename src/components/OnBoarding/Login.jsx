@@ -6,6 +6,8 @@ import { handleError, post } from "../httpService/http";
 import Input from "../widgets/Input";
 
 function Login() {
+    const auth = Auth.user()
+    console.log(auth)
     const { values, errors, bindField, isValid } = useForm({
         validations: {
             email: {
@@ -34,8 +36,8 @@ function Login() {
             const response = await handleError(await post(`sign-in`, values))
 
             if (response.status === 200) {
-                console.log('response', response)
-                Auth.login(response)
+                console.log('response', response.data)
+                Auth.login(response.data)
             }
 
         } catch (err) {
