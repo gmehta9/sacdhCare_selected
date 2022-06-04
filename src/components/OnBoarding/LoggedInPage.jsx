@@ -18,10 +18,10 @@ function LoggedInPage() {
                                     <i className="fa fa-calendar-minus-o mr-2"></i>
                                     <span className="font-weight-bold small text-uppercase">Donation History</span></a>
 
-                                {/* <a className="nav-link mb-3 p-3 shadow" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
-                                    <i className="fa fa-star mr-2"></i>
-                                    <span className="font-weight-bold small text-uppercase">Reviews</span></a>
-
+                                <a className="nav-link mb-3 p-3 shadow" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false" onClick={() => localStorage.clear()}>
+                                    <i className="fa fa-sign-in mr-2"></i>
+                                    <span className="font-weight-bold small text-uppercase">Logout</span></a>
+                                {/*
                                 <a className="nav-link mb-3 p-3 shadow" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
                                     <i className="fa fa-check mr-2"></i>
                                     <span className="font-weight-bold small text-uppercase">Confirm booking</span></a> */}
