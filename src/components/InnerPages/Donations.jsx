@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 import { patterns, useForm } from "../helper/useForm";
 import { handleError, post } from "../httpService/http";
@@ -26,48 +27,44 @@ function Donations() {
         );
 
         if (!res) {
-            alert("Razorpay SDK failed to load. Are you online?");
+            toast.error("Razorpay SDK failed to load. Are you online?");
             return;
         }
 
         // creating a new order
-        const result = await handleError(await post(`http://localhost:5000/payment/orders`));
-
-        if (!result) {
-            alert("Server error. Are you online?");
+        const orderObj = await handleError(await post(`donate`, values));
+        console.log('result.data', orderObj.data)
+        if (!orderObj) {
+            toast.error("Server error. Are you online?");
             return;
         }
 
         // Getting the order details back
-        const { amount, id: order_id, currency } = result.data;
+        const { amount, order_id, currency, first_name, email, phone_number } = orderObj.data;
 
         const options = {
             key: "rzp_test_r6FiJfddJh76SI", // Enter the Key ID generated from the Dashboard
             amount: amount.toString(),
             currency: currency,
-            name: "Soumya Corp.",
-            description: "Test Transaction",
+            name: first_name,
+            description: "Donation",
             image: 'http://localhost:5000/payment/success',
             order_id: order_id,
             handler: async function (response) {
                 const data = {
                     orderCreationId: order_id,
-                    razorpayPaymentId: response.razorpay_payment_id,
-                    razorpayOrderId: response.razorpay_order_id,
-                    razorpaySignature: response.razorpay_signature,
+                    payment_id: response.razorpay_payment_id,
+                    amount: response.razorpay_order_id,
                 };
 
-                const result = await handleError(await post(`http://localhost:5000/payment/success`, data));
+                const verifyPayment = await handleError(await post(`verify-payment`, data));
 
-                alert(result.data.msg);
+                console.log('verifyPayment.data', verifyPayment)
             },
             prefill: {
-                name: "Soumya Dey",
-                email: "SoumyaDey@example.com",
-                contact: "9999999999",
-            },
-            notes: {
-                address: "Soumya Dey Corporate Office",
+                name: first_name,
+                email: email,
+                contact: phone_number,
             },
             theme: {
                 color: "#61dafb",
@@ -79,7 +76,10 @@ function Donations() {
     }
     const { values, errors, bindField, isValid, setInitialValues } = useForm({
         validations: {
-            name: {
+            first_name: {
+                required: true,
+            },
+            last_name: {
                 required: true,
             },
             amount: {
@@ -89,7 +89,7 @@ function Donations() {
                     message: "Enter vaild amount.",
                 },
             },
-            phone_no: {
+            phone_number: {
                 pattern: {
                     value: patterns.onlyNumber,
                     message: "Enter vaild Phone no.",
@@ -136,24 +136,17 @@ function Donations() {
 
     //     instance.on('payment.error', function (resp) { alert(resp.error.description) }); // will pass error object to error handler
     // }
-    console.log(values)
     return (
         <>
-            <button
-                type="button"
-                onClick={displayRazorpay}
-                className="course-payment-button">
-                Buy Now
-            </button>
-            <form>
+            <form onSubmit={displayRazorpay}>
                 <div className="row">
 
                     <div className="col-6">
                         <Input
                             labelTitle="First Name"
                             type="text"
-                            name="name"
-                            {...bindField("name")}
+                            name="first_name"
+                            {...bindField("first_name")}
                             placeholder="Enter your name"
                             id="namefill"
                             error={errors}
@@ -165,8 +158,8 @@ function Donations() {
                         <Input
                             labelTitle="Last Name"
                             type="text"
-                            name="name"
-                            {...bindField("name")}
+                            name="last_name"
+                            {...bindField("last_name")}
                             placeholder="Enter your name"
                             id="namefill"
                             error={errors}
@@ -178,8 +171,8 @@ function Donations() {
                         <Input
                             labelTitle="Phone No"
                             type="text"
-                            name="phoneNo"
-                            {...bindField("phoneNo")}
+                            name="phone_number"
+                            {...bindField("phone_number")}
                             placeholder="Enter your phone no"
                             id="phoneNo"
                             error={errors}
@@ -240,8 +233,8 @@ function Donations() {
                         <Input
                             labelTitle="Company Name"
                             type="text"
-                            name="name"
-                            {...bindField("company_name")}
+                            name="company"
+                            {...bindField("company")}
                             placeholder="Enter your name"
                             id="namefill"
                             error={errors}
@@ -316,6 +309,7 @@ function Donations() {
                     <div className="col-6 mt-4">
                         <button
                             type="button"
+                            onClick={displayRazorpay}
                             disabled={!isValid()}
                             className="btn btn-primary btn-block mb-4">
                             Pay {values.amount && values.amount + '/-'}
