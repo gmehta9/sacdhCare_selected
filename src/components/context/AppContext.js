@@ -6,6 +6,7 @@ export const AppContextProvider = ({ children }) => {
 
     const [spinner, setSpinner] = useState();
     const [pageTitle, setPageTitle] = useState();
+    const [popShow, setPopShow] = useState(true);
 
     return (
         <AppContext.Provider
@@ -13,7 +14,9 @@ export const AppContextProvider = ({ children }) => {
                 spinner,
                 setSpinner,
                 pageTitle,
-                setPageTitle
+                setPageTitle,
+                popShow,
+                setPopShow
             }}
         >
             {children}

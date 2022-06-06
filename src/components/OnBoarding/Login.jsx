@@ -47,8 +47,9 @@ function Login() {
     }
 
     useEffect(() => {
+        console.log(Auth.isUserAuthenticated())
         if (Auth.isUserAuthenticated()) {
-            navigate('/user/loggedInPage')
+            navigate('/user/logged')
         }
         setPageTitle(Auth.isUserAuthenticated() ? 'My Account' : 'Login')
 

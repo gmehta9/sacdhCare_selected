@@ -25,6 +25,21 @@ function SignUp() {
                 },
                 required: true,
             },
+            phone_number: {
+                pattern: {
+                    value: patterns.onlyNumber,
+                    message: "Enter vaild Phone no.",
+                },
+                maxLength: {
+                    value: 10,
+                    messag1e: "Enter vaild Phone no.",
+                },
+                minLength: {
+                    value: 10,
+                    messag1e: "Enter vaild Phone no.",
+                },
+                required: true,
+            },
             password: {
                 minLength: {
                     value: 8,

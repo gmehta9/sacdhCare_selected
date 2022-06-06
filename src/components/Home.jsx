@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Banner from "./includes/Banner";
 import Orthopedics from "../assets/images/resource/1.png";
 import Diaginostic from "../assets/images/resource/2.png";
@@ -16,9 +16,36 @@ import servicetwo from "../assets/images/services/service-two.jpg";
 import servicethree from "../assets/images/services/service-three.jpg"
 import servicefour from "../assets/images/services/service-four.jpg";
 import servicefive from "../assets/images/services/service-five.jpg"
+import AppContext from "./context/AppContext";
+import Swal from 'sweetalert2';
 
 function Home() {
+    const { setPageTitle, popShow, setPopShow } = useContext(AppContext)
 
+    const popHandler = () => {
+        Swal.fire({
+            // title: 'Custom width, padding, color, background.',
+            padding: '0',
+            margin: '0',
+            customClass: {
+                image: 'image-popup',
+                actions: 'popup-btn',
+                confirmButton: 'p-2 py-0'
+            },
+            confirmButtonText: 'X',
+            imageUrl: '/sadhcare/background/popup_free_opd-1.jpg',
+
+        })
+    }
+    useEffect(() => {
+        setPageTitle()
+        if (popShow) {
+            popHandler()
+        }
+        setPopShow(false)
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
     return (
         <>
             <Banner />
@@ -408,7 +435,7 @@ function Home() {
             {/* End team section
 
             testimonial-section */}
-            <section className="testimonial-section" style={{ background: "url(images/testimonials/1.jpg)" }}>
+            <section className="testimonial-section" style={{ background: "url(/sadhcare/background/1.jpg)" }}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">

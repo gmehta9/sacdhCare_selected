@@ -1,72 +1,102 @@
-.cta{
+.cta {
   padding: 40px 0;
-  .cta-block{
+
+  .cta-block {
     border-radius: 4px;
     overflow: hidden;
-    .emmergency{
+
+    .emmergency {
       background: $primary-color;
-      a{
+
+      a {
         color: $light;
         font-size: 30px;
       }
-      p{
+
+      p {
         padding-top: 20px;
       }
     }
-    .top-doctor{
+
+    .top-doctor {
       background: lighten($color: $primary-color, $amount: 5%);
-      .btn-main{
+
+      .btn-main {
         margin-top: 10px;
         color: $light;
         border: 1px solid $light;
         padding: 10px 20px;
         transition: all .3s ease;
-        &:hover{
+
+        &:hover {
           background: $light;
           color: $primary-color;
         }
       }
     }
-    .working-time{
+
+    .working-time {
       background: lighten($color: $primary-color, $amount: 10%);
-      ul{
+
+      ul {
         margin: 0;
         padding: 0;
-        li{
+
+        li {
           color: $light;
           text-transform: uppercase;
           letter-spacing: 2px;
           padding: 5px 0;
-          span{
+
+          span {
             float: right;
           }
-          &:not(:last-child){
+
+          &:not(:last-child) {
             border-bottom: 1px solid $light;
           }
         }
       }
     }
-    .item{
+
+    .item {
       padding: 45px 30px;
-      i,h2,p{
+
+      i,
+      h2,
+      p {
         transition: all .2s ease;
         color: $light;
       }
-      i{
+
+      i {
         font-size: 30px;
         margin-bottom: 20px;
       }
-      h2{
+
+      h2 {
         font-weight: normal;
         text-transform: uppercase;
         letter-spacing: 1px;
         font-size: 25px;
         margin-bottom: 30px;
       }
-      p{
+
+      p {
         font-size: 16px;
         line-height: 25px;
       }
     }
   }
+}
+
+.image-popup {
+  margin: 0 !important;
+}
+
+.popup-btn {
+  margin-top: 0 !important;
+  position: absolute;
+  right: 0;
+  top: 0;
 }

@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom";
 import Auth from "../auth/Auth";
 import AppContext from "../context/AppContext";
@@ -10,6 +11,21 @@ function LoggedInPage({ userLogout }) {
 
     const { setPageTitle } = useContext(AppContext);
 
+    const logoutHandler = () => {
+        Swal.fire({
+            // title: "L?",
+            text: "Are you sure you want to logout?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    localStorage.clear()
+                    navigate('/user/login')
+                }
+            });
+    }
     useEffect(() => {
         if (!Auth.isUserAuthenticated()) {
             navigate('/user/login')
@@ -26,7 +42,6 @@ function LoggedInPage({ userLogout }) {
                                 <a className="nav-link mb-3 p-3 shadow active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
                                     <i className="fa fa-user-circle-o mr-2"></i>
                                     <span className="font-weight-bold small text-uppercase">Personal information</span></a>
-
                                 <a
                                     className="nav-link mb-3 p-3 shadow"
                                     id="v-pills-profile-tab"
@@ -47,7 +62,7 @@ function LoggedInPage({ userLogout }) {
                                     role="tab"
                                     aria-controls="v-pills-messages"
                                     aria-selected="false"
-                                    onClick={() => localStorage.clear()}
+                                    onClick={logoutHandler}
                                 >
                                     <i className="fa fa-sign-in mr-2"></i>
                                     <span className="font-weight-bold small text-uppercase">Logout</span>
@@ -82,22 +97,23 @@ function LoggedInPage({ userLogout }) {
                                                 <th width="45%">Transaction Id</th>
                                                 <th width="20%">Amount</th>
                                             </tr>
-                                            <tbody>
-                                                {donationHistory.length === 0 &&
-                                                    <tr>
-                                                        <td colSpan={4}> No Result Found!</td>
-                                                    </tr>
-                                                }
-                                                {donationHistory && donationHistory.map((elm, index) =>
-                                                    <tr>
-                                                        <td>{index + 1}</td>
-                                                        <td>{elm.date}</td>
-                                                        <td>{elm.transaction} </td>
-                                                        <td>{elm.amount}</td>
-                                                    </tr>
-                                                )}
-                                            </tbody>
                                         </thead>
+                                        <tbody>
+                                            {donationHistory.length === 0 &&
+                                                <tr>
+                                                    <td className="text-center" colSpan="4"> No Result Found!</td>
+                                                </tr>
+                                            }
+                                            {donationHistory && donationHistory.map((elm, index) =>
+                                                <tr>
+                                                    <td>{index + 1}</td>
+                                                    <td>{elm.date}</td>
+                                                    <td>{elm.transaction} </td>
+                                                    <td>{elm.amount}</td>
+                                                </tr>
+                                            )}
+                                        </tbody>
+
                                     </table>
                                 </div>
 
