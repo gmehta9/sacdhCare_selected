@@ -29,7 +29,7 @@ class Auth {
     }
 
     isUserAuthenticated() {
-        if (localStorage.removeItem(`__sadh_user`)) {
+        if (localStorage.getItem(`__sadh_user`)) {
             return true;
         } else {
             return false;

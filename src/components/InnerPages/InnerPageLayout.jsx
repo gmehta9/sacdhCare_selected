@@ -6,7 +6,7 @@ import Header from "../includes/Header";
 function InnerPageLayout() {
 
     return (
-        <>
+        <React.Fragment>
             <Header />
             <section className="story">
                 <div className="container">
@@ -14,7 +14,7 @@ function InnerPageLayout() {
                 </div>
             </section>
             <Footer />
-        </>
+        </React.Fragment>
     );
 }
 export default InnerPageLayout;

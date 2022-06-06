@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { AppContext } from "../context/AppContext";
 
 function OurServices() {
+    const { setPageTitle } = useContext(AppContext);
 
+    useEffect(() => {
+        setPageTitle('Our Services')
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
     return (
-        <>
+        <React.Fragment>
             <p>Swami Amar Dev Hospital boasts of state-of-the-art medical infrastructure, some which of include:</p>
 
             <table className="table table-bordered">
@@ -93,7 +99,7 @@ function OurServices() {
                 </tbody>
             </table>
 
-        </>
+        </React.Fragment>
     );
 }
 export default OurServices;

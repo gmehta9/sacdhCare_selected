@@ -1,10 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Auth from "../auth/Auth";
+import AppContext from "../context/AppContext";
 import "./loggedIn.scss";
 
-function LoggedInPage() {
+function LoggedInPage({ userLogout }) {
     const [donationHistory, setHistoryDonation] = useState([]);
+    const navigate = useNavigate();
+
+    const { setPageTitle } = useContext(AppContext);
+
+    useEffect(() => {
+        if (!Auth.isUserAuthenticated()) {
+            navigate('/user/login')
+        }
+        setPageTitle('My Account')
+    }, [])
     return (
-        <>
+        <React.Fragment>
             <section className="header">
                 <div className="container py-4">
                     <div className="row">
@@ -14,13 +27,31 @@ function LoggedInPage() {
                                     <i className="fa fa-user-circle-o mr-2"></i>
                                     <span className="font-weight-bold small text-uppercase">Personal information</span></a>
 
-                                <a className="nav-link mb-3 p-3 shadow" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                                <a
+                                    className="nav-link mb-3 p-3 shadow"
+                                    id="v-pills-profile-tab"
+                                    data-toggle="pill"
+                                    href="#v-pills-profile"
+                                    role="tab"
+                                    aria-controls="v-pills-profile"
+                                    aria-selected="false"
+                                >
                                     <i className="fa fa-calendar-minus-o mr-2"></i>
                                     <span className="font-weight-bold small text-uppercase">Donation History</span></a>
 
-                                <a className="nav-link mb-3 p-3 shadow" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false" onClick={() => localStorage.clear()}>
+                                <a
+                                    className="nav-link mb-3 p-3 shadow"
+                                    id="v-pills-messages-tab"
+                                    data-toggle="pill"
+                                    href="#v-pills-messages"
+                                    role="tab"
+                                    aria-controls="v-pills-messages"
+                                    aria-selected="false"
+                                    onClick={() => localStorage.clear()}
+                                >
                                     <i className="fa fa-sign-in mr-2"></i>
-                                    <span className="font-weight-bold small text-uppercase">Logout</span></a>
+                                    <span className="font-weight-bold small text-uppercase">Logout</span>
+                                </a>
                                 {/*
                                 <a className="nav-link mb-3 p-3 shadow" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
                                     <i className="fa fa-check mr-2"></i>
@@ -31,6 +62,7 @@ function LoggedInPage() {
 
                         <div className="col-md-9">
 
+                            {/* Donation Personal information */}
                             <div className="tab-content" id="v-pills-tabContent">
                                 <div className="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                     <h4 className="font-italic mb-4">Personal information</h4>
@@ -39,15 +71,16 @@ function LoggedInPage() {
                                     </p>
                                 </div>
 
+                                {/* Donation History */}
                                 <div className="tab-pane fade shadow rounded bg-white p-5" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                     <h4 className="font-italic mb-4">Bookings</h4>
-                                    <table>
-                                        <thead>
+                                    <table className="table table-bordered">
+                                        <thead className="thead-dark">
                                             <tr>
-                                                <th>Sr. No</th>
-                                                <th>Date</th>
-                                                <th>Transaction Id</th>
-                                                <th>Amount</th>
+                                                <th width="10%">Sr. No</th>
+                                                <th width="25%">Date</th>
+                                                <th width="45%">Transaction Id</th>
+                                                <th width="20%">Amount</th>
                                             </tr>
                                             <tbody>
                                                 {donationHistory.length === 0 &&
@@ -83,7 +116,7 @@ function LoggedInPage() {
                     </div>
                 </div>
             </section>
-        </>
+        </React.Fragment>
     );
 }
 export default LoggedInPage;

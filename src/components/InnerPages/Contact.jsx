@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { AppContext } from "../context/AppContext";
 
 function ContactUs() {
 
+    const { setPageTitle } = useContext(AppContext)
+
+    useEffect(() => {
+        setPageTitle('Contact Us')
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
     return (
-        <>
+        <React.Fragment>
             <section className="section contact">
                 <div className="container">
                     <div className="row">
@@ -67,7 +75,7 @@ function ContactUs() {
                     </div>
                 </div>
             </section>
-        </>
+        </React.Fragment>
     );
 }
 export default ContactUs;

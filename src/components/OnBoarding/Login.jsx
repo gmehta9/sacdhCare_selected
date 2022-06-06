@@ -1,14 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Auth from "../auth/Auth";
+import AppContext from "../context/AppContext";
 import { patterns, useForm } from "../helper/useForm";
 import { handleError, post } from "../httpService/http";
 import Input from "../widgets/Input";
-import LoggedInPage from "./LoggedInPage";
 
 function Login() {
-    const auth = Auth.user()
-    console.log(auth)
+
+    const { setPageTitle } = useContext(AppContext)
+
+    const navigate = useNavigate()
     const { values, errors, bindField, isValid } = useForm({
         validations: {
             email: {
@@ -32,13 +34,11 @@ function Login() {
 
     const loginHandler = async (e) => {
         e.preventDefault()
-        console.log(values)
         try {
             const response = await handleError(await post(`sign-in`, values))
-
             if (response.status === 200) {
-                console.log('response', response.data)
                 Auth.login(response.data)
+                navigate('/user/loggedInPage')
             }
 
         } catch (err) {
@@ -46,60 +46,61 @@ function Login() {
         }
     }
 
+    useEffect(() => {
+        if (Auth.isUserAuthenticated()) {
+            navigate('/user/loggedInPage')
+        }
+        setPageTitle(Auth.isUserAuthenticated() ? 'My Account' : 'Login')
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
     return (
-        <>
-            {auth ?
-                <LoggedInPage />
-                :
-                <div className="row justify-content-center">
+        <React.Fragment>
+            <form onSubmit={loginHandler}>
+                <Input
+                    labelTitle="Email"
+                    type="email"
+                    name="email"
+                    {...bindField("email")}
+                    placeholder="Enter your email"
+                    id="emailfill"
+                    error={errors}
+                // requried={true}
+                />
 
-                    <div className="col-6">
-                        <form onSubmit={loginHandler}>
-                            <Input
-                                labelTitle="Email"
-                                type="email"
-                                name="email"
-                                {...bindField("email")}
-                                placeholder="Enter your email"
-                                id="emailfill"
-                                error={errors}
-                            // requried={true}
-                            />
+                <Input
+                    labelTitle="Password"
+                    type="password"
+                    name="password"
+                    {...bindField("password")}
+                    placeholder="Enter your password"
+                    id="emailfill"
+                    error={errors}
+                // requried={true}
+                />
 
-                            <Input
-                                labelTitle="Password"
-                                type="password"
-                                name="password"
-                                {...bindField("password")}
-                                placeholder="Enter your password"
-                                id="emailfill"
-                                error={errors}
-                            // requried={true}
-                            />
+                <div className="row mb-4">
+                    <div className="col">
+                        <Link to="/user/forgot-password">Forgot password?</Link>
+                    </div>
+                </div>
 
-                            <div className="row mb-4">
-                                <div className="col">
-                                    <Link to="/user/forgot-password">Forgot password?</Link>
-                                </div>
-                            </div>
+                <button
+                    disabled={!isValid()}
+                    type="submit"
+                    className="btn btn-primary btn-block mb-4">
+                    Sign in
+                </button>
 
-                            <button
-                                disabled={!isValid()}
-                                type="submit"
-                                className="btn btn-primary btn-block mb-4">
-                                Sign in
-                            </button>
+            </form >
+            <div className="row mb-4">
+                <div className="col text-center">
+                    <Link to="/user/sign-up">Sign Up</Link>
+                </div>
+            </div>
 
-                        </form >
-                        <div className="row mb-4">
-                            <div className="col text-center">
-                                <Link to="/user/sign-up">Sign Up</Link>
-                            </div>
-                        </div>
-                    </div >
-                </div >
-            }
-        </>
+        </React.Fragment>
     );
 }
 export default Login;

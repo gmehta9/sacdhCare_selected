@@ -27,6 +27,7 @@
     .item {
       margin: 10px 15px;
       outline: 0;
+
       @media screen and (max-width:525px) {
         margin: 10px 5px;
       }
@@ -99,7 +100,7 @@
         &:after {
           position: absolute;
           content: '';
-          background: #48bdc5;
+          background: #2167b2;
           bottom: 0px;
           left: 0px;
           height: 1px;
@@ -181,7 +182,7 @@
       }
 
       &.style-one {
-        background: #48bdc5;
+        background: #2167b2;
         transition: all 500ms ease;
 
         &:hover {
@@ -200,7 +201,7 @@
       transition: all 500ms ease;
 
       &:hover {
-        background: #48bdc5;
+        background: #2167b2;
         transition: all 500ms ease;
       }
     }
@@ -544,6 +545,7 @@
           margin-right: 10px;
         }
       }
+
       li:not(:last-child) {
         margin-bottom: 5px;
       }

@@ -10,7 +10,11 @@ function OnboardingLayout() {
             <Header />
             <section className="story">
                 <div className="container">
-                    <Outlet />
+                    <div className="row justify-content-center">
+                        <div className="col-12 col-sm-8 col-md-6">
+                            <Outlet />
+                        </div>
+                    </div>
                 </div>
             </section>
             <Footer />

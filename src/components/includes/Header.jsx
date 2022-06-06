@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import mainLogo from "../../assets/images/sadhcare.png"
 import Auth from "../auth/Auth";
+import PageTitleInfo from "./PageTileInfo";
+import { AppContext } from "../context/AppContext";
 
 function Header() {
     const auth = Auth.user()
-
+    const { pageTitle } = useContext(AppContext)
     return (
-        <>
+        <React.Fragment>
             <div className="header-top">
                 <div className="container">
                     <div className="row align-items-center">
@@ -39,14 +41,14 @@ function Header() {
             <section className="header-uper">
                 <div className="container">
                     <div className="row align-items-center">
-                        <div className="col-xl-4 col-lg-3">
+                        <div className="col-xl-4 col-lg-3 col-3">
                             <div className="logo">
                                 <Link to="/">
                                     <img loading="lazy" className="img-fluid" width={"110px"} src={mainLogo} alt="logo" />
                                 </Link>
                             </div>
                         </div>
-                        <div className="col-xl-8 col-lg-9">
+                        <div className="col-xl-8 col-lg-9 col-9">
                             <div className="right-side">
                                 <ul className="contact-info pl-0 mb-4 mb-md-0">
                                     <li className="item text-left">
@@ -142,7 +144,9 @@ function Header() {
                     </div>
                 </div>
             </nav>
-        </>
+            {/*  */}
+            {pageTitle && <PageTitleInfo pageTitle={pageTitle} />}
+        </React.Fragment>
     );
 }
 export default Header;

@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { AppContext } from "../context/AppContext";
 import doctor from "../jsonData/doctorList.json";
 function OurDoctors() {
+    const { setPageTitle } = useContext(AppContext);
+
+    useEffect(() => {
+        setPageTitle('Our Doctors')
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
     return (
-        <>
+        <React.Fragment>
             <p>
                 SADH has a team of doctors specialized in different fields of medicine, who have a deep desire to promote the welfare of others and help create a better world. Many of the doctors and support staff at SADH are ex-Army doctors and personnel, led by Dr.(Col.)Tarun Kaul.
             </p>
@@ -26,7 +34,7 @@ function OurDoctors() {
             </table>
 
 
-        </>
+        </React.Fragment>
     );
 }
 export default OurDoctors;

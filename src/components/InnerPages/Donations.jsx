@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { toast } from "react-toastify";
 
 import { patterns, useForm } from "../helper/useForm";
 import { handleError, post } from "../httpService/http";
 import Input from "../widgets/Input";
+import AppContext from "../context/AppContext";
 
 function Donations() {
-    const [registeredField, setRegisteredField] = useState(false)
+    // const [registeredField, setRegisteredField] = useState(false)
+
+    const { setPageTitle } = useContext(AppContext)
 
     function loadScript(src) {
         return new Promise((resolve) => {
@@ -43,23 +46,27 @@ function Donations() {
         const { amount, order_id, currency, first_name, email, phone_number } = orderObj.data;
 
         const options = {
-            key: "rzp_test_r6FiJfddJh76SI", // Enter the Key ID generated from the Dashboard
-            amount: amount.toString(),
+            key: "rzp_test_B9VhcroYHU7OF1", // Enter the Key ID generated from the Dashboard
+            amount: amount,
             currency: currency,
             name: first_name,
             description: "Donation",
-            image: 'http://localhost:5000/payment/success',
+            image: 'http://localhost:3000/sadhcare/static/media/sadhcare.6750fc03a2ceabfd8392.png',
             order_id: order_id,
             handler: async function (response) {
+                console.log(response)
                 const data = {
-                    orderCreationId: order_id,
+                    order_id: response.razorpay_order_id,
                     payment_id: response.razorpay_payment_id,
-                    amount: response.razorpay_order_id,
+                    amount: values.amount,
                 };
 
                 const verifyPayment = await handleError(await post(`verify-payment`, data));
 
                 console.log('verifyPayment.data', verifyPayment)
+                if (verifyPayment) {
+                    setInitialValues({})
+                }
             },
             prefill: {
                 name: first_name,
@@ -120,24 +127,15 @@ function Donations() {
             return { ...pre, amount: rs }
         })
     }
-    // const displayRazorpay = () => {
-    //     instance.orders.create(options, function (err, order) {
-    //         console.log(order);
-    //     });
 
-    //     instance.createPayment(options);
+    useEffect(() => {
+        setPageTitle('Donation')
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
-    //     instance.on('payment.success', function (resp) {
-    //         console.log("payment checking.");
-    //         console.log(resp.razorpay_payment_id)
-    //         console.log(resp.razorpay_order_id)
-    //         console.log(resp.razorpay_signature)
-    //     }); // will pass payment ID, order ID, and Razorpay signature to success handler.
-
-    //     instance.on('payment.error', function (resp) { alert(resp.error.description) }); // will pass error object to error handler
-    // }
     return (
-        <>
+        <React.Fragment>
+
             <form onSubmit={displayRazorpay}>
                 <div className="row">
 
@@ -317,7 +315,7 @@ function Donations() {
                     </div>
                 </div>
             </form >
-        </>
+        </React.Fragment>
     );
 }
 export default Donations;

@@ -19,6 +19,7 @@ import Gallery from './components/InnerPages/Gallery';
 import InnerPageLayout from './components/InnerPages/InnerPageLayout';
 import OurServices from './components/InnerPages/OurServices';
 import OurProgrammes from './components/InnerPages/OurProgrammes';
+import LoggedInPage from './components/OnBoarding/LoggedInPage';
 
 function App() {
   return (
@@ -26,10 +27,12 @@ function App() {
     <HashRouter>
       <ToastContainer autoClose={3000} />
       <Routes>
+
         <Route path="user" element={<OnboardingLayout />}>
           <Route path="login" element={<Login />} />
           <Route path="forgot-password" element={<ForgotPassword />} />
           <Route path="sign-up" element={<SignUp />} />
+          <Route path="logged" element={<LoggedInPage />} />
         </Route>
 
         <Route path="" element={<MainLayout />} >
@@ -39,7 +42,6 @@ function App() {
         <Route path="" element={<InnerPageLayout />} >
           <Route path="about-us" element={<AboutUs />} />
           <Route path="our-programmes" element={<OurProgrammes />} />
-
           <Route path="our-doctors" element={<OurDoctors />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="our-services" element={<OurServices />} />
@@ -48,6 +50,7 @@ function App() {
         </Route>
 
         <Route path="*" element={<Navigate to='/' replace />} />
+
       </Routes>
     </HashRouter>
   );

@@ -39,7 +39,7 @@
 
 	.feature-section .contact-info .item {
 		display: block !important;
-		margin-bottom: 20px !important;
+		margin-bottom: 10px !important;
 	}
 }
 
@@ -75,8 +75,7 @@
 
 	.feature-section .contact-info .item {
 		width: 100%;
-		margin-right: 30px !important;
-		margin-bottom: 20px !important;
+		margin-bottom: 10px !important;
 	}
 
 	.service-tab-section .tab-list-column {
@@ -106,6 +105,7 @@
 		margin-top: 70px !important;
 		padding-left: 0px !important;
 	}
+
 	.contact-area.style-two {
 		margin-top: 0 !important;
 	}
@@ -191,7 +191,7 @@
 		float: none !important;
 		margin: 0px !important;
 		width: 100% !important;
-		background: #48bdc5;
+		background: #2167b2;
 		border: 1px solid #ffffff;
 		border-top: none;
 	}
@@ -292,7 +292,7 @@
 	.main-menu .navbar-collapse>.navigation>li>ul>li>ul>li:hover>a,
 	.main-menu .navbar-collapse>.navigation>li.current>a,
 	.main-menu .navbar-collapse>.navigation>li.current-menu-item>a {
-		background: #48bdc5;
+		background: #2167b2;
 		color: #fff !important;
 	}
 
@@ -353,7 +353,6 @@
 
 	.header-uper .right-side {
 		float: none !important;
-		text-align: center !important;
 	}
 
 	.header-uper .contact-info {
@@ -425,7 +424,7 @@
 	}
 
 	.header-uper .contact-info .item {
-		margin-left: 10px !important;
+		margin-left: 0 !important;
 		margin-right: 10px !important;
 		margin-bottom: 30px !important;
 	}
@@ -452,7 +451,7 @@
 	}
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 400px) {
 	.feature-section .contact-info .item {
 		padding-left: 50px !important;
 		padding-right: 0px !important;

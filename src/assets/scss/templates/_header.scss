@@ -84,13 +84,6 @@
   .contact-info {
     float: left;
 
-    @include desktop {
-      text-align: center;
-
-      .item {
-        margin: 0 20px;
-      }
-    }
   }
 
   .contact-info .item {
@@ -103,17 +96,32 @@
       position: absolute;
       top: 0px;
       left: 0px;
-      width: 53px;
-      height: 53px;
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
       text-align: center;
-      line-height: 57px;
-      border: 1px solid #5ec5cc;
+      line-height: 45px;
+      border: 1px solid #ae1f25;
 
       i:before {
-        color: #5ec5cc;
-        font-size: 22px;
+        color: #ae1f25;
+        font-size: 18px;
       }
+
+      @media only screen and (max-width: 600px) {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+
+        i:before {
+          font-size: 15px;
+        }
+      }
+
+    }
+
+    @media only screen and (max-width: 600px) {
+      padding-left: 40px;
     }
 
     strong {
