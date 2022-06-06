@@ -38,7 +38,7 @@ function Login() {
             const response = await handleError(await post(`sign-in`, values))
             if (response.status === 200) {
                 Auth.login(response.data)
-                navigate('/user/loggedInPage')
+                navigate('/user/logged')
             }
 
         } catch (err) {
