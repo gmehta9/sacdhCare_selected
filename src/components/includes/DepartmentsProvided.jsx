@@ -2,11 +2,6 @@ import React from "react";
 import { Slide } from 'react-slideshow-image';
 import Departments from "../jsonData/Departments.json";
 
-
-import gallery1 from "../../assets/images/gallery/1.jpg";
-import gallery2 from "../../assets/images/gallery/2.jpg";
-import gallery3 from "../../assets/images/gallery/3.jpg";
-
 function DepartmentsProvided() {
     const properties = {
         duration: 3000,
