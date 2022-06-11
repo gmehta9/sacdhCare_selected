@@ -1,14 +1,16 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 import { patterns, useForm } from "../helper/useForm";
 import { handleError, post } from "../httpService/http";
 import Input from "../widgets/Input";
 import AppContext from "../context/AppContext";
+import Auth from "../auth/Auth";
 
 function Donations() {
     // const [registeredField, setRegisteredField] = useState(false)
-
+    const user = Auth.user();
+    const [readyOnly, setReadOnly] = useState()
     const { setPageTitle } = useContext(AppContext)
 
     function loadScript(src) {
@@ -121,6 +123,20 @@ function Donations() {
 
         },
     });
+
+    useEffect(() => {
+        if (user) {
+            setInitialValues({
+                name: user.name,
+                email: user.email,
+                phone_number: user.phone_number
+
+            })
+            setReadOnly(true)
+        }
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     const setAmountHandler = (rs) => {
         setInitialValues(pre => {

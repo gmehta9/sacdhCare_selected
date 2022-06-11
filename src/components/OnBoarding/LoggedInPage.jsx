@@ -4,12 +4,36 @@ import { useNavigate } from "react-router-dom";
 import Auth from "../auth/Auth";
 import AppContext from "../context/AppContext";
 import "./loggedIn.scss";
+import { get, handleError, post } from "../httpService/http";
+import Input from "../widgets/Input";
+import { patterns, useForm } from "../helper/useForm";
 
 function LoggedInPage({ userLogout }) {
     const [donationHistory, setHistoryDonation] = useState([]);
+    const [isEdit, setIsEdit] = useState(false);
     const navigate = useNavigate();
-
+    const user = Auth.user()
     const { setPageTitle } = useContext(AppContext);
+
+    const { values, errors, bindField, isValid, setInitialValues } = useForm({
+        validations: {
+            name: {
+                required: true,
+            },
+            phone_number: {
+                minLength: {
+                    value: 10,
+                    message: "Enter vaild 10 digit phone no.",
+                },
+                maxLength: {
+                    value: 10,
+                    message: "Enter vaild 10 digit phone no.",
+                },
+                required: true,
+            },
+
+        },
+    });
 
     const logoutHandler = () => {
         Swal.fire({
@@ -26,12 +50,44 @@ function LoggedInPage({ userLogout }) {
                 }
             });
     }
+
+    const updateProfileHandler = async () => {
+        try {
+            const response = await handleError(await post(`update-profile`, values))
+            if (response.status === 200) {
+                console.log('updateProfileHandler', response)
+            }
+
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
+    const getDonationHandler = async () => {
+        try {
+            const response = await handleError(await get(`donate`))
+            if (response.status === 200) {
+                console.log('getDonationHandler', response)
+            }
+
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
     useEffect(() => {
         if (!Auth.isUserAuthenticated()) {
             navigate('/user/login')
         }
         setPageTitle('My Account')
+        setInitialValues({
+            name: user.name,
+            phone_number: user.phone_number,
+            email: user.email
+        })
+        getDonationHandler()
     }, [])
+
     return (
         <React.Fragment>
             <section className="header">
@@ -39,8 +95,15 @@ function LoggedInPage({ userLogout }) {
                     <div className="row">
                         <div className="col-md-3">
                             <div className="nav flex-column nav-pills nav-pills-custom" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                <a className="nav-link mb-3 p-3 shadow active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
-                                    <i className="fa fa-user-circle-o mr-2"></i>
+                                <a
+                                    className="nav-link mb-3 p-3 shadow active"
+                                    id="v-pills-home-tab"
+                                    data-toggle="pill"
+                                    href="#v-pills-home"
+                                    role="tab"
+                                    aria-controls="v-pills-home"
+                                    aria-selected="true">
+                                    <i className="fa fa-user-circle mr-2"></i>
                                     <span className="font-weight-bold small text-uppercase">Personal information</span></a>
                                 <a
                                     className="nav-link mb-3 p-3 shadow"
@@ -51,7 +114,7 @@ function LoggedInPage({ userLogout }) {
                                     aria-controls="v-pills-profile"
                                     aria-selected="false"
                                 >
-                                    <i className="fa fa-calendar-minus-o mr-2"></i>
+                                    <i className="fa fa-calendar-minus mr-2"></i>
                                     <span className="font-weight-bold small text-uppercase">Donation History</span></a>
 
                                 <a
@@ -64,7 +127,7 @@ function LoggedInPage({ userLogout }) {
                                     aria-selected="false"
                                     onClick={logoutHandler}
                                 >
-                                    <i className="fa fa-sign-in mr-2"></i>
+                                    <i className="fa fa-sign mr-2"></i>
                                     <span className="font-weight-bold small text-uppercase">Logout</span>
                                 </a>
                                 {/*
@@ -79,16 +142,80 @@ function LoggedInPage({ userLogout }) {
 
                             {/* Donation Personal information */}
                             <div className="tab-content" id="v-pills-tabContent">
-                                <div className="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                                    <h4 className="font-italic mb-4">Personal information</h4>
-                                    <p className="font-italic text-muted mb-2">
+                                <div
+                                    className="tab-pane fade shadow rounded bg-white show active p-4"
+                                    id="v-pills-home"
+                                    role="tabpanel"
+                                    aria-labelledby="v-pills-home-tab">
+                                    <h4 className="font-italic d-flex mb-4">Personal information
 
-                                    </p>
+                                        {!isEdit && <button
+                                            type="button"
+                                            className="btn ml-auto btn-sm btn-dark"
+                                            onClick={() => setIsEdit(true)} >Edit</button>
+                                        }
+                                    </h4>
+
+                                    <div className="row">
+                                        <div className="col-md-6 col-12 mb-3">
+                                            <label className="font-weight-bold mb-0">Name </label>
+                                            {isEdit ?
+                                                <Input
+                                                    type="text"
+                                                    name="name"
+                                                    {...bindField("name")}
+                                                    placeholder="Enter your name"
+                                                    id="nameFill"
+                                                    error={errors}
+                                                />
+                                                :
+                                                <div className="">
+                                                    {values.name}
+                                                </div>
+                                            }
+                                        </div>
+                                        <div className="col-md-6 col-12 mb-3">
+                                            <label className="font-weight-bold mb-0">Email </label>
+                                            <div className="">
+                                                {values.email}
+                                            </div>
+                                        </div>
+                                        <div className="col-md-6 col-12 mb-3">
+                                            <label className="font-weight-bold mb-0">Phone No </label>
+                                            {isEdit ?
+                                                <Input
+                                                    type="text"
+                                                    name="phone_number"
+                                                    {...bindField("phone_number")}
+                                                    placeholder="Enter your Phone"
+                                                    id="phone_number"
+                                                    error={errors}
+                                                />
+                                                :
+                                                <div className="">
+                                                    {values.phone_number}
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                    {isEdit &&
+                                        <div className="row">
+                                            <button
+                                                onClick={updateProfileHandler}
+                                                disabled={!isValid()}
+                                                type="button"
+                                                className="btn btn-sm btn-primary mx-1">Submit</button>
+                                            <button
+                                                onClick={() => setIsEdit(false)}
+                                                type="button"
+                                                className="btn btn-sm btn-secondary mx-1">Cancel</button>
+                                        </div>
+                                    }
                                 </div>
 
                                 {/* Donation History */}
-                                <div className="tab-pane fade shadow rounded bg-white p-5" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                                    <h4 className="font-italic mb-4">Bookings</h4>
+                                <div className="tab-pane fade shadow rounded bg-white p-4" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                    <h4 className="font-italic mb-4">Donations </h4>
                                     <table className="table table-bordered">
                                         <thead className="thead-dark">
                                             <tr>

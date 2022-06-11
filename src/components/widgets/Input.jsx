@@ -19,11 +19,13 @@ function Input({
     return (
         <>
             <div className="form-outline mb-3">
-                <label
-                    className="form-label"
-                    htmlFor={id}>
-                    {labelTitle} {requried && <sup>*</sup>}
-                </label>
+                {labelTitle &&
+                    <label
+                        className="form-label"
+                        htmlFor={id}>
+                        {labelTitle} {requried && <sup>*</sup>}
+                    </label>
+                }
                 <input
                     type={showPassward ? 'text' : type}
                     onChange={onChange}
