@@ -9,7 +9,8 @@ import Input from "../widgets/Input";
 import { patterns, useForm } from "../helper/useForm";
 
 function LoggedInPage({ userLogout }) {
-    const [donationHistory, setHistoryDonation] = useState([]);
+
+    const [donationHistory, setHistoryDonation] = useState({});
     const [isEdit, setIsEdit] = useState(false);
     const navigate = useNavigate();
     const user = Auth.user()
@@ -41,14 +42,15 @@ function LoggedInPage({ userLogout }) {
             text: "Are you sure you want to logout?",
             icon: "warning",
             buttons: true,
+            showCancelButton: true,
+            confirmButtonText: 'Yes',
             dangerMode: true,
-        })
-            .then((willDelete) => {
-                if (willDelete) {
-                    localStorage.clear()
-                    navigate('/user/login')
-                }
-            });
+        }).then((result) => {
+            if (result.isConfirmed) {
+                localStorage.clear()
+                navigate('/user/login')
+            }
+        });
     }
 
     const updateProfileHandler = async () => {
@@ -67,7 +69,8 @@ function LoggedInPage({ userLogout }) {
         try {
             const response = await handleError(await get(`donate`))
             if (response.status === 200) {
-                console.log('getDonationHandler', response)
+                // console.log('getDonationHandler', response)
+                setHistoryDonation(response.data)
             }
 
         } catch (err) {
@@ -86,8 +89,18 @@ function LoggedInPage({ userLogout }) {
             email: user.email
         })
         getDonationHandler()
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+
+    const dateFormateHandler = (d) => {
+
+        const date = new Date(d)
+
+        return `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
+    }
+    console.log(donationHistory)
     return (
         <React.Fragment>
             <section className="header">
@@ -226,16 +239,16 @@ function LoggedInPage({ userLogout }) {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {donationHistory.length === 0 &&
+                                            {donationHistory?.data?.length === 0 &&
                                                 <tr>
                                                     <td className="text-center" colSpan="4"> No Result Found!</td>
                                                 </tr>
                                             }
-                                            {donationHistory && donationHistory.map((elm, index) =>
+                                            {donationHistory?.data && donationHistory.data.map((elm, index) =>
                                                 <tr>
                                                     <td>{index + 1}</td>
-                                                    <td>{elm.date}</td>
-                                                    <td>{elm.transaction} </td>
+                                                    <td>{dateFormateHandler(elm.created_at)}</td>
+                                                    <td>{elm.order_id} </td>
                                                     <td>{elm.amount}</td>
                                                 </tr>
                                             )}

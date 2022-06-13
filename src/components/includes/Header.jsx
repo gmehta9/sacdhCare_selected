@@ -41,15 +41,15 @@ function Header() {
             <section className="header-uper">
                 <div className="container">
                     <div className="row align-items-center">
-                        <div className="col-xl-4 col-lg-3 col-3">
+                        <div className="col-xl-3 col-lg-3 col-5">
                             <div className="logo">
                                 <Link to="/">
                                     <img loading="lazy" className="img-fluid" width={"110px"} src={mainLogo} alt="logo" />
                                 </Link>
                             </div>
                         </div>
-                        <div className="col-xl-8 col-lg-9 col-9">
-                            <div className="right-side">
+                        <div className="col-xl-8 col-lg-9 col-7 d-flex ">
+                            <div className="right-side ml-auto">
                                 <ul className="contact-info pl-0 mb-4 mb-md-0">
                                     <li className="item text-left">
                                         <div className="icon-box">
@@ -70,9 +70,9 @@ function Header() {
                                         <a href="tel:01242970919">0124 2970919</a>
                                     </li>
                                 </ul>
-                                <div className="link-btn text-center text-lg-right">
+                                {/* <div className="link-btn text-center text-lg-right">
                                     <Link to="/" className="btn-style-one">Appoinment</Link>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
