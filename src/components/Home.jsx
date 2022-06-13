@@ -80,6 +80,7 @@ function Home() {
             </section>
             {/* EMEGENCY  info section */}
 
+            {/* Best Features <span>of Our Hospital */}
             <section className="feature-section section bg-gray">
                 <div className="container">
                     <div className="row">
@@ -389,9 +390,9 @@ function Home() {
                     </div>
                 </div>
             </section>
-            {/* End Service Section
+            {/* End Service Section */}
 
-            team section */}
+            {/* team section */}
             <section className="team-section section">
                 <div className="container">
                     <div className="section-title text-center">
@@ -432,9 +433,9 @@ function Home() {
                     </div>
                 </div>
             </section>
-            {/* End team section
+            {/* End team section*/}
 
-            testimonial-section */}
+            {/* testimonial-section  */}
             <section className="testimonial-section" style={{ background: "url(/sadhcare/background/1.jpg)" }}>
                 <div className="container">
                     <div className="row">

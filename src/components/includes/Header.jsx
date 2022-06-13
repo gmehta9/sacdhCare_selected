@@ -93,7 +93,7 @@ function Header() {
                                 <NavLink activeclassname="active" className="nav-link" to="/our-doctors">Our Doctors</NavLink>
                             </li>
                             <li className={`nav-item`}>
-                                <NavLink activeclassname="active" className="nav-link" to="/our-services">Our Services</NavLink>
+                                <NavLink activeclassname="active" className="nav-link" to="/our-services">Services</NavLink>
                             </li>
                             <li className={`nav-item`}>
                                 <NavLink activeclassname="active" className="nav-link" to="/our-programmes">Our Programmes</NavLink>
@@ -101,6 +101,9 @@ function Header() {
 
                             <li className={`nav-item`}>
                                 <NavLink activeclassname="active" className="nav-link" to="/gallery">Gallery</NavLink>
+                            </li>
+                            <li className={`nav-item`}>
+                                <NavLink activeclassname="active" className="nav-link" to="/book-appointment">Book Appointment</NavLink>
                             </li>
                             <li className={`nav-item`}>
                                 <NavLink activeclassname="active" className="nav-link" to="/user/login">

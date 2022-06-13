@@ -20,6 +20,7 @@ import InnerPageLayout from './components/InnerPages/InnerPageLayout';
 import OurServices from './components/InnerPages/OurServices';
 import OurProgrammes from './components/InnerPages/OurProgrammes';
 import LoggedInPage from './components/OnBoarding/LoggedInPage';
+import BookAppointment from './components/InnerPages/BookAppointment';
 
 function App() {
   return (
@@ -47,6 +48,8 @@ function App() {
           <Route path="our-services" element={<OurServices />} />
           <Route path="contact-us" element={<ContactUs />} />
           <Route path="donations" element={<Donations />} />
+          <Route path="book-appointment" element={<BookAppointment />} />
+
         </Route>
 
         <Route path="*" element={<Navigate to='/' replace />} />
