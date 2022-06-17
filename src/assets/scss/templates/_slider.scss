@@ -7,6 +7,15 @@
     background-position: center;
     background-size: cover;
     position: relative;
+    height: 520px;
+
+    img {
+      margin-top: -100px;
+
+      @media (max-width: 580px) {
+        height: 400px;
+      }
+    }
 
     &:focus {
       outline: 0;
@@ -59,11 +68,19 @@
       font-weight: 600;
       font-family: $secondary-font;
       color: $light;
+
+      @media (max-width: 580px) {
+        font-size: 25px;
+      }
     }
 
     p {
       font-size: 26px;
       color: $light;
+
+      @media (max-width: 580px) {
+        font-size: 15px;
+      }
     }
 
     .btn-white {

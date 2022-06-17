@@ -11,13 +11,11 @@ import doctor1 from "../assets/images/team/mt-dr-Col-tarun-kaul.jpg";
 import doctor2 from "../assets/images/team/dr.majroli_tewari.jpg";
 import doctor3 from "../assets/images/team/dr.colshashi_shukla.jpg";
 
-import serviceone from "../assets/images/services/service-one.jpg";
 import servicetwo from "../assets/images/services/service-two.jpg";
-import servicethree from "../assets/images/services/service-three.jpg"
-import servicefour from "../assets/images/services/service-four.jpg";
-import servicefive from "../assets/images/services/service-five.jpg"
+
 import AppContext from "./context/AppContext";
 import Swal from 'sweetalert2';
+import Gallery from "./InnerPages/Gallery";
 
 function Home() {
     const { setPageTitle, popShow, setPopShow } = useContext(AppContext)
@@ -53,18 +51,19 @@ function Home() {
             <section className="cta">
                 <div className="container">
                     <div className="cta-block row no-gutters">
-                        <div className="col-lg-4 col-md-6 emmergency item">
-                            <i className="fa fa-phone"></i>
-                            <h2>Emegency Cases</h2>
-                            <a href="tel:1-800-700-6200">1-800-700-6200</a>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                        </div>
                         <div className="col-lg-4 col-md-6 top-doctor item">
                             <i className="fa fa-stethoscope"></i>
                             <h2>24 Hour Service</h2>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore dignissimos officia dicta suscipit
                                 vel eum</p>
-                            <a href="service.html" className="btn btn-main">Read more</a>
+                            {/* <a href="service.html" className="btn btn-main">Read more</a> */}
+                        </div>
+                        <div className="col-lg-4 col-md-6 emmergency item">
+                            <i className="fa fa-certificate"></i>
+                            <h2>Our certifications</h2>
+                            {/* <   a href="tel:1-800-700-6200">1-800-700-6200</a> */}
+                            <p>SADH care hospital is the only NABH certified hospital in Pataudi.
+                                We are now Ayushman Bharat Empanelled.</p>
                         </div>
                         <div className="col-lg-4 col-md-12 working-time item">
                             <i className="fa fa-hourglass-o"></i>
@@ -79,6 +78,61 @@ function Home() {
                 </div>
             </section>
             {/* EMEGENCY  info section */}
+
+
+            <section className="service-tab-section section">
+                <div className="outer-box clearfix">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-12">
+                                <div className="service-box" >
+                                    <div className="row">
+                                        <div className="col-lg-6">
+                                            <img loading="lazy" className="img-fluid" src={servicetwo} alt="service" />
+                                        </div>
+                                        <div className="col-lg-6">
+                                            <div className="contents">
+                                                <div className="section-title">
+                                                    <h3>About Us</h3>
+                                                </div>
+                                                <div className="text">
+                                                    <p>SADH Care Hospital is developing a sustainable healthcare facility in an underserved area of
+                                                        Pataudi, and its neighboring rural areas, in the Indian State of Haryana in India. We are a not-for-
+
+                                                        “know more” takes to “about us” page
+
+                                                        profit hospital dedicated to provide quality healthcare services.
+                                                        The area lacked centers with proper healthcare facilities, the people of Pataudi and nearby areas
+                                                        had no choice but to travel 40-60 km to the nearest metro, Gurugram, for childbirth and proper
+                                                        healthcare facilities which are costlier.
+                                                        SADH Care hospital provides good quality mother and childcare facility, eye-care, dental,
+                                                        nephrology, neurology, etc., at subsidized rates. The hospital also caters to accidents &amp; emergency
+                                                        services, like a cardiac arrest – people die every year due to lack of immediate medical attention.
+                                                        In view of above, Sentiss Foundation along with Swami Amardev Vidhalaya Trust, has set up a
+                                                        25-bed not-for-profit hospital and providing specialist services at highly subsidized rates.</p>
+                                                </div>
+                                                <ul className="content-list">
+                                                    <li>
+                                                        <i className="far fa-dot-circle"></i>SADH CARE HOSPITAL ACTS AS A BEACON OF HOPE FOR THE RESIDENTS IN AND AROUND
+                                                        PATAUDI
+                                                    </li>
+                                                </ul>
+                                                <div className="text">
+                                                    <p>The hospital is determined to bring healthcare equity to the people of Pataudi and surrounding
+                                                        areas by providing basic healthcare services, especially strengthening the mother and child
+                                                        healthcare services by introducing affordable treatment and diagnostic facilities.</p>
+                                                </div>
+                                                <a href="#/about-us" className="btn btn-style-one">Read more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
             {/* Best Features <span>of Our Hospital */}
             <section className="feature-section section bg-gray">
@@ -160,218 +214,7 @@ function Home() {
             </section>
 
 
-            <section className="service-tab-section section">
-                <div className="outer-box clearfix">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-12">
-                                {/*  Nav tabs  */}
-                                <div className="tabs mb-5">
-                                    <ul className="nav nav-tabs justify-content-center" id="aboutTab" role="tablist">
-                                        <li className="nav-item" role="presentation">
-                                            <a className="nav-link active" id="dormitory-tab" data-toggle="tab" href="#dormitory" role="tab" aria-controls="dormitory" aria-selected="true">dormitory</a>
-                                        </li>
-                                        <li className="nav-item" role="presentation">
-                                            <a className="nav-link" id="orthopedic-tab" data-toggle="tab" href="#orthopedic" role="tab" aria-controls="orthopedic" aria-selected="false">orthopedic</a>
-                                        </li>
-                                        <li className="nav-item" role="presentation">
-                                            <a className="nav-link" id="sonogram-tab" data-toggle="tab" href="#sonogram" role="tab" aria-controls="sonogram" aria-selected="false">sonogram</a>
-                                        </li>
-                                        <li className="nav-item" role="presentation">
-                                            <a className="nav-link" id="x-ray-tab" data-toggle="tab" href="#x-ray" role="tab" aria-controls="x-ray" aria-selected="false">x-ray</a>
-                                        </li>
-                                        <li className="nav-item" role="presentation">
-                                            <a className="nav-link" id="diagnostic-tab" data-toggle="tab" href="#diagnostic" role="tab" aria-controls="diagnostic" aria-selected="false">diagnostic</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                {/* Start single tab content */}
-                                <div className="tab-content" id="aboutTab">
-                                    <div className="service-box tab-pane fade show active" id="dormitory">
-                                        <div className="row">
-                                            <div className="col-lg-6">
-                                                <img loading="lazy" className="img-fluid" src={serviceone} alt="service" />
-                                            </div>
-                                            <div className="col-lg-6">
-                                                <div className="contents">
-                                                    <div className="section-title">
-                                                        <h3>dormitory</h3>
-                                                    </div>
-                                                    <div className="text">
-                                                        <p>The implant fixture is first placed, so that it ilikely to osseointegrate,
-                                                            then a dental prosthetic is added. then a
-                                                            dental prosthetic is added.then a dental pros- thetic is added.</p>
-                                                        <p>The implant fixture is first placed, so that it ilikely to osseointegrate,
-                                                            then a dental prosthetic is added. then a dental
-                                                            prosthetic is added.then a dental pros- thetic is added.</p>
-                                                    </div>
-                                                    <ul className="content-list">
-                                                        <li>
-                                                            <i className="far fa-dot-circle"></i>Whitening is among the most popular dental
-                                                        </li>
-                                                        <li>
-                                                            <i className="far fa-dot-circle"></i>Teeth cleaning is part of oral hygiene and
-                                                            involves</li>
-                                                        <li>
-                                                            <i className="far fa-dot-circle"></i>Teeth cleaning is part of oral hygiene and
-                                                            involves</li>
-                                                    </ul>
-                                                    <a href="services.html" className="btn btn-style-one">Read more</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* End single tab content
-                                    Start single tab content */}
-                                    <div className="service-box tab-pane fade" id="orthopedic">
-                                        <div className="row">
-                                            <div className="col-lg-6">
-                                                <img loading="lazy" className="img-fluid" src={servicetwo} alt="service" />
-                                            </div>
-                                            <div className="col-lg-6">
-                                                <div className="contents">
-                                                    <div className="section-title">
-                                                        <h3>orthopedic</h3>
-                                                    </div>
-                                                    <div className="text">
-                                                        <p>The implant fixture is first placed, so that it ilikely to osseointegrate,
-                                                            then a dental prosthetic is added.
-                                                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
-                                                        <p>The implant fixture is first placed, so that it ilikely to osseointegrate,
-                                                            then a dental prosthetic is added.
-                                                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
-                                                    </div>
-                                                    <ul className="content-list">
-                                                        <li>
-                                                            <i className="far fa-dot-circle"></i>Whitening is among the most popular dental
-                                                        </li>
-                                                        <li>
-                                                            <i className="far fa-dot-circle"></i>Teeth cleaning is part of oral hygiene and
-                                                            involves</li>
-                                                        <li>
-                                                            <i className="far fa-dot-circle"></i>Teeth cleaning is part of oral hygiene and
-                                                            involves</li>
-                                                    </ul>
-                                                    <a href="services.html" className="btn btn-style-one">Read more</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* End single tab content
-                                    Start single tab content */}
-                                    <div className="service-box tab-pane fade" id="sonogram">
-                                        <div className="row">
-                                            <div className="col-lg-6">
-                                                <img loading="lazy" className="img-fluid" src={servicethree} alt="service" />
-                                            </div>
-                                            <div className="col-lg-6">
-                                                <div className="contents">
-                                                    <div className="section-title">
-                                                        <h3>sonogram</h3>
-                                                    </div>
-                                                    <div className="text">
-                                                        <p>The implant fixture is first placed, so that it ilikely to osseointegrate,
-                                                            then a dental prosthetic is added.
-                                                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
-                                                        <p>The implant fixture is first placed, so that it ilikely to osseointegrate,
-                                                            then a dental prosthetic is added.
-                                                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
-                                                    </div>
-                                                    <ul className="content-list">
-                                                        <li>
-                                                            <i className="far fa-dot-circle"></i>Whitening is among the most popular dental
-                                                        </li>
-                                                        <li>
-                                                            <i className="far fa-dot-circle"></i>Teeth cleaning is part of oral hygiene and
-                                                            involves</li>
-                                                        <li>
-                                                            <i className="far fa-dot-circle"></i>Teeth cleaning is part of oral hygiene and
-                                                            involves</li>
-                                                    </ul>
-                                                    <a href="services.html" className="btn btn-style-one">Read more</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* End single tab content
-                                    Start single tab content */}
-                                    <div className="service-box tab-pane fade" id="x-ray">
-                                        <div className="row">
-                                            <div className="col-lg-6">
-                                                <img loading="lazy" className="img-fluid" src={servicefour} alt="service" />
-                                            </div>
-                                            <div className="col-lg-6">
-                                                <div className="contents">
-                                                    <div className="section-title">
-                                                        <h3>x-ray</h3>
-                                                    </div>
-                                                    <div className="text">
-                                                        <p>The implant fixture is first placed, so that it ilikely to osseointegrate,
-                                                            then a dental prosthetic is added.
-                                                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
-                                                        <p>The implant fixture is first placed, so that it ilikely to osseointegrate,
-                                                            then a dental prosthetic is added.
-                                                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
-                                                    </div>
-                                                    <ul className="content-list">
-                                                        <li>
-                                                            <i className="far fa-dot-circle"></i>Whitening is among the most popular dental
-                                                        </li>
-                                                        <li>
-                                                            <i className="far fa-dot-circle"></i>Teeth cleaning is part of oral hygiene and
-                                                            involves</li>
-                                                        <li>
-                                                            <i className="far fa-dot-circle"></i>Teeth cleaning is part of oral hygiene and
-                                                            involves</li>
-                                                    </ul>
-                                                    <a href="services.html" className="btn btn-style-one">Read more</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* End single tab content
-                                    Start single tab content */}
-                                    <div className="service-box tab-pane fade" id="diagnostic">
-                                        <div className="row">
-                                            <div className="col-lg-6">
-                                                <img loading="lazy" className="img-fluid" src={servicefive} alt="service" />
-                                            </div>
-                                            <div className="col-lg-6">
-                                                <div className="contents">
-                                                    <div className="section-title">
-                                                        <h3>diagnostic</h3>
-                                                    </div>
-                                                    <div className="text">
-                                                        <p>The implant fixture is first placed, so that it ilikely to osseointegrate,
-                                                            then a dental prosthetic is added.
-                                                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
-                                                        <p>The implant fixture is first placed, so that it ilikely to osseointegrate,
-                                                            then a dental prosthetic is added.
-                                                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
-                                                    </div>
-                                                    <ul className="content-list">
-                                                        <li>
-                                                            <i className="far fa-dot-circle"></i>Whitening is among the most popular dental
-                                                        </li>
-                                                        <li>
-                                                            <i className="far fa-dot-circle"></i>Teeth cleaning is part of oral hygiene and
-                                                            involves</li>
-                                                        <li>
-                                                            <i className="far fa-dot-circle"></i>Teeth cleaning is part of oral hygiene and
-                                                            involves</li>
-                                                    </ul>
-                                                    <a href="services.html" className="btn btn-style-one">Read more</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* End single tab content */}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
 
             {/* Service Section */}
             <section className="service-section bg-gray section">
@@ -434,7 +277,7 @@ function Home() {
                 </div>
             </section>
             {/* End team section*/}
-
+            <Gallery />
             {/* testimonial-section  */}
             <section className="testimonial-section" style={{ background: "url(/sadhcare/background/1.jpg)" }}>
                 <div className="container">

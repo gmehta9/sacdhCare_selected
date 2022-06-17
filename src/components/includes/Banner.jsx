@@ -8,7 +8,7 @@ import slide3 from "../../assets/images/slider/slider3.jpg"
 function Banner() {
     const zoomInProperties = {
         indicators: true,
-        scale: 1.4,
+        scale: 1,
         autoplay: false
     }
     return (

@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "imageTitle": "Facility 01",
+        "image": "gallery/gallery-01.jpg",
+        "imageContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, in."
+    },
+    {
+        "id": 2,
+        "imageTitle": "Facility 02",
+        "image": "gallery/gallery-02.jpg",
+        "imageContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, in."
+    },
+    {
+        "id": 3,
+        "imageTitle": "Facility 03",
+        "image": "gallery/gallery-03.jpg",
+        "imageContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, in."
+    },
+    {
+        "id": 4,
+        "imageTitle": "Facility 04",
+        "image": "gallery/gallery-04.jpg",
+        "imageContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, in."
+    },
+    {
+        "id": 5,
+        "imageTitle": "Facility 05",
+        "image": "gallery/gallery-05.jpg",
+        "imageContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, in."
+    },
+    {
+        "id": 6,
+        "imageTitle": "Facility 06",
+        "image": "gallery/gallery-06.jpg",
+        "imageContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, in."
+    }
+]
