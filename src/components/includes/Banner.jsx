@@ -27,14 +27,14 @@ function Banner() {
                         </div>
                     </div>
                 </div>
-                <div className="slider-item slide1" >
+                <div className="slider-item slide1">
                     <img src={slide2} alt="" />
                     <div className="slider-content">
                         <div className="row justify-content-center">
                             <div className="col-12">
                                 <div className=" style text-center">
-                                    <p className="tag-text mb-2" data-animation-in="slideInRight"> Entrust your health our doctors </p>
-                                    <h2 className="text-white text-bold mb-2" data-animation-in="slideInLeft">Exceptional people. Exceptional care.</h2>
+                                    <h2 className="text-white text-bold mb-2" data-animation-in="slideInLeft">We are now </h2>
+                                    <p className="tag-text mb-4" data-animation-in="slideInRight">Ayushman Bharat Empanelled.</p>
                                 </div>
                             </div>
                         </div>
@@ -53,6 +53,20 @@ function Banner() {
                         </div>
                     </div>
                 </div>
+                <div className="slider-item slide1" >
+                    <img src={slide2} alt="" />
+                    <div className="slider-content">
+                        <div className="row justify-content-center">
+                            <div className="col-12">
+                                <div className=" style text-center">
+                                    <p className="tag-text mb-2" data-animation-in="slideInRight"> Entrust your health our doctors </p>
+                                    <h2 className="text-white text-bold mb-2" data-animation-in="slideInLeft">Exceptional people. Exceptional care.</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="slider-item slide1">
                     <img src={slide1} alt="" />
                     <div className="slider-content">
@@ -66,19 +80,7 @@ function Banner() {
                         </div>
                     </div>
                 </div>
-                <div className="slider-item slide1">
-                    <img src={slide2} alt="" />
-                    <div className="slider-content">
-                        <div className="row justify-content-center">
-                            <div className="col-12">
-                                <div className=" style text-center">
-                                    <h2 className="text-white text-bold mb-2" data-animation-in="slideInLeft">We are now </h2>
-                                    <p className="tag-text mb-4" data-animation-in="slideInRight">Ayushman Bharat Empanelled.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </Zoom>
         </>
     );

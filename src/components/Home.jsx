@@ -203,7 +203,7 @@ function Home() {
                             <div className="team-member">
                                 <img loading="lazy" src={doctor3} alt="doctor" className="img-fluid" />
                                 <div className="contents text-center">
-                                    <h5>Dr. (Maj.) Roli Tewari</h5>
+                                    <h5>Dr (Maj) Roli Tewari (Retd)</h5>
                                     {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p> */}
                                 </div>
                             </div>
