@@ -16,7 +16,7 @@ function DepartmentsProvided() {
                 <div className="item" key={index}>
                     <div className="inner-box">
                         <div className="img_holder">
-                            <a href="service.html">
+                            <a href="/">
                                 <img loading="lazy" src={`${process.env.PUBLIC_URL}/${dept.image}`} alt="images" className="img-fluid" />
                             </a>
                         </div>

@@ -66,31 +66,31 @@ function Footer() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="service.html">
+                                    <Link to="/">
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
                                         Biomedical Waste Type & Disposal
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="service.html">
+                                    <Link to="/">
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
                                         Biomedical Waste Management Training
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="service.html">
+                                    <Link to="/">
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
                                         COVID-19
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="service.html">
+                                    <Link to="/">
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
                                         Donate To SADH
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="service.html">
+                                    <Link to="/">
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
                                         Contact SADH
                                     </Link>
@@ -101,31 +101,31 @@ function Footer() {
                             <h2>Services</h2>
                             <ul className="menu-link">
                                 <li>
-                                    <Link to="service.html">
+                                    <Link to="/">
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
                                         Outpatient Surgery
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="service.html">
+                                    <Link to="/">
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
                                         Cardiac Clinic
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="service.html">
+                                    <Link to="/">
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
                                         Ophthalmology Clinic
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="service.html">
+                                    <Link to="/">
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
                                         Gynaecological Clinic
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="service.html">
+                                    <Link to="/">
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
                                         Outpatient Rehabilitation
                                     </Link>

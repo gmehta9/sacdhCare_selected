@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import Banner from "./includes/Banner";
-import Orthopedics from "../assets/images/resource/1.png";
-import Diaginostic from "../assets/images/resource/2.png";
-import Psycology from "../assets/images/resource/3.png";
-import GeneralTreatment from "../assets/images/resource/4.png";
+
+import specialities from "./jsonData/specialities.json"
+import OurServices from "./jsonData/OurServices.json"
+
 import TestimonialsSlider from "./includes/TestimonialsSlider";
 import DepartmentsProvided from "./includes/DepartmentsProvided";
 
@@ -11,11 +11,12 @@ import doctor1 from "../assets/images/team/mt-dr-Col-tarun-kaul.jpg";
 import doctor2 from "../assets/images/team/dr.majroli_tewari.jpg";
 import doctor3 from "../assets/images/team/dr.colshashi_shukla.jpg";
 
-import servicetwo from "../assets/images/services/service-two.jpg";
+
 
 import AppContext from "./context/AppContext";
 import Swal from 'sweetalert2';
 import Gallery from "./InnerPages/Gallery";
+import AboutUs from "./InnerPages/AboutUs";
 
 function Home() {
     const { setPageTitle, popShow, setPopShow } = useContext(AppContext)
@@ -79,133 +80,67 @@ function Home() {
             </section>
             {/* EMEGENCY  info section */}
 
-
-            <section className="service-tab-section section">
-                <div className="outer-box clearfix">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-12">
-                                <div className="service-box" >
-                                    <div className="row">
-                                        <div className="col-lg-6">
-                                            <img loading="lazy" className="img-fluid" src={servicetwo} alt="service" />
-                                        </div>
-                                        <div className="col-lg-6">
-                                            <div className="contents">
-                                                <div className="section-title">
-                                                    <h3>About Us</h3>
-                                                </div>
-                                                <div className="text">
-                                                    <p>SADH Care Hospital is developing a sustainable healthcare facility in an underserved area of
-                                                        Pataudi, and its neighboring rural areas, in the Indian State of Haryana in India. We are a not-for-
-
-                                                        “know more” takes to “about us” page
-
-                                                        profit hospital dedicated to provide quality healthcare services.
-                                                        The area lacked centers with proper healthcare facilities, the people of Pataudi and nearby areas
-                                                        had no choice but to travel 40-60 km to the nearest metro, Gurugram, for childbirth and proper
-                                                        healthcare facilities which are costlier.
-                                                        SADH Care hospital provides good quality mother and childcare facility, eye-care, dental,
-                                                        nephrology, neurology, etc., at subsidized rates. The hospital also caters to accidents &amp; emergency
-                                                        services, like a cardiac arrest – people die every year due to lack of immediate medical attention.
-                                                        In view of above, Sentiss Foundation along with Swami Amardev Vidhalaya Trust, has set up a
-                                                        25-bed not-for-profit hospital and providing specialist services at highly subsidized rates.</p>
-                                                </div>
-                                                <ul className="content-list">
-                                                    <li>
-                                                        <i className="far fa-dot-circle"></i>SADH CARE HOSPITAL ACTS AS A BEACON OF HOPE FOR THE RESIDENTS IN AND AROUND
-                                                        PATAUDI
-                                                    </li>
-                                                </ul>
-                                                <div className="text">
-                                                    <p>The hospital is determined to bring healthcare equity to the people of Pataudi and surrounding
-                                                        areas by providing basic healthcare services, especially strengthening the mother and child
-                                                        healthcare services by introducing affordable treatment and diagnostic facilities.</p>
-                                                </div>
-                                                <a href="#/about-us" className="btn btn-style-one">Read more</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {/* About Section */}
+            <AboutUs />
 
 
             {/* Best Features <span>of Our Hospital */}
-            <section className="feature-section section bg-gray">
+            <section className="feature-section py-5 section bg-gray">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="image-content">
-                                <div className="section-title text-center">
-                                    <h3>Best Features <span>of Our Hospital</span></h3>
-                                    <p className="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam magni in at debitis <br /> nam error officia vero tempora alias? Sunt?</p>
-                                </div>
+
 
                                 <div className="row">
-                                    <div className="col-sm-6">
-                                        <div className="item">
-                                            <div className="icon-box">
-                                                <figure>
-                                                    <a href="services.html">
-                                                        <img loading="lazy" src={Orthopedics} alt="features" />
-                                                    </a>
-                                                </figure>
-                                            </div>
-                                            <h3 className="mb-2">Orthopedics</h3>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ducimus veniam illo quibusdam pariatur
-                                                ex sunt, est aspernatur
-                                                at debitis eius vitae vel nostrum dolorem labore autem corrupti odit mollitia?</p>
+                                    <div className="col-md-6 service-box">
+                                        <div class="section-title">
+                                            <h3>Our Service</h3>
+                                        </div>
+                                        <div className="row">
+                                            {OurServices.map((elm, index) =>
+                                                <div className="col-md-6" key={index}>
+                                                    <h6>{elm.title}</h6>
+                                                    <ul class="content-list">
+                                                        {elm.subitem.map((ee) =>
+                                                            <li key={index + 3}>
+                                                                <i class="far fa-check-circle"></i>{ee}
+                                                            </li>
+                                                        )}
+
+                                                    </ul>
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
-                                    <div className="col-sm-6">
-                                        <div className="item">
-                                            <div className="icon-box">
-                                                <figure>
-                                                    <a href="services.html">
-                                                        <img loading="lazy" src={Diaginostic} alt="features " />
-                                                    </a>
-                                                </figure>
+                                    <div className="col-md-6 ">
+                                        <div className="service-box">
+                                            <div class="section-title">
+                                                <h3>Specialities</h3>
                                             </div>
-                                            <h3 className="mb-2">Diaginostic</h3>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ducimus veniam illo quibusdam pariatur
+                                        </div>
+                                        <div className="row">
+                                            {specialities.map((elm, idex) =>
+                                                <div key={idex} className="col-sm-6">
+                                                    <div className="item text-center">
+                                                        <div className="icon-box">
+                                                            <figure>
+                                                                <a href="services.html">
+                                                                    <img width={'50px'} height={'50px'} loading="lazy" src={`${process.env.PUBLIC_URL}/${elm.icon}`} alt="features" />
+                                                                </a>
+                                                            </figure>
+                                                        </div>
+                                                        <h6 className="mb-2">{elm.title}</h6>
+                                                        {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ducimus veniam illo quibusdam pariatur
                                                 ex sunt, est aspernatur
                                                 at debitis eius vitae vel nostrum dolorem labore autem corrupti odit mollitia?</p>
+                                            */}
+                                                    </div>
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
-                                    <div className="col-sm-6">
-                                        <div className="item">
-                                            <div className="icon-box">
-                                                <figure>
-                                                    <a href="services.html">
-                                                        <img loading="lazy" src={Psycology} alt="features " />
-                                                    </a>
-                                                </figure>
-                                            </div>
-                                            <h3 className="mb-2">Psycology</h3>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ducimus veniam illo quibusdam pariatur
-                                                ex sunt, est aspernatur
-                                                at debitis eius vitae vel nostrum dolorem labore autem corrupti odit mollitia?</p>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-6">
-                                        <div className="item">
-                                            <div className="icon-box">
-                                                <figure>
-                                                    <a href="services.html">
-                                                        <img loading="lazy" src={GeneralTreatment} alt="features " />
-                                                    </a>
-                                                </figure>
-                                            </div>
-                                            <h3 className="mb-2">General Treatment</h3>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ducimus veniam illo quibusdam pariatur
-                                                ex sunt, est aspernatur
-                                                at debitis eius vitae vel nostrum dolorem labore autem corrupti odit mollitia?</p>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -217,7 +152,7 @@ function Home() {
 
 
             {/* Service Section */}
-            <section className="service-section bg-gray section">
+            <section className="service-section section">
                 <div className="container">
                     <div className="section-title text-center">
                         <h3>HOSPITAL <span>INFRASTRUCTURE</span> </h3>
@@ -234,7 +169,7 @@ function Home() {
                 </div>
             </section>
             {/* End Service Section */}
-
+            <Gallery />
             {/* team section */}
             <section className="team-section section">
                 <div className="container">
@@ -277,7 +212,7 @@ function Home() {
                 </div>
             </section>
             {/* End team section*/}
-            <Gallery />
+
             {/* testimonial-section  */}
             <section className="testimonial-section" style={{ background: "url(/sadhcare/background/1.jpg)" }}>
                 <div className="container">
@@ -434,6 +369,29 @@ function Home() {
                                     </div>
                                 </form>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="feature-section py-5 section bg-gray">
+                <div className="container service-box">
+                    <div className="section-title ">
+                        <h3>Our <span>partners</span>
+                        </h3>
+                    </div>
+                    <div className="row">
+                        <div className="col-lg-6 text-center">
+                            <div className="">
+                                <strong>Class of 1979</strong> <br />
+                                St. Columba's School, New Delhi
+                            </div>
+                        </div>
+                        <div className="col-lg-6 text-center">
+                            <div className="">
+                                <strong>SENTISS FOUNDATION</strong> <br />
+                                The CSR division of Sentiss Pharma
+                            </div>
+                            <img style={{ width: "200px" }} src="http://staging.beforegoinglive.com/sentiss1/wp-content/uploads/2020/10/Logo-in-white-bkg-1.png" alt="" srcset="" />
                         </div>
                     </div>
                 </div>

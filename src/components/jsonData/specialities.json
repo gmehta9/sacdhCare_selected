@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "title": "Cancer Care / Oncolog",
+        "icon": "specialities/1.png",
+        "contnet": ""
+    },
+    {
+        "id": 2,
+        "title": "Cardiac Science",
+        "icon": "specialities/2.png",
+        "contnet": ""
+    },
+    {
+        "id": 3,
+        "title": "Liver Transplant & Biliary Sciences",
+        "icon": "specialities/3.png",
+        "contnet": ""
+    },
+    {
+        "id": 4,
+        "title": "Orthopaedics & Joint Replacement",
+        "icon": "specialities/4.png",
+        "contnet": ""
+    },
+    {
+        "id": 5,
+        "title": "Neurosciences",
+        "icon": "specialities/5.png",
+        "contnet": ""
+    },
+    {
+        "id": 6,
+        "title": "Gastroenterology Hepatology Endoscopy",
+        "icon": "specialities/6.png",
+        "contnet": ""
+    },
+    {
+        "id": 7,
+        "title": "Thoracic Surgery",
+        "icon": "specialities/7.png",
+        "contnet": ""
+    },
+    {
+        "id": 8,
+        "title": "Laparoscopic/Minimal Access Surgery",
+        "icon": "specialities/8.png",
+        "contnet": ""
+    }
+]

@@ -1,0 +1,45 @@
+[
+    {
+        "id": 1,
+        "title": "Facilities",
+        "subitem": [
+            "Emergency",
+            "Operation theatre",
+            "Neonatal ICU level-1",
+            "Labour room"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Diagnostics",
+        "subitem": [
+            "Ultra sonography (USG)",
+            "Digital X-ray",
+            "C-arm for radiography",
+            "ECG",
+            "Pathology lab"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Surgical Facilities",
+        "subitem": [
+            "Department of Obstetrics and Gynaecology",
+            "Department of General surgery",
+            "Department of Orthopaedics",
+            "Department of General surgery",
+            "Department of Pediatrics"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Speciality OPD Services",
+        "subitem": [
+            "Obstetrics &amp; Gynaecology all days",
+            "Paediatrician 24x7",
+            "General medicine all days",
+            "General &amp; Laparoscopic Surgery",
+            "Orthopaedics"
+        ]
+    }
+]
