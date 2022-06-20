@@ -3,7 +3,7 @@ import { Zoom } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import slide1 from "../../assets/images/slider/slider1.jpg"
 import slide2 from "../../assets/images/slider/slider2.jpg"
-import slide3 from "../../assets/images/slider/slider3.jpg"
+// import slide3 from "../../assets/images/slider/slider3.jpg"
 
 function Banner() {
     const zoomInProperties = {
@@ -40,7 +40,8 @@ function Banner() {
                         </div>
                     </div>
                 </div>
-                <div className="slider-item slide1">
+
+                {/* <div className="slider-item slide1">
                     <img src={slide3} alt="" />
                     <div className="slider-content">
                         <div className="row justify-content-center">
@@ -79,7 +80,7 @@ function Banner() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
             </Zoom>
         </>

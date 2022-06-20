@@ -68,7 +68,7 @@ function Home() {
                         </div>
                         <div className="col-lg-4 col-md-12 working-time item">
                             <i className="fa fa-hourglass-o"></i>
-                            <h2>Working Hours</h2>
+                            <h2>OPD Timings</h2>
                             <ul className="w-hours">
                                 <li>Mon - Fri - <span>8:00 - 17:00</span></li>
                                 <li>Mon - Fri - <span>8:00 - 17:00</span></li>
@@ -147,7 +147,6 @@ function Home() {
                     </div>
                 </div>
             </section>
-
 
 
 
