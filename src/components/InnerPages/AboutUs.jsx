@@ -6,7 +6,7 @@ function AboutUs() {
 
     const location = useLocation()
 
-    console.log('location', location)
+
     return (
         <React.Fragment>
             <section className="service-tab-section section">

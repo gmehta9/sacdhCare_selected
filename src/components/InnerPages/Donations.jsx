@@ -38,7 +38,7 @@ function Donations() {
 
         // creating a new order
         const orderObj = await handleError(await post(`donate`, values));
-        console.log('result.data', orderObj.data)
+
         if (!orderObj) {
             toast.error("Server error. Are you online?");
             return;
@@ -56,7 +56,7 @@ function Donations() {
             image: 'http://localhost:3000/sadhcare/static/media/sadhcare.6750fc03a2ceabfd8392.png',
             order_id: order_id,
             handler: async function (response) {
-                console.log(response)
+
                 const data = {
                     order_id: response.razorpay_order_id,
                     payment_id: response.razorpay_payment_id,
@@ -65,7 +65,7 @@ function Donations() {
 
                 const verifyPayment = await handleError(await post(`verify-payment`, data));
 
-                console.log('verifyPayment.data', verifyPayment)
+
                 if (verifyPayment) {
                     setInitialValues({})
                 }
@@ -256,9 +256,9 @@ function Donations() {
                         />
                     </div>
 
-                    {/* <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck1" />
-                        <label class="custom-control-label" htmlFor="customCheck1">Check this custom checkbox</label>
+                    {/* <div className="custom-control custom-checkbox">
+                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
+                        <label className="custom-control-label" htmlFor="customCheck1">Check this custom checkbox</label>
                     </div>
                     {registeredField &&
                         <>

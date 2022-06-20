@@ -30,7 +30,7 @@ function ForgotPassword() {
         try {
             const response = await handleError(await post(`forgot-password`, values))
             const data = response;
-            console.log('forgotPasswordHandler', data)
+
         } catch (err) {
             console.error(err);
         }

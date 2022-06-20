@@ -5,7 +5,7 @@ import Header from "../includes/Header";
 
 function OnboardingLayout() {
     const location = useLocation()
-    console.log(location.pathname)
+
     return (
         <>
             <Header />

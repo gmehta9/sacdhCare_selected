@@ -47,7 +47,7 @@ function Login() {
     }
 
     useEffect(() => {
-        console.log(Auth.isUserAuthenticated())
+
         if (Auth.isUserAuthenticated()) {
             navigate('/user/logged')
         }

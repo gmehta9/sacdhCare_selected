@@ -59,7 +59,7 @@ function SignUp() {
 
     const signUpHandler = async (e) => {
         e.preventDefault()
-        console.log(values)
+
         try {
             const response = await handleError(await post(
                 `sign-up`,

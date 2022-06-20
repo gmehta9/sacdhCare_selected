@@ -14,9 +14,9 @@ function Header() {
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-md-6">
-                            <div className="top-left text-center text-md-left">
+                            {/* <div className="top-left text-center text-md-left">
                                 <h6>Opening Hours : Saturday to Tuesday - 8am to 10pm</h6>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="col-md-6">
                             <div className="top-right text-center text-md-right">

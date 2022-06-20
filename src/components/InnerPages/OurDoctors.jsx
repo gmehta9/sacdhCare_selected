@@ -24,7 +24,7 @@ function OurDoctors() {
                 </thead>
                 <tbody>
                     {doctor.map((elm, indec) =>
-                        <tr key={indec}>
+                        <tr key={`doctor${indec}`}>
                             <td>{indec + 1}</td>
                             <td>{elm.name}</td>
                             <td>{elm.specialization}</td>

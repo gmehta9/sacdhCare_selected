@@ -1,25 +1,25 @@
 import React, { useContext, useEffect } from "react";
 import Banner from "./includes/Banner";
 
-import specialities from "./jsonData/specialities.json"
 import OurServices from "./jsonData/OurServices.json"
+import specialities from "./jsonData/specialities.json"
 
 import TestimonialsSlider from "./includes/TestimonialsSlider";
-import DepartmentsProvided from "./includes/DepartmentsProvided";
 
 import doctor1 from "../assets/images/team/mt-dr-Col-tarun-kaul.jpg";
 import doctor2 from "../assets/images/team/dr.majroli_tewari.jpg";
 import doctor3 from "../assets/images/team/dr.colshashi_shukla.jpg";
 
-
-
 import AppContext from "./context/AppContext";
 import Swal from 'sweetalert2';
 import Gallery from "./InnerPages/Gallery";
 import AboutUs from "./InnerPages/AboutUs";
+import { useState } from "react";
 
 function Home() {
     const { setPageTitle, popShow, setPopShow } = useContext(AppContext)
+
+    const [tabContent, setTabContent] = useState();
 
     const popHandler = () => {
         Swal.fire({
@@ -45,6 +45,12 @@ function Home() {
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
+    useEffect(() => {
+        setTabContent(OurServices[0])
+    }, [])
+
+    console.log('tabContent', tabContent)
     return (
         <>
             <Banner />
@@ -79,167 +85,10 @@ function Home() {
                 </div>
             </section>
             {/* EMEGENCY  info section */}
-
-            {/* About Section */}
-            <AboutUs />
-
-
-            {/* Best Features <span>of Our Hospital */}
-            <section className="feature-section py-5 section bg-gray">
+            <section className="appoinment-section section bg-gray">
                 <div className="container">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="image-content">
-
-
-                                <div className="row">
-                                    <div className="col-md-6 service-box">
-                                        <div class="section-title">
-                                            <h3>Our Service</h3>
-                                        </div>
-                                        <div className="row">
-                                            {OurServices.map((elm, index) =>
-                                                <div className="col-md-6" key={index}>
-                                                    <h6>{elm.title}</h6>
-                                                    <ul class="content-list">
-                                                        {elm.subitem.map((ee) =>
-                                                            <li key={index + 3}>
-                                                                <i class="far fa-check-circle"></i>{ee}
-                                                            </li>
-                                                        )}
-
-                                                    </ul>
-                                                </div>
-                                            )}
-                                        </div>
-                                    </div>
-                                    <div className="col-md-6 ">
-                                        <div className="service-box">
-                                            <div class="section-title">
-                                                <h3>Specialities</h3>
-                                            </div>
-                                        </div>
-                                        <div className="row">
-                                            {specialities.map((elm, idex) =>
-                                                <div key={idex} className="col-sm-6">
-                                                    <div className="item text-center">
-                                                        <div className="icon-box">
-                                                            <figure>
-                                                                <a href="services.html">
-                                                                    <img width={'50px'} height={'50px'} loading="lazy" src={`${process.env.PUBLIC_URL}/${elm.icon}`} alt="features" />
-                                                                </a>
-                                                            </figure>
-                                                        </div>
-                                                        <h6 className="mb-2">{elm.title}</h6>
-                                                        {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ducimus veniam illo quibusdam pariatur
-                                                ex sunt, est aspernatur
-                                                at debitis eius vitae vel nostrum dolorem labore autem corrupti odit mollitia?</p>
-                                            */}
-                                                    </div>
-                                                </div>
-                                            )}
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-
-            {/* Service Section */}
-            <section className="service-section section">
-                <div className="container">
-                    <div className="section-title text-center">
-                        <h3>HOSPITAL <span>INFRASTRUCTURE</span> </h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet. qui suscipit atque <br />
-                            fugiat officia corporis rerum eaque neque totam animi, sapiente culpa. Architecto!</p>
-                    </div>
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="items-container">
-                                <DepartmentsProvided />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {/* End Service Section */}
-            <Gallery />
-            {/* team section */}
-            <section className="team-section section">
-                <div className="container">
-                    <div className="section-title text-center">
-                        <h3>Our Expert
-                            <span>Doctors</span>
-                        </h3>
-                        <p className="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem illo, rerum
-                            <br />natus nobis deleniti doloremque minima odit voluptatibus ipsam animi?</p>
-                    </div>
                     <div className="row justify-content-center">
-                        <div className="col-lg-4 col-md-6">
-                            <div className="team-member">
-                                <img loading="lazy" src={doctor1} alt="doctor" className="img-fluid" />
-                                <div className="contents text-center">
-                                    <h5>Dr. (Col.) Tarun Kaul</h5>
-                                    {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p> */}
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6">
-                            <div className="team-member">
-                                <img loading="lazy" src={doctor2} alt="doctor" className="img-fluid" />
-                                <div className="contents text-center">
-                                    <h5>Dr. (Col.) Shashi Shukla</h5>
-                                    {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p> */}
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6">
-                            <div className="team-member">
-                                <img loading="lazy" src={doctor3} alt="doctor" className="img-fluid" />
-                                <div className="contents text-center">
-                                    <h5>Dr (Maj) Roli Tewari (Retd)</h5>
-                                    {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p> */}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {/* End team section*/}
-
-            {/* testimonial-section  */}
-            <section className="testimonial-section" style={{ background: "url(/sadhcare/background/1.jpg)" }}>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="section-title text-center">
-                                <h3>What Our
-                                    <span>Patients Says</span>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="testimonial-carousel">
-                                <TestimonialsSlider />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {/* End testimonial-section
-
- Contact Section  */}
-            <section className="appoinment-section section">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-6">
+                        {/* <div className="col-lg-6">
                             <div className="accordion-section">
                                 <div className="section-title">
                                     <h3>FAQ</h3>
@@ -317,8 +166,8 @@ function Home() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-lg-6">
+                        </div> */}
+                        <div className="col-lg-8">
                             <div className="contact-area pl-0 pl-lg-5">
                                 <div className="section-title">
                                     <h3>Request <span>Appointment</span>
@@ -372,6 +221,162 @@ function Home() {
                     </div>
                 </div>
             </section>
+            {/* About Section */}
+            <AboutUs />
+
+            <section className="service-tab-section py-5 feature-section bg-gray section">
+                <div className="outer-box clearfix">
+                    <div className="container">
+                        <div className="section-title text-center">
+                            <h3>Our <span>Services</span> </h3>
+                            <br />
+                        </div>
+                        <div className="row">
+                            <div className="col-md-12">
+
+                                <div className="tabs mb-5">
+                                    <ul className="nav nav-tabs justify-content-center" id="aboutTab" role="tablist">
+                                        {OurServices.map((elm, index) =>
+                                            <li
+                                                key={`service${index}`}
+                                                onClick={() => setTabContent(elm)}
+                                                className="nav-item" role="presentation">
+                                                <a
+                                                    className={` ${index === 0 ? 'active' : ''} nav-link `}
+                                                    id={`service${index}`}
+                                                    data-toggle="tab"
+                                                    href={elm.showID}
+                                                    role="tab"
+                                                    aria-controls={elm.showID}
+                                                    aria-selected="true">{elm.title}</a>
+                                            </li>
+                                        )}
+                                    </ul>
+                                </div>
+                                <div className="  tab-content">
+                                    <div
+                                        className={` image-content fade show`}
+                                    >
+                                        <div className="row">
+
+                                            {tabContent && tabContent.subitem.map((ee, ind) =>
+                                                // <li key={`Serv${ind}`}>
+                                                //     <i className="far fa-check-circle"></i>{ee}
+                                                // </li>
+                                                <div key={ind} className="col-sm-3">
+                                                    <div className="item text-center">
+                                                        <div className="icon-box">
+                                                            <figure>
+                                                                <a >
+
+                                                                    <img width={'50px'} height={'50px'} loading="lazy" src={`${process.env.PUBLIC_URL}/${ee.icon}`} alt="features" />
+                                                                </a>
+                                                            </figure>
+                                                        </div>
+                                                        <h6 className="mb-2">{ee.name}</h6>
+
+                                                    </div>
+                                                </div>
+                                            )}
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {/* Best Features <span>of Our Hospital */}
+
+            {/* Service Section */}
+            {/* <section className="service-section section">
+                <div className="container">
+                    <div className="section-title text-center">
+                        <h3>HOSPITAL <span>INFRASTRUCTURE</span> </h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet. qui suscipit atque <br />
+                            fugiat officia corporis rerum eaque neque totam animi, sapiente culpa. Architecto!</p>
+                    </div>
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <div className="items-container">
+                                <DepartmentsProvided />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> */}
+            {/* End Service Section */}
+
+            <Gallery />
+
+            {/* team section */}
+            <section className="team-section section bg-gray">
+                <div className="container">
+                    <div className="section-title text-center">
+                        <h3>Our Expert
+                            <span>Doctors</span>
+                        </h3>
+                        <p className="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem illo, rerum
+                            <br />natus nobis deleniti doloremque minima odit voluptatibus ipsam animi?</p>
+                    </div>
+                    <div className="row justify-content-center">
+                        <div className="col-lg-4 col-md-6">
+                            <div className="team-member">
+                                <img loading="lazy" src={doctor1} alt="doctor" className="img-fluid" />
+                                <div className="contents text-center">
+                                    <h5>Dr. (Col.) Tarun Kaul</h5>
+                                    {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p> */}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-md-6">
+                            <div className="team-member">
+                                <img loading="lazy" src={doctor2} alt="doctor" className="img-fluid" />
+                                <div className="contents text-center">
+                                    <h5>Dr. (Col.) Shashi Shukla</h5>
+                                    {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p> */}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-md-6">
+                            <div className="team-member">
+                                <img loading="lazy" src={doctor3} alt="doctor" className="img-fluid" />
+                                <div className="contents text-center">
+                                    <h5>Dr (Maj) Roli Tewari (Retd)</h5>
+                                    {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p> */}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {/* End team section*/}
+
+            {/* testimonial-section  */}
+            <section className="testimonial-section" style={{ background: "url(/sadhcare/background/1.jpg)" }}>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <div className="section-title text-center">
+                                <h3>What Our
+                                    <span>Patients Says</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <div className="testimonial-carousel">
+                                <TestimonialsSlider />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {/* End testimonial-section */}
+
             <section className="feature-section py-5 section bg-gray">
                 <div className="container service-box">
                     <div className="section-title ">
@@ -390,7 +395,7 @@ function Home() {
                                 <strong>SENTISS FOUNDATION</strong> <br />
                                 The CSR division of Sentiss Pharma
                             </div>
-                            <img style={{ width: "200px" }} src="http://staging.beforegoinglive.com/sentiss1/wp-content/uploads/2020/10/Logo-in-white-bkg-1.png" alt="" srcset="" />
+                            <img style={{ width: "200px" }} src="http://staging.beforegoinglive.com/sentiss1/wp-content/uploads/2020/10/Logo-in-white-bkg-1.png" alt="" srcSet="" />
                         </div>
                     </div>
                 </div>

@@ -1,45 +1,106 @@
 [
     {
         "id": 1,
+        "showID": "facilities",
         "title": "Facilities",
         "subitem": [
-            "Emergency",
-            "Operation theatre",
-            "Neonatal ICU level-1",
-            "Labour room"
+            {
+                "name": "Emergency",
+                "icon": "specialities/4.png"
+            },
+            {
+                "name": "Operation theatre",
+                "icon": "specialities/4.png"
+            },
+            {
+                "name": "Neonatal ICU level-1",
+                "icon": "specialities/4.png"
+            },
+            {
+                "name": "Labour room",
+                "icon": "specialities/4.png"
+            }
         ]
     },
     {
         "id": 2,
+        "showID": "diagnostics",
         "title": "Diagnostics",
         "subitem": [
-            "Ultra sonography (USG)",
-            "Digital X-ray",
-            "C-arm for radiography",
-            "ECG",
-            "Pathology lab"
+            {
+                "name": "Ultra sonography (USG)",
+                "icon": "specialities/3.png"
+            },
+            {
+                "name": "Digital X-ray",
+                "icon": "specialities/3.png"
+            },
+            {
+                "name": "C-arm for radiography",
+                "icon": "specialities/3.png"
+            },
+            {
+                "name": "ECG",
+                "icon": "specialities/3.png"
+            },
+            {
+                "name": "Pathology lab",
+                "icon": "specialities/3.png"
+            }
         ]
     },
     {
         "id": 3,
+        "showID": "surgicalfacilities",
         "title": "Surgical Facilities",
         "subitem": [
-            "Department of Obstetrics and Gynaecology",
-            "Department of General surgery",
-            "Department of Orthopaedics",
-            "Department of General surgery",
-            "Department of Pediatrics"
+            {
+                "name": "Department of Obstetrics and Gynaecology",
+                "icon": "specialities/1.png"
+            },
+            {
+                "name": "Department of General surgery",
+                "icon": "specialities/1.png"
+            },
+            {
+                "name": "Department of Orthopaedics",
+                "icon": "specialities/1.png"
+            },
+            {
+                "name": "Department of General surgery",
+                "icon": "specialities/1.png"
+            },
+            {
+                "name": "Department of Pediatrics",
+                "icon": "specialities/1.png"
+            }
         ]
     },
     {
         "id": 4,
+        "showID": "OPDservices",
         "title": "Speciality OPD Services",
         "subitem": [
-            "Obstetrics &amp; Gynaecology all days",
-            "Paediatrician 24x7",
-            "General medicine all days",
-            "General &amp; Laparoscopic Surgery",
-            "Orthopaedics"
+            {
+                "name": "Obstetrics &amp; Gynaecology all days",
+                "icon": "specialities/2.png"
+            },
+            {
+                "name": "Paediatrician 24x7",
+                "icon": "specialities/2.png"
+            },
+            {
+                "name": "General medicine all days",
+                "icon": "specialities/2.png"
+            },
+            {
+                "name": "General &amp; Laparoscopic Surgery",
+                "icon": "specialities/2.png"
+            },
+            {
+                "name": "Orthopaedics",
+                "icon": "specialities/2.png"
+            }
         ]
     }
 ]

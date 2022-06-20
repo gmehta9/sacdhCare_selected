@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { AppContext } from "../context/AppContext";
-import gallery from "../jsonData/gallery.json"
+// import gallery from "../jsonData/gallery.json"
+import Departments from "../jsonData/Departments.json";
 
 function Gallery() {
 
@@ -9,37 +10,34 @@ function Gallery() {
     useEffect(() => {
         setPageTitle('Gallery')
 
-        console.log('gallery', gallery)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
         <React.Fragment>
-            <section className="gallery bg-gray">
+            <section className="gallery ">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="section-title text-center">
                                 <h3>Collected Shots
-                                    <span>of Our Hospital</span>
+                                    <span> of Our Hospital</span>
                                 </h3>
                                 <p>Leverage agile frameworks to provide a robust synopsis for high level overv-
                                     <br />iews. Iterative approaches to corporate strategy...</p>
                             </div>
                         </div>
 
-                        {gallery.map((elm, index) =>
-
-                            <div key={index} className="col-lg-4 col-md-6">
+                        {Departments.map((elm, index) =>
+                            <div key={`gallery${index}`} className="col-lg-4 col-md-6">
                                 <div className="gallery-item">
                                     <img loading="lazy" src={`${process.env.PUBLIC_URL}/${elm.image}`} className="img-fluid" alt="gallery" />
                                     <a data-fancybox="images" href={`${process.env.PUBLIC_URL}/${elm.image}`} >
-                                        <h3>{elm.imageTitle}</h3>
-                                        <p>{elm.imageContent}</p>
+                                        <h3>{elm.title}</h3>
+                                        {/* <p>{elm.imageContent}</p> */}
                                     </a>
                                 </div>
                             </div>
-
                         )}
 
                     </div>

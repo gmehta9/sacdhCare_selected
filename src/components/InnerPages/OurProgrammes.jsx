@@ -16,7 +16,7 @@ function OurProgrammes() {
             <div className="accordion-holder">
                 <div className="accordion" id="accordionGroup" role="tablist" aria-multiselectable="true">
                     {programData.map((prgm, index) =>
-                        <div key={index} className="card">
+                        <div key={`programData${index}`} className="card">
                             <div className="card-header" role="tab" id={`headingOne${index}`}>
                                 <h6 className="card-title mb-0">
                                     <a role="button" data-toggle="collapse" href={`#collapse${index}`} aria-expanded="true" aria-controls={`collapse${index}`}>

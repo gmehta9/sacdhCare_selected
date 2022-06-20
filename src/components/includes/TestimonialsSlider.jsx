@@ -29,7 +29,7 @@ function TestimonialsSlider() {
     return (
         <Slide {...properties}>
             {testimonials.map((elm, index) =>
-                <div key={index} className="slide-item">
+                <div key={`testimonials${index}`} className="slide-item">
                     <div className="inner-box text-center">
                         <div className="image-box">
                             <figure>

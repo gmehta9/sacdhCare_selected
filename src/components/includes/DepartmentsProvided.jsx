@@ -13,7 +13,7 @@ function DepartmentsProvided() {
     return (
         <Slide {...properties}>
             {Departments.map((dept, index) =>
-                <div className="item" key={index}>
+                <div className="item" key={`Departments${index}`}>
                     <div className="inner-box">
                         <div className="img_holder">
                             <a href="/">
@@ -22,9 +22,7 @@ function DepartmentsProvided() {
                         </div>
                         <div className="image-content text-center">
                             {/* <span>Better Service At Low Cost</span> */}
-                            <a href="service.html">
-                                <h6>{dept.title}</h6>
-                            </a>
+                            <h6>{dept.title}</h6>
                             {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vero.</p> */}
                         </div>
                     </div>

@@ -57,7 +57,7 @@ function LoggedInPage({ userLogout }) {
         try {
             const response = await handleError(await post(`update-profile`, values))
             if (response.status === 200) {
-                console.log('updateProfileHandler', response)
+
             }
 
         } catch (err) {
@@ -69,7 +69,7 @@ function LoggedInPage({ userLogout }) {
         try {
             const response = await handleError(await get(`donate`))
             if (response.status === 200) {
-                // console.log('getDonationHandler', response)
+
                 setHistoryDonation(response.data)
             }
 
@@ -100,7 +100,7 @@ function LoggedInPage({ userLogout }) {
 
         return `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
     }
-    console.log(donationHistory)
+
     return (
         <React.Fragment>
             <section className="header">
@@ -245,7 +245,7 @@ function LoggedInPage({ userLogout }) {
                                                 </tr>
                                             }
                                             {donationHistory?.data && donationHistory.data.map((elm, index) =>
-                                                <tr>
+                                                <tr key={`donationHistory${index}`}>
                                                     <td>{index + 1}</td>
                                                     <td>{dateFormateHandler(elm.created_at)}</td>
                                                     <td>{elm.order_id} </td>
