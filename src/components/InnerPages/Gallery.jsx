@@ -15,7 +15,7 @@ function Gallery() {
 
     return (
         <React.Fragment>
-            <section className="gallery ">
+            <section className="gallery bg-gray ">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">

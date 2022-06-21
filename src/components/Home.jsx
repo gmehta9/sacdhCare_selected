@@ -15,6 +15,7 @@ import Gallery from "./InnerPages/Gallery";
 import AboutUs from "./InnerPages/AboutUs";
 import { useState } from "react";
 import Appointment from "./includes/Appointment";
+import Beneficiaries from "./includes/Beneficiaries";
 
 function Home() {
     const { setPageTitle, popShow, setPopShow } = useContext(AppContext)
@@ -89,7 +90,8 @@ function Home() {
             {/* About Section */}
             <AboutUs />
 
-            <section className="service-tab-section py-5 feature-section bg-gray section">
+            <Beneficiaries />
+            <section className="service-tab-section py-5 feature-section section">
                 <div className="outer-box clearfix">
                     <div className="container">
                         <div className="section-title text-center">
@@ -171,7 +173,7 @@ function Home() {
             <Gallery />
 
             {/* team section */}
-            <section className="team-section section bg-gray">
+            <section className="team-section section ">
                 <div className="container">
                     <div className="section-title text-center">
                         <h3>Our Expert
