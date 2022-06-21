@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from "react";
 import Banner from "./includes/Banner";
 
 import OurServices from "./jsonData/OurServices.json"
-import specialities from "./jsonData/specialities.json"
 
 import TestimonialsSlider from "./includes/TestimonialsSlider";
 
@@ -126,17 +125,11 @@ function Home() {
                                         <div className="row">
 
                                             {tabContent && tabContent.subitem.map((ee, ind) =>
-                                                // <li key={`Serv${ind}`}>
-                                                //     <i className="far fa-check-circle"></i>{ee}
-                                                // </li>
                                                 <div key={ind} className="col-sm-3">
                                                     <div className="item text-center">
                                                         <div className="icon-box">
                                                             <figure>
-                                                                <a >
-
-                                                                    <img width={'50px'} height={'50px'} loading="lazy" src={`${process.env.PUBLIC_URL}/${ee.icon}`} alt="features" />
-                                                                </a>
+                                                                <img width={'50px'} height={'50px'} loading="lazy" src={`${process.env.PUBLIC_URL}/${ee.icon}`} alt="features" />
                                                             </figure>
                                                         </div>
                                                         <h6 className="mb-2">{ee.name}</h6>
