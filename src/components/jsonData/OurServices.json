@@ -6,19 +6,19 @@
         "subitem": [
             {
                 "name": "Emergency",
-                "icon": "specialities/4.png"
+                "icon": "specialities/Emergency.png"
             },
             {
                 "name": "Operation theatre",
-                "icon": "specialities/4.png"
+                "icon": "specialities/hospital-bed.png"
             },
             {
                 "name": "Neonatal ICU level-1",
-                "icon": "specialities/4.png"
+                "icon": "specialities/operation.png"
             },
             {
                 "name": "Labour room",
-                "icon": "specialities/4.png"
+                "icon": "specialities/hospital-bed.png"
             }
         ]
     },
@@ -29,23 +29,23 @@
         "subitem": [
             {
                 "name": "Ultra sonography (USG)",
-                "icon": "specialities/3.png"
+                "icon": "specialities/sonography.png"
             },
             {
                 "name": "Digital X-ray",
-                "icon": "specialities/3.png"
+                "icon": "specialities/x-rays.png"
             },
             {
                 "name": "C-arm for radiography",
-                "icon": "specialities/3.png"
+                "icon": "specialities/radiography.png"
             },
             {
                 "name": "ECG",
-                "icon": "specialities/3.png"
+                "icon": "specialities/ecg.png"
             },
             {
                 "name": "Pathology lab",
-                "icon": "specialities/3.png"
+                "icon": "specialities/microscope.png"
             }
         ]
     },
@@ -56,23 +56,19 @@
         "subitem": [
             {
                 "name": "Department of Obstetrics and Gynaecology",
-                "icon": "specialities/1.png"
+                "icon": "specialities/Gynaecology.png"
             },
             {
                 "name": "Department of General surgery",
-                "icon": "specialities/1.png"
+                "icon": "specialities/Generalsurgery.png"
             },
             {
                 "name": "Department of Orthopaedics",
-                "icon": "specialities/1.png"
-            },
-            {
-                "name": "Department of General surgery",
-                "icon": "specialities/1.png"
+                "icon": "specialities/Orthopaedics.png"
             },
             {
                 "name": "Department of Pediatrics",
-                "icon": "specialities/1.png"
+                "icon": "specialities/pediatrics.png"
             }
         ]
     },
@@ -83,23 +79,23 @@
         "subitem": [
             {
                 "name": "Obstetrics &amp; Gynaecology all days",
-                "icon": "specialities/2.png"
+                "icon": "specialities/fetus.png"
             },
             {
                 "name": "Paediatrician 24x7",
-                "icon": "specialities/2.png"
+                "icon": "specialities/Emergency.png"
             },
             {
                 "name": "General medicine all days",
-                "icon": "specialities/2.png"
+                "icon": "specialities/medicine.png"
             },
             {
                 "name": "General &amp; Laparoscopic Surgery",
-                "icon": "specialities/2.png"
+                "icon": "specialities/surgery-room.png"
             },
             {
                 "name": "Orthopaedics",
-                "icon": "specialities/2.png"
+                "icon": "specialities/orthopedics.png"
             }
         ]
     }

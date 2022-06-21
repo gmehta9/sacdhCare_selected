@@ -15,6 +15,7 @@ import Swal from 'sweetalert2';
 import Gallery from "./InnerPages/Gallery";
 import AboutUs from "./InnerPages/AboutUs";
 import { useState } from "react";
+import Appointment from "./includes/Appointment";
 
 function Home() {
     const { setPageTitle, popShow, setPopShow } = useContext(AppContext)
@@ -85,142 +86,7 @@ function Home() {
                 </div>
             </section>
             {/* EMEGENCY  info section */}
-            <section className="appoinment-section section bg-gray">
-                <div className="container">
-                    <div className="row justify-content-center">
-                        {/* <div className="col-lg-6">
-                            <div className="accordion-section">
-                                <div className="section-title">
-                                    <h3>FAQ</h3>
-                                </div>
-                                <div className="accordion-holder">
-                                    <div className="accordion" id="accordionGroup" role="tablist" aria-multiselectable="true">
-                                        <div className="card">
-                                            <div className="card-header" role="tab" id="headingOne">
-                                                <h4 className="card-title">
-                                                    <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                        Why Should I choose Medical Health
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                            <div id="collapseOne" className="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordionGroup">
-                                                <div className="card-body">
-                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-                                                    officia aute,
-                                                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-                                                    tempor,
-                                                    sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                                                    helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                                                    vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
-                                                    haven't
-                                                    heard of them accusamus labore sustainable VHS.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="card">
-                                            <div className="card-header" role="tab" id="headingTwo">
-                                                <h4 className="card-title">
-                                                    <a className="collapsed" role="button" data-toggle="collapse" href="#collapseTwo"
-                                                        aria-expanded="false" aria-controls="collapseTwo">
-                                                        What are the Centre’s visiting hours?
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                            <div id="collapseTwo" className="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordionGroup">
-                                                <div className="card-body">
-                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-                                                    officia aute,
-                                                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-                                                    tempor,
-                                                    sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                                                    helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                                                    vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
-                                                    haven't
-                                                    heard of them accusamus labore sustainable VHS.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="card">
-                                            <div className="card-header" role="tab" id="headingThree">
-                                                <h4 className="card-title">
-                                                    <a className="collapsed" role="button" data-toggle="collapse" href="#collapseThree"
-                                                        aria-expanded="false" aria-controls="collapseThree">
-                                                        How many visitors are allowed?
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                            <div id="collapseThree" className="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordionGroup">
-                                                <div className="card-body">
-                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-                                                    officia aute,
-                                                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-                                                    tempor,
-                                                    sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                                                    helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                                                    vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
-                                                    haven't
-                                                    heard of them accusamus labore sustainable VHS.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> */}
-                        <div className="col-lg-8">
-                            <div className="contact-area pl-0 pl-lg-5">
-                                <div className="section-title">
-                                    <h3>Request <span>Appointment</span>
-                                    </h3>
-                                </div>
-                                <form name="contact_form" className="default-form contact-form" action="!#" method="post">
-                                    <div className="row">
-                                        <div className="col-md-6">
-                                            <div className="form-group">
-                                                <input className="form-control" type="text" name="Name" placeholder="Name" required="" />
-                                            </div>
-                                            <div className="form-group">
-                                                <input className="form-control" type="email" name="Email" placeholder="Email" required="" />
-                                            </div>
-                                            <div className="form-group">
-                                                <select className="form-control" name="subject">
-                                                    <option>Departments</option>
-                                                    <option>Diagnostic</option>
-                                                    <option>Psychological</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <div className="form-group">
-                                                <input className="form-control" type="text" name="Phone" placeholder="Phone" required="" />
-                                            </div>
-                                            <div className="form-group">
-                                                <input className="form-control" type="text" name="Date" placeholder="Date" required="" id="datepicker" autoComplete="off" />
-                                                <i className="fa fa-calendar" aria-hidden="true"></i>
-                                            </div>
-                                            <div className="form-group">
-                                                <select className="form-control" name="subject">
-                                                    <option>Doctor</option>
-                                                    <option>Diagnostic</option>
-                                                    <option>Psychological</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-12">
-                                            <div className="form-group">
-                                                <textarea className="form-control" name="form_message" placeholder="Your Message" required=""></textarea>
-                                            </div>
-                                            <div className="form-group text-center">
-                                                <button type="submit" className="btn-style-one">submit now</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <Appointment />
             {/* About Section */}
             <AboutUs />
 
@@ -234,7 +100,7 @@ function Home() {
                         <div className="row">
                             <div className="col-md-12">
 
-                                <div className="tabs mb-5">
+                                <div className="tabs mb-3">
                                     <ul className="nav nav-tabs justify-content-center" id="aboutTab" role="tablist">
                                         {OurServices.map((elm, index) =>
                                             <li

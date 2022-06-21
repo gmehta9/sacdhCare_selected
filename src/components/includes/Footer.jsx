@@ -23,9 +23,10 @@ function Footer() {
                                 <ul className="location-link">
                                     <li className="item">
                                         <i className="fas fa-map-marker-alt"></i>
-                                        <p>Swami Amar Dev Hospital, Ashram Hari Mandir, Pataudi<br />
+                                        <p>Swami Amar Dev Hospital, <br />
+                                            Ashram Hari Mandir, Pataudi<br />
                                             Gurugram, Haryana<br />
-                                            122503, <br />
+                                            122503<br />
                                         </p>
                                     </li>
                                     <li className="item">

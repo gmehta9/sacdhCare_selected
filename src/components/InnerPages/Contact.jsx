@@ -21,11 +21,10 @@ function ContactUs() {
                                     <i className="far fa-map"></i>
                                     <div className="media-body">
                                         <h3>Location</h3>
-                                        <p>
-                                            Swami Amar Dev Hospital, Ashram Hari Mandir, <br />
-                                            Pataudi, Gurugram<br />
-                                            Haryana, 122503<br />
-                                            INDIA
+                                        <p>Swami Amar Dev Hospital, <br />
+                                            Ashram Hari Mandir, Pataudi<br />
+                                            Gurugram, Haryana<br />
+                                            122503 <br />
                                         </p>
                                     </div>
                                 </div>
