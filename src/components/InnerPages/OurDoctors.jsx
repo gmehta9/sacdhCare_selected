@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import Swal from "sweetalert2";
 import { AppContext } from "../context/AppContext";
 import doctor from "../jsonData/doctorList.json";
 function OurDoctors() {
@@ -6,8 +7,28 @@ function OurDoctors() {
 
     useEffect(() => {
         setPageTitle('Our Doctors')
+        window.scrollTo(0, 0);
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
+    const detailShow = (detail) => {
+        if (detail?.descp) {
+            Swal.fire({
+                title: detail.name,
+                padding: '0',
+                margin: '0',
+                customClass: {
+                    actions: 'popup-btn',
+                    confirmButton: 'p-2 py-0',
+                    htmlContainer: 'text-justify'
+                },
+                confirmButtonText: 'X',
+                html: detail?.descp,
+
+            })
+        }
+    }
 
     return (
         <React.Fragment>
@@ -21,7 +42,9 @@ function OurDoctors() {
                     <div className="row justify-content-center">
                         {doctor.map((elm, indec) =>
                             <div key={indec} className="col-lg-2 co-6">
-                                <div className="team-member">
+                                <div
+                                    onClick={() => detailShow(elm)}
+                                    className={`${elm.descp ? 'available-descp' : ''} team-member`}>
                                     <img
                                         loading="lazy"
                                         src={`${process.env.PUBLIC_URL}/${elm.image}`}

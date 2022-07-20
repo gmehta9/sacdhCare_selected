@@ -13,6 +13,7 @@ import AboutUs from "./InnerPages/AboutUs";
 import { useState } from "react";
 import Appointment from "./includes/Appointment";
 import Beneficiaries from "./includes/Beneficiaries";
+import { Link } from "react-router-dom";
 
 function Home() {
     const { setPageTitle, popShow, setPopShow } = useContext(AppContext)
@@ -34,6 +35,25 @@ function Home() {
 
         })
     }
+
+    const detailShow = (detail) => {
+        if (detail?.descp) {
+            Swal.fire({
+                title: detail.name,
+                padding: '0',
+                margin: '0',
+                customClass: {
+                    actions: 'popup-btn',
+                    confirmButton: 'p-2 py-0',
+                    htmlContainer: 'text-justify'
+                },
+                confirmButtonText: 'X',
+                html: detail?.descp,
+
+            })
+        }
+    }
+
     useEffect(() => {
         setPageTitle()
         if (popShow) {
@@ -176,20 +196,23 @@ function Home() {
                         <h3>Our Expert
                             <span>Doctors</span>
                         </h3>
-                        <p className="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem illo, rerum
-                            <br />natus nobis deleniti doloremque minima odit voluptatibus ipsam animi?</p>
+                        <p className="mb-0 pb-0 text-right"><Link to="/our-doctors"> View All</Link> </p>
                     </div>
+
                     <div className="row justify-content-center">
-                        {doctor.slice(0, 3).map((elm, indec) =>
-                            <div key={indec} className="col-lg-4 col-md-6">
-                                <div className="team-member">
+                        {doctor.slice(0, 4).map((elm, indec) =>
+                            <div key={indec} className="col-lg-3 col-md-6">
+                                <div
+                                    onClick={() => detailShow(elm)}
+                                    className={`${elm.descp ? 'available-descp' : ''} team-member`}
+                                >
                                     <img
                                         loading="lazy"
                                         src={`${process.env.PUBLIC_URL}/${elm.image}`}
                                         alt="doctor"
                                         className="img-fluid" />
                                     <div className="contents text-center">
-                                        <h5>{elm.name}</h5>
+                                        <h6>{elm.name}</h6>
                                         {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p> */}
                                     </div>
                                 </div>

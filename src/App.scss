@@ -11,7 +11,8 @@
 @import url("../src/assets/scss/style.scss");
 
 .pg-img {
-    height: 140px;
+    border-radius: 5px !important;
+    box-shadow: none !important;
 }
 
 .hand {
