@@ -29,8 +29,8 @@ function OurDoctors() {
 
                                         className="img-fluid pg-img" />
                                     <div className="contents text-center">
-                                        <h6>{elm.name}</h6>
-                                        <p>{elm.specialization}</p>
+                                        <h6 className="mt-3">{elm.name}</h6>
+                                        <p className="small">{elm.specialization}</p>
                                     </div>
                                 </div>
                             </div>
