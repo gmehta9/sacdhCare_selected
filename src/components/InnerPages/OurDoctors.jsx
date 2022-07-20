@@ -14,7 +14,32 @@ function OurDoctors() {
             <p>
                 SADH has a team of doctors specialized in different fields of medicine, who have a deep desire to promote the welfare of others and help create a better world. Many of the doctors and support staff at SADH are ex-Army doctors and personnel, led by Dr.(Col.)Tarun Kaul.
             </p>
-            <table className="table table-bordered">
+
+            <section className="section ">
+                <div className="container">
+
+                    <div className="row justify-content-center">
+                        {doctor.map((elm, indec) =>
+                            <div key={indec} className="col-lg-2 co-6">
+                                <div className="team-member">
+                                    <img
+                                        loading="lazy"
+                                        src={`${process.env.PUBLIC_URL}/${elm.image}`}
+                                        alt="doctor"
+
+                                        className="img-fluid pg-img" />
+                                    <div className="contents text-center">
+                                        <h6>{elm.name}</h6>
+                                        <p>{elm.specialization}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
+                    </div>
+                </div>
+            </section>
+            {/* <table className="table table-bordered">
                 <thead className="thead-dark">
                     <tr>
                         <th>Sr. No.</th>
@@ -31,7 +56,7 @@ function OurDoctors() {
                         </tr>
                     )}
                 </tbody>
-            </table>
+            </table> */}
 
 
         </React.Fragment>

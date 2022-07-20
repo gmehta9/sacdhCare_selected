@@ -1,13 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import Banner from "./includes/Banner";
 
-import OurServices from "./jsonData/OurServices.json"
+import OurServices from "./jsonData/OurServices.json";
+import doctor from "./jsonData/doctorList.json";
 
 import TestimonialsSlider from "./includes/TestimonialsSlider";
-
-import doctor1 from "../assets/images/team/mt-dr-Col-tarun-kaul.jpg";
-import doctor2 from "../assets/images/team/dr.majroli_tewari.jpg";
-import doctor3 from "../assets/images/team/dr.colshashi_shukla.jpg";
 
 import AppContext from "./context/AppContext";
 import Swal from 'sweetalert2';
@@ -183,33 +180,21 @@ function Home() {
                             <br />natus nobis deleniti doloremque minima odit voluptatibus ipsam animi?</p>
                     </div>
                     <div className="row justify-content-center">
-                        <div className="col-lg-4 col-md-6">
-                            <div className="team-member">
-                                <img loading="lazy" src={doctor1} alt="doctor" className="img-fluid" />
-                                <div className="contents text-center">
-                                    <h5>Dr. (Col.) Tarun Kaul</h5>
-                                    {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p> */}
+                        {doctor.slice(0, 3).map((elm, indec) =>
+                            <div key={indec} className="col-lg-4 col-md-6">
+                                <div className="team-member">
+                                    <img
+                                        loading="lazy"
+                                        src={`${process.env.PUBLIC_URL}/${elm.image}`}
+                                        alt="doctor"
+                                        className="img-fluid" />
+                                    <div className="contents text-center">
+                                        <h5>{elm.name}</h5>
+                                        {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p> */}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6">
-                            <div className="team-member">
-                                <img loading="lazy" src={doctor2} alt="doctor" className="img-fluid" />
-                                <div className="contents text-center">
-                                    <h5>Dr. (Col.) Shashi Shukla</h5>
-                                    {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p> */}
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6">
-                            <div className="team-member">
-                                <img loading="lazy" src={doctor3} alt="doctor" className="img-fluid" />
-                                <div className="contents text-center">
-                                    <h5>Dr (Maj) Roli Tewari (Retd)</h5>
-                                    {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p> */}
-                                </div>
-                            </div>
-                        </div>
+                        )}
                     </div>
                 </div>
             </section>
