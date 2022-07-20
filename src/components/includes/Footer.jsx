@@ -61,10 +61,14 @@ function Footer() {
                             <h2>Quick Links</h2>
                             <ul className="menu-link">
                                 <li>
-                                    <Link to="/pdf/HSPCB-BMW-GUIDELINES-COVID.pdf">
+                                    <span
+                                        className="hand"
+                                        onClick={() =>
+                                            window.open(`${process.env.PUBLIC_URL}/pdf/HSPCB-BMW-GUIDELINES-COVID.pdf`, '_blank')}
+                                    >
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
                                         Haryana Govt. Policy Guideline
-                                    </Link>
+                                    </span>
                                 </li>
                                 <li>
                                     <Link to="/">
