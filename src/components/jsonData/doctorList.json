@@ -1,17 +1,9 @@
 [
     {
-        "id": 11,
-        "name": "Dr. (Col.) Tarun Kaul",
-        "specialization": "Director and Administrative in-charge",
-        "image": "doctors/mt-dr-Col-tarun-kaul.jpg",
-        "descp": "<p>Dr. (Col.) Tarun Kaul is a retired Colonel and winner of the esteemed Sena Medal in 2005. Under his able and uncompromising supervision Swami Amar Dev Hospital has been set up. After serving for 33 years in the Indian army, Dr. (Col.) Tarun Kaul decided to pursue his dream of providing quality healthcare to the deprived sections of society.</p><p>During his service, Dr. (Col.) Tarun Kaul worked across various geographies from glaciers to deserts in various departments from clinical to instructive as well as in administration. Dr. (Col.) Tarun Kaul has been the Director and Administrative in-charge of a Medical set up in a foreign country with 2 hospitals and 3 medical centers, Director of polyclinic & trauma Center at Delhi with an OPD of 4000 patients/day, Director of Army Medical Services over 2 states, Director of Medical Training and Coordination at Army Headquarters.</p><p>Dr. (Col.) Tarun Kaul has been leading our outreach and special programs from the front and actively contributes in all the programs organized by the hospital.</p>"
-    },
-    {
-        "id": 22,
-        "name": "Dr. (Col.) Shashi Shukla",
-        "specialization": "Chief In-charge of the Outreach Medical Camps",
-        "image": "doctors/dr.colshashi_shukla.jpg",
-        "descp": "<p>Armed with a deep desire of serving the less privileged, Dr. (Col.) Shashi Shukla is the Chief Medical Officer at Swami Amar Dev Hospital, and the Chief In-charge of the Outreach Medical Camps conducted by the hospital. An alumni of the prestigious Government Medical College, Patiala, Dr. (Col.) Shashi has had an illustrious career with the Indian Army. During her two decades of career with the Army Medical Corps, Dr. (Col.) Shashi has handled numerous important assignments and projects, including being the Director and Administrative In-charge of a Field Hospital in the far east of India.</p> <p> Dr. (Col.) Shashi has also led a 1000 bed strong Base Hospital as Chief In-charge, worked as a Senior Medical Officer in a United Nations Peace keeping mission overseas and worked with the Defense Institute of Physiology and Allied Sciences (DIPAS), during her tenure with the Indian Army. Besides being an active member of the Indian Academy of Echocardiography, Dr. (Col.) Shashi is also heading the “Mother & Child” Health campaign undertaken by Swami Amar Dev Hospital.</p>"
+        "id": 33,
+        "name": "Dr. (Brig) Amitava Banerjee (Retd)",
+        "specialization": "Director &amp; HOD Radiodiagnosis",
+        "image": "doctors/Dr-(Brig)-Amitava-Banerjee.jpg"
     },
     {
         "id": 2,
@@ -19,12 +11,6 @@
         "specialization": "Deputy Medical Superintendent",
         "image": "doctors/Dr-Roli.jpg",
         "descp": "<p>Compassionate, energetic and sincere, Dr. (Maj.) Roli Tewari – an ex-Major in Dental Corps – is an experienced dental surgeon practicing for 20 years. She is an alumni of the esteemed Maulana Azad Medical College, New Delhi. Dr. (Maj.) Roli has been associated with prestigious institutions like Lok Nayak Jai Prakash Hospital, Delhi, and Army Dental Corps. Her area of expertise includes RCTs, Crowns and bridges, splinting and extractions, with special focus on pediatric and geriatric patients. She is a firm believer in “prevention is better than cure” and practices likewise.</p> <p>Apart from her responsibilities as a Deputy Medical Superintendent, Dr. (Maj.) Roli also heads the Dental Health Awareness Campaign by SADH and the Outreach Programme for Children, spreading awareness about the importance and relationship between health and hygiene.</p>"
-    },
-    {
-        "id": 33,
-        "name": "Dr. (Brig) Amitava Banerjee (Retd)",
-        "specialization": "Director &amp; HOD Radiodiagnosis",
-        "image": "doctors/Dr-(Brig)-Amitava-Banerjee.jpg"
     },
     {
         "id": 3,

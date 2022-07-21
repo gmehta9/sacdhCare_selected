@@ -33,14 +33,14 @@ function OurDoctors() {
     return (
         <React.Fragment>
             <p>
-                SADH has a team of doctors specialized in different fields of medicine, who have a deep desire to promote the welfare of others and help create a better world. Many of the doctors and support staff at SADH are ex-Army doctors and personnel, led by Dr.(Col.)Tarun Kaul.
+                SADH has a team of doctors specialized in different fields of medicine, who have a deep desire to promote the welfare of others and help create a better world. Many of the doctors and support staff at SADH are ex-Army doctors and personnel, led by Dr. (Brig) Amitava Banerjee (Retd).
             </p>
 
             <section className="section ">
                 <div className="container">
 
                     <div className="row justify-content-center">
-                        {doctor.slice(0, 6).map((elm, indec) =>
+                        {doctor.slice(0, 4).map((elm, indec) =>
                             <div key={indec} className="col-lg-2 co-6">
                                 <div
                                     onClick={() => detailShow(elm)}
