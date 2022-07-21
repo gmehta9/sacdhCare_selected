@@ -94,7 +94,7 @@ function Home() {
                             <i className="fa fa-hourglass-o"></i>
                             <h2>OPD Timings</h2>
                             <ul className="w-hours">
-                                <li>Mon - Fri - <span>8:00 - 17:00</span></li>
+                                <li>Mon - Fri - <span>8:00 AM - 05:00 PM</span></li>
                                 {/* <li>Mon - Fri - <span>8:00 - 17:00</span></li>
                                 <li>Mon - Fri - <span>8:00 - 17:00</span></li> */}
                             </ul>
