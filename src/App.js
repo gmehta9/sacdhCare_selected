@@ -21,6 +21,7 @@ import OurServices from './components/InnerPages/OurServices';
 import OurProgrammes from './components/InnerPages/OurProgrammes';
 import LoggedInPage from './components/OnBoarding/LoggedInPage';
 import BookAppointment from './components/InnerPages/BookAppointment';
+import Associates from './components/InnerPages/Associates';
 
 function App() {
   return (
@@ -49,7 +50,7 @@ function App() {
           <Route path="contact-us" element={<ContactUs />} />
           <Route path="donations" element={<Donations />} />
           <Route path="book-appointment" element={<BookAppointment />} />
-
+          <Route path="associates" element={<Associates />} />
         </Route>
 
         <Route path="*" element={<Navigate to='/' replace />} />

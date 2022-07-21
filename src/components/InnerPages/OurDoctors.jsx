@@ -40,7 +40,7 @@ function OurDoctors() {
                 <div className="container">
 
                     <div className="row justify-content-center">
-                        {doctor.map((elm, indec) =>
+                        {doctor.slice(0, 6).map((elm, indec) =>
                             <div key={indec} className="col-lg-2 co-6">
                                 <div
                                     onClick={() => detailShow(elm)}
@@ -62,7 +62,7 @@ function OurDoctors() {
                     </div>
                 </div>
             </section>
-            {/* <table className="table table-bordered">
+            <table className="table table-bordered">
                 <thead className="thead-dark">
                     <tr>
                         <th>Sr. No.</th>
@@ -71,7 +71,7 @@ function OurDoctors() {
                     </tr>
                 </thead>
                 <tbody>
-                    {doctor.map((elm, indec) =>
+                    {doctor.slice(6).map((elm, indec) =>
                         <tr key={`doctor${indec}`}>
                             <td>{indec + 1}</td>
                             <td>{elm.name}</td>
@@ -79,7 +79,7 @@ function OurDoctors() {
                         </tr>
                     )}
                 </tbody>
-            </table> */}
+            </table>
 
 
         </React.Fragment>

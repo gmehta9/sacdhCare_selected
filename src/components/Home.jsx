@@ -79,8 +79,8 @@ function Home() {
                         <div className="col-lg-4 col-md-6 top-doctor item">
                             <i className="fa fa-stethoscope"></i>
                             <h2>24 Hour Service</h2>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore dignissimos officia dicta suscipit
-                                vel eum</p>
+                            {/* <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore dignissimos officia dicta suscipit
+                                vel eum</p> */}
                             {/* <a href="service.html" className="btn btn-main">Read more</a> */}
                         </div>
                         <div className="col-lg-4 col-md-6 emmergency item">
@@ -95,8 +95,8 @@ function Home() {
                             <h2>OPD Timings</h2>
                             <ul className="w-hours">
                                 <li>Mon - Fri - <span>8:00 - 17:00</span></li>
-                                <li>Mon - Fri - <span>8:00 - 17:00</span></li>
-                                <li>Mon - Fri - <span>8:00 - 17:00</span></li>
+                                {/* <li>Mon - Fri - <span>8:00 - 17:00</span></li>
+                                <li>Mon - Fri - <span>8:00 - 17:00</span></li> */}
                             </ul>
                         </div>
                     </div>
@@ -156,8 +156,6 @@ function Home() {
                                                     </div>
                                                 </div>
                                             )}
-
-
                                         </div>
                                     </div>
                                 </div>

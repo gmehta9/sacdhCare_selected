@@ -23,7 +23,7 @@ function Footer() {
                                 <ul className="location-link">
                                     <li className="item">
                                         <i className="fas fa-map-marker-alt"></i>
-                                        <p>Swami Amar Dev Hospital, <br />
+                                        <p>SADH Care Hospital, <br />
                                             Ashram Hari Mandir, Pataudi<br />
                                             Gurugram, Haryana<br />
                                             122503<br />
@@ -58,7 +58,7 @@ function Footer() {
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-5 mb-3 mb-md-0">
-                            <h2>Quick Links</h2>
+                            <h2>USEFUL LINKS</h2>
                             <ul className="menu-link">
                                 <li>
                                     <span
@@ -71,68 +71,44 @@ function Footer() {
                                     </span>
                                 </li>
                                 <li>
-                                    <Link to="/">
+                                    <Link to="/donations">
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
-                                        Biomedical Waste Type & Disposal
+                                        Donate
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/">
+                                    <Link to="/associates">
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
-                                        Biomedical Waste Management Training
+                                        Associates
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/">
+                                    <Link to="/gallery">
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
-                                        COVID-19
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/">
-                                        <i className="fa fa-angle-right" aria-hidden="true"></i>
-                                        Donate To SADH
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/">
-                                        <i className="fa fa-angle-right" aria-hidden="true"></i>
-                                        Contact SADH
+                                        Gallery
                                     </Link>
                                 </li>
                             </ul>
                         </div>
                         <div className="col-lg-4 col-md-7">
-                            <h2>Services</h2>
+                            <h2>QUICK LINKS</h2>
                             <ul className="menu-link">
                                 <li>
-                                    <Link to="/">
+                                    <Link to="/our-programmes">
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
-                                        Outpatient Surgery
+                                        Programmes
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/">
+                                    <Link to="/our-services">
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
-                                        Cardiac Clinic
+                                        Medical Services
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/">
+                                    <Link to="/our-doctors">
                                         <i className="fa fa-angle-right" aria-hidden="true"></i>
-                                        Ophthalmology Clinic
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/">
-                                        <i className="fa fa-angle-right" aria-hidden="true"></i>
-                                        Gynaecological Clinic
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/">
-                                        <i className="fa fa-angle-right" aria-hidden="true"></i>
-                                        Outpatient Rehabilitation
+                                        Doctor’s List
                                     </Link>
                                 </li>
                             </ul>

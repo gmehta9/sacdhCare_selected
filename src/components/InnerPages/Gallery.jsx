@@ -9,7 +9,7 @@ function Gallery() {
 
     useEffect(() => {
         setPageTitle('Gallery')
-
+        window.scrollTo(0, 0);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
@@ -23,8 +23,8 @@ function Gallery() {
                                 <h3>Collected Shots
                                     <span> of Our Hospital</span>
                                 </h3>
-                                <p>Leverage agile frameworks to provide a robust synopsis for high level overv-
-                                    <br />iews. Iterative approaches to corporate strategy...</p>
+                                {/* <p>Leverage agile frameworks to provide a robust synopsis for high level overv-
+                                    <br />iews. Iterative approaches to corporate strategy...</p> */}
                             </div>
                         </div>
 

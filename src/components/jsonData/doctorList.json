@@ -33,6 +33,12 @@
         "image": "doctors/Dr-Parul-Prinja.jpg"
     },
     {
+        "id": 6,
+        "name": "Dr. Umesh Kumari Yadav",
+        "specialization": "Gynaecologist & Obstetrician",
+        "image": "doctors/Dr-Umesh-Kumari-Yadav.jpg"
+    },
+    {
         "id": 4,
         "name": "Dr. Vipin",
         "specialization": "Medical Specialist",
@@ -43,12 +49,6 @@
         "name": "Dr. Pankaj Khatana",
         "specialization": "Medical Specialist",
         "image": "placeholder/place-img.jpg"
-    },
-    {
-        "id": 6,
-        "name": "Dr. Umesh Kumari Yadav",
-        "specialization": "Gynaecologist & Obstetrician",
-        "image": "doctors/Dr-Umesh-Kumari-Yadav.jpg"
     },
     {
         "id": 7,
