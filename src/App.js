@@ -1,8 +1,8 @@
 // import logo from './logo.svg';
 import './App.scss';
-import { Route, Routes, BrowserRouter, Navigate, HashRouter } from 'react-router-dom';
+import { Route, Routes, Navigate, HashRouter } from 'react-router-dom';
 
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import ContactUs from './components/InnerPages/Contact';

@@ -91,7 +91,7 @@ function SignUp() {
         if (Auth.isUserAuthenticated()) {
             navigate('/user/loggedInPage')
         }
-        setPageTitle(Auth.isUserAuthenticated() ? 'My Account' : 'Login')
+        setPageTitle(Auth.isUserAuthenticated() ? 'My Account' : 'Sign Up')
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
@@ -155,7 +155,7 @@ function SignUp() {
                     type="submit"
                     disabled={!isValid()}
                     className="btn btn-primary btn-block mt-5 mb-4">
-                    sign Up
+                    Submit
                 </button>
 
             </form>

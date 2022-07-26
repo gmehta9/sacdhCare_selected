@@ -6,7 +6,8 @@ import AppContext from "../context/AppContext";
 import "./loggedIn.scss";
 import { get, handleError, post } from "../httpService/http";
 import Input from "../widgets/Input";
-import { patterns, useForm } from "../helper/useForm";
+import { useForm } from "../helper/useForm";
+import { toast } from "react-toastify";
 
 function LoggedInPage({ userLogout }) {
 
@@ -47,6 +48,9 @@ function LoggedInPage({ userLogout }) {
             dangerMode: true,
         }).then((result) => {
             if (result.isConfirmed) {
+                toast.success('User Logout successfully!', {
+                    autoClose: 5000,
+                })
                 localStorage.clear()
                 navigate('/user/login')
             }

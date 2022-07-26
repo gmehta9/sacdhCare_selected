@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 import Auth from "../auth/Auth";
 import AppContext from "../context/AppContext";
 import { patterns, useForm } from "../helper/useForm";
@@ -11,7 +12,7 @@ function ForgotPassword() {
 
     const navigate = useNavigate()
 
-    const { values, errors, bindField, isValid } = useForm({
+    const { values, errors, bindField, isValid, setInitialValues } = useForm({
         validations: {
             email: {
                 pattern: {
@@ -29,7 +30,13 @@ function ForgotPassword() {
         e.preventDefault()
         try {
             const response = await handleError(await post(`forgot-password`, values))
-            const data = response;
+            console.log(response);
+            setInitialValues({})
+            Swal.fire(
+                'Success!',
+                `Reset password link has been sent to your email (${values.email})!`,
+                'success'
+            )
 
         } catch (err) {
             console.error(err);

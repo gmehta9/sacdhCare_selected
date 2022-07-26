@@ -70,6 +70,8 @@ function AppointmentForm() {
     useEffect(() => {
         setInitialValues({ service: 'service-2' })
         getminDate()
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return (
         <div className="contact-area pl-0 pl-lg-5">

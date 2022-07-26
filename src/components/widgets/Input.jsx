@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import { eye_hide_show } from "../../assets/images/eye_hide_show.svg";
-import { eye_hide } from "../../assets/images/eye_hide.svg";
+// import { eye_hide_show } from "../../assets/images/eye_hide_show.svg";
+// import { eye_hide } from "../../assets/images/eye_hide.svg";
 
 function Input({
     labelTitle,
@@ -13,9 +13,9 @@ function Input({
     value,
     requried,
     onChange,
-    icons
+    // icons
 }) {
-    const [showPassward, setshowPassward] = useState(false);
+    const [showPassward] = useState(false);
     return (
         <>
             <div className="form-outline mb-3">

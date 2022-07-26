@@ -13,7 +13,8 @@ function PageTitleInfo({ pageTitle }) {
                             <li>
                                 <Link to="/">home</Link>
                             </li>
-                            <li>{pageTitle}</li>
+                            /&nbsp;&nbsp;
+                            <li className="font-weight-bold">{pageTitle}</li>
                         </ul>
                     </div>
                 </div>
