@@ -20,9 +20,9 @@ function Banner() {
                         <div className="row justify-content-center">
                             <div className="col-12">
                                 <div className=" style text-center">
-                                    <h2 className="text-white text-bold mb-2" data-animation-in="slideInLeft">SADH Care hospital is the only</h2>
+                                    <h2 className="text-white text-bold mb-2" data-animation-in="slideInLeft">NABH Certified</h2>
                                     {/* <p className="tag-text mb-4" data-animation-in="slideInRight">NABH certified hospital in Pataudi.</p> */}
-                                    <p className="tag-text mb-4" data-animation-in="slideInRight">NABH Certified</p>
+                                    {/* <p className="tag-text mb-4" data-animation-in="slideInRight">NABH Certified</p> */}
                                 </div>
                             </div>
                         </div>
@@ -34,9 +34,9 @@ function Banner() {
                         <div className="row justify-content-center">
                             <div className="col-12">
                                 <div className=" style text-center">
-                                    <h2 className="text-white text-bold mb-2" data-animation-in="slideInLeft">We are now </h2>
+                                    <h2 className="text-white text-bold mb-2" data-animation-in="slideInLeft">Ayushman Empaneled </h2>
                                     {/* <p className="tag-text mb-4" data-animation-in="slideInRight">Ayushman Bharat Empanelled.</p> */}
-                                    <p className="tag-text mb-4" data-animation-in="slideInRight">Ayushman Empaneled.</p>
+                                    {/* <p className="tag-text mb-4" data-animation-in="slideInRight">Ayushman Empaneled.</p> */}
                                 </div>
                             </div>
                         </div>
