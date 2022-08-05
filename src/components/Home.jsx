@@ -262,7 +262,11 @@ function Home() {
                                 <strong>SENTISS FOUNDATION</strong> <br />
                                 The CSR division of Sentiss Pharma
                             </div>
-                            <img style={{ width: "200px" }} src="http://staging.beforegoinglive.com/sentiss1/wp-content/uploads/2020/10/Logo-in-white-bkg-1.png" alt="" srcSet="" />
+                            <img
+                                style={{ width: "150px", marginTop: '20px' }}
+                                src={`${process.env.PUBLIC_URL}/Logo-in-white-bkg-1.png`}
+                                alt=""
+                                srcSet="" />
                         </div>
                     </div>
                 </div>
