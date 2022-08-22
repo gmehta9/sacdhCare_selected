@@ -101,9 +101,16 @@ function AppointmentForm() {
                             {errors.email && <span className="small text-danger"> {errors.email}</span>}
                         </div>
                         <div className="form-group">
+                            <select className="form-control" {...bindField('Gender')}>
+                                <option value="male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div className="form-group">
                             <input
                                 className="form-control"
-                                type="email"
+                                type="text"
                                 {...bindField('subject')}
                                 placeholder="Subject"
                             />
@@ -120,6 +127,7 @@ function AppointmentForm() {
                             />
                             {errors.phone && <span className="small text-danger"> {errors.phone}</span>}
                         </div>
+
                         <div className="form-group">
                             <input
                                 className="form-control"
@@ -129,6 +137,15 @@ function AppointmentForm() {
                                 placeholder="Date"
                                 autoComplete="off"
                             />
+                        </div>
+                        <div className="form-group">
+                            <input
+                                className="form-control"
+                                type="number"
+                                {...bindField('age')}
+                                placeholder="Enter Age"
+                            />
+                            {errors.age && <span className="small text-danger"> {errors.age}</span>}
                         </div>
                         <div className="form-group">
                             <select className="form-control" {...bindField('service')}>
