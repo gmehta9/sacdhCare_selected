@@ -20,7 +20,9 @@ function AppointmentForm() {
                 },
                 required: true
             },
-
+            age: {
+                required: true
+            },
             phone: {
                 required: true,
                 pattern: {
@@ -40,7 +42,6 @@ function AppointmentForm() {
     });
     const formSubmitHandler = () => {
         setLoading(true)
-        console.log(values)
         emailjs.send('service_ewvvjr4', 'template_u1xgccc', values, 'TeqjHr8_9jOKqoOs0').then((response) => {
             console.log(response)
             Swal.fire(
@@ -49,7 +50,7 @@ function AppointmentForm() {
                 'success'
             )
             setLoading(false)
-            setInitialValues({})
+            setInitialValues({ age: 'male' })
         }
         ).catch((error) => {
             Swal.fire({
@@ -68,7 +69,7 @@ function AppointmentForm() {
         setMinDate(dateFormate)
     }
     useEffect(() => {
-        setInitialValues({ service: 'service-2' })
+        setInitialValues({ service: 'service-2', age: 'male' })
         getminDate()
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -101,10 +102,10 @@ function AppointmentForm() {
                             {errors.email && <span className="small text-danger"> {errors.email}</span>}
                         </div>
                         <div className="form-group">
-                            <select className="form-control" {...bindField('Gender')}>
+                            <select className="form-control" {...bindField('gender')}>
                                 <option value="male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Other">Other</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
                             </select>
                         </div>
                         <div className="form-group">

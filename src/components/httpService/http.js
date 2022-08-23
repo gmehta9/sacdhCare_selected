@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import Auth from "../auth/Auth";
 
 function getToken() {
+
     const token = Auth?.token() || '';
     if (token) {
         return {
@@ -37,6 +39,9 @@ async function handleError(data) {
     let status = data.status;
     if (data.status === 401) {
         Auth.logout();
+        setTimeout(() => {
+            localStorage.clear()
+        }, 1000);
     }
     if (data.status === 422) {
         // for (const [key] of Object.entries(response.errors)) {

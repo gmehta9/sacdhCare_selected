@@ -68,6 +68,9 @@ function SignUp() {
 
             if (response.status === 200) {
                 setInitialValues({})
+
+                navigate('/user/login')
+
                 toast.success(response.message, {
                     autoClose: 5000,
                 })
