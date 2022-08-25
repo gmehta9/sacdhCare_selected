@@ -98,6 +98,13 @@ function Donations() {
                     message: "Enter vaild amount.",
                 },
             },
+            pancard: {
+                required: true,
+                pattern: {
+                    value: /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/,
+                    message: "Enter vaild Pan card no.",
+                },
+            },
             phone_number: {
                 pattern: {
                     value: patterns.onlyNumber,
@@ -256,6 +263,19 @@ function Donations() {
                         />
                     </div>
 
+                    <div className="col-6">
+                        <Input
+                            labelTitle="Pan Card no."
+                            type="text"
+                            name="pancard"
+                            {...bindField("pancard")}
+                            placeholder="Enter your Pan card no"
+                            id="pancard"
+                            error={errors}
+                        // requried={true}
+                        />
+                    </div>
+
                     {/* <div className="custom-control custom-checkbox">
                         <input type="checkbox" className="custom-control-input" id="customCheck1" />
                         <label className="custom-control-label" htmlFor="customCheck1">Check this custom checkbox</label>
@@ -302,21 +322,30 @@ function Donations() {
                         />
                         <button type="button"
                             onClick={() => setAmountHandler('500')}
-                            className="btn mx-1 btn-sm btn-outline-dark">500</button>
+                            className={`btn mx-1 btn-sm ${values.amount === '500' ? 'btn-dark' : 'btn-outline-dark'}`}>
+                            500
+                        </button>
                         <button type="button"
                             onClick={() => setAmountHandler('1000')}
-                            className="btn mx-1 btn-sm btn-outline-dark">1000</button>
+                            className={`btn mx-1 btn-sm ${values.amount === '1000' ? 'btn-dark' : 'btn-outline-dark'}`}>
+                            1000
+                        </button>
                         <button type="button"
                             onClick={() => setAmountHandler('2000')}
-                            className="btn mx-1 btn-sm btn-outline-dark">2000</button>
+                            className={`btn mx-1 btn-sm ${values.amount === '2000' ? 'btn-dark' : 'btn-outline-dark'}`}>
+                            2000
+                        </button>
                         <button type="button"
                             onClick={() => setAmountHandler('3000')}
-                            className="btn mx-1 btn-sm btn-outline-dark">3000</button>
+                            className={`btn mx-1 btn-sm ${values.amount === '3000' ? 'btn-dark' : 'btn-outline-dark'}`}>
+                            3000
+                        </button>
                         <button type="button"
                             onClick={() => setAmountHandler('')}
-                            className="btn mx-1 btn-sm btn-outline-dark">Other</button>
+                            className={`btn mx-1 btn-sm ${values.amount === '500' ? 'btn-dark' : 'btn-outline-dark'}`}>
+                            Other
+                        </button>
                     </div>
-
 
                 </div>
                 <div className="row">
@@ -326,7 +355,7 @@ function Donations() {
                             onClick={displayRazorpay}
                             disabled={!isValid()}
                             className="btn btn-primary btn-block mb-4">
-                            Pay {values.amount && values.amount + '/-'}
+                            Donate {values.amount && values.amount + '/-'}
                         </button>
                     </div>
                 </div>

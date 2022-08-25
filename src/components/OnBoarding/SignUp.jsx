@@ -61,10 +61,7 @@ function SignUp() {
         e.preventDefault()
 
         try {
-            const response = await handleError(await post(
-                `sign-up`,
-                values
-            ))
+            const response = await handleError(await post(`sign-up`, values))
 
             if (response.status === 200) {
                 setInitialValues({})
@@ -102,65 +99,148 @@ function SignUp() {
     return (
         <React.Fragment>
             <form onSubmit={signUpHandler}>
-                <Input
-                    labelTitle="Name"
-                    type="text"
-                    name="name"
-                    {...bindField("name")}
-                    placeholder="Enter your name"
-                    id="namefill"
-                    error={errors}
-                // requried={true}
-                />
-                <Input
-                    labelTitle="phone_number"
-                    type="text"
-                    name="phone_number"
-                    {...bindField("phone_number")}
-                    placeholder="Enter your phone no"
-                    id="phone_number"
-                    error={errors}
-                    requried={true}
-                />
-                <Input
-                    labelTitle="Email"
-                    type="email"
-                    name="email"
-                    {...bindField("email")}
-                    placeholder="Enter your email"
-                    id="emailfill"
-                    error={errors}
-                    requried={true}
-                />
-                <Input
-                    labelTitle="Password"
-                    type="password"
-                    name="password"
-                    {...bindField("password")}
-                    placeholder="Enter your password"
-                    id="password"
-                    error={errors}
-                    icons
-                    requried={true}
-                />
-                <Input
-                    labelTitle="Confirm Password"
-                    type="password"
-                    name="password_confirmation"
-                    {...bindField("password_confirmation")}
-                    placeholder="Enter your Confirm Password"
-                    id="password_confirmation"
-                    error={errors}
-                    icons
-                    requried={true}
-                />
-                <button
-                    type="submit"
-                    disabled={!isValid()}
-                    className="btn btn-primary btn-block mt-5 mb-4">
-                    Submit
-                </button>
-
+                <div className="row">
+                    <div className="col-md-4 col-6">
+                        <Input
+                            labelTitle="Name"
+                            type="text"
+                            name="first_name"
+                            {...bindField("first_name")}
+                            placeholder="Enter your First name"
+                            id="namefill"
+                            error={errors}
+                        // requried={true}
+                        />
+                    </div>
+                    <div className="col-md-4 col-6">
+                        <Input
+                            labelTitle="Name"
+                            type="text"
+                            name="last_name"
+                            {...bindField("last_name")}
+                            placeholder="Enter your last name"
+                            id="namefill"
+                            error={errors}
+                        // requried={true}
+                        />
+                    </div>
+                    <div className="col-md-4 col-6">
+                        <Input
+                            labelTitle="phone_number"
+                            type="text"
+                            name="phone_number"
+                            {...bindField("phone_number")}
+                            placeholder="Enter your phone no"
+                            id="phone_number"
+                            error={errors}
+                            requried={true}
+                        />
+                    </div>
+                    <div className="col-md-4 col-6">
+                        <Input
+                            labelTitle="Email"
+                            type="email"
+                            name="email"
+                            {...bindField("email")}
+                            placeholder="Enter your email"
+                            id="emailfill"
+                            error={errors}
+                            requried={true}
+                        />
+                    </div>
+                    <div className="col-md-4 col-6">
+                        <Input
+                            labelTitle="Password"
+                            type="password"
+                            name="password"
+                            {...bindField("password")}
+                            placeholder="Enter your password"
+                            id="password"
+                            error={errors}
+                            icons
+                            requried={true}
+                        />
+                    </div>
+                    <div className="col-md-4 col-6">
+                        <Input
+                            labelTitle="Confirm Password"
+                            type="password"
+                            name="password_confirmation"
+                            {...bindField("password_confirmation")}
+                            placeholder="Enter your Confirm Password"
+                            id="password_confirmation"
+                            error={errors}
+                            icons
+                            requried={true}
+                        />
+                    </div>
+                    <div className="col-12">
+                        <Input
+                            labelTitle="Address"
+                            type="text"
+                            name="address"
+                            {...bindField("address")}
+                            placeholder="Enter your address"
+                            id="namefill"
+                            error={errors}
+                        // requried={true}
+                        />
+                    </div>
+                    <div className="col-md-3 col-6">
+                        <Input
+                            labelTitle="City"
+                            type="text"
+                            name="city"
+                            {...bindField("city")}
+                            placeholder="Enter your city"
+                            id="namefill"
+                            error={errors}
+                        // requried={true}
+                        />
+                    </div>
+                    <div className="col-md-3 col-6">
+                        <Input
+                            labelTitle="State"
+                            type="text"
+                            name="state"
+                            {...bindField("state")}
+                            placeholder="Enter your name"
+                            id="namefill"
+                            error={errors}
+                        // requried={true}
+                        />
+                    </div>
+                    <div className="col-md-3 col-6">
+                        <Input
+                            labelTitle="Date of birth"
+                            type="date"
+                            name="dob"
+                            {...bindField("dob")}
+                            placeholder="Enter Date of birth"
+                            id="namefill"
+                            error={errors}
+                        // requried={true}
+                        />
+                    </div>
+                    <div className="col-md-3 col-6">
+                        <Input
+                            labelTitle="Company Name"
+                            type="text"
+                            name="company"
+                            {...bindField("company")}
+                            placeholder="Enter your name"
+                            id="namefill"
+                            error={errors}
+                        // requried={true}
+                        />
+                    </div>
+                    <button
+                        type="submit"
+                        disabled={!isValid()}
+                        className="btn btn-primary btn-block mt-5 mb-4">
+                        Submit
+                    </button>
+                </div>
             </form>
             <div className="row mb-4">
                 <div className="col text-center">
