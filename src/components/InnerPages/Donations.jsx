@@ -6,6 +6,7 @@ import { handleError, post } from "../httpService/http";
 import Input from "../widgets/Input";
 import AppContext from "../context/AppContext";
 import Auth from "../auth/Auth";
+import Swal from "sweetalert2";
 
 function Donations() {
     // const [registeredField, setRegisteredField] = useState(false)
@@ -67,6 +68,11 @@ function Donations() {
 
 
                 if (verifyPayment) {
+                    Swal.fire(
+                        'Success!',
+                        'Thank you for your support. Regards, SADH Care!',
+                        'success'
+                    )
                     setInitialValues({})
                 }
             },
@@ -182,7 +188,7 @@ function Donations() {
                             name="last_name"
                             {...bindField("last_name")}
                             placeholder="Enter your name"
-                            id="namefill"
+                            id="lastfill"
                             error={errors}
                         // requried={true}
                         />
@@ -220,7 +226,7 @@ function Donations() {
                             name="address"
                             {...bindField("address")}
                             placeholder="Enter your address"
-                            id="namefill"
+                            id="addressFill"
                             error={errors}
                         // requried={true}
                         />
@@ -232,7 +238,7 @@ function Donations() {
                             name="city"
                             {...bindField("city")}
                             placeholder="Enter your city"
-                            id="namefill"
+                            id="cityFill"
                             error={errors}
                         // requried={true}
                         />
@@ -244,7 +250,7 @@ function Donations() {
                             name="state"
                             {...bindField("state")}
                             placeholder="Enter your name"
-                            id="namefill"
+                            id="statefill"
                             error={errors}
                         // requried={true}
                         />
@@ -257,7 +263,7 @@ function Donations() {
                             name="company"
                             {...bindField("company")}
                             placeholder="Enter your name"
-                            id="namefill"
+                            id="companyFill"
                             error={errors}
                         // requried={true}
                         />
@@ -359,7 +365,7 @@ function Donations() {
                         </button>
                     </div>
                 </div>
-            </form >
+            </form>
         </React.Fragment>
     );
 }
