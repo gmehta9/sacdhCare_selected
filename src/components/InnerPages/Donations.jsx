@@ -140,8 +140,13 @@ function Donations() {
     useEffect(() => {
         if (user) {
             setInitialValues({
-                name: user.name,
+                first_name: user.first_name,
+                last_name: user.last_name,
                 email: user.email,
+                address: user.address,
+                city: user.city,
+                state: user.state,
+                company: user.company,
                 phone_number: user.phone_number
 
             })

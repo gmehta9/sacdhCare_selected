@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router";
+
 import { toast } from "react-toastify";
 import Auth from "../auth/Auth";
 
@@ -33,6 +33,15 @@ async function post(api, data, header) {
     });
 }
 
+async function put(api, data, header) {
+
+    return fetch(`${process.env.REACT_APP_BASE_URL}${api}`, {
+        headers: header || getToken(),
+        method: "PUT",
+        body: JSON.stringify(data),
+    });
+}
+
 async function handleError(data) {
 
     const response = await data.json();
@@ -62,4 +71,4 @@ async function handleError(data) {
 
 }
 
-export { get, post, handleError, getToken }
+export { get, post, put, handleError, getToken }

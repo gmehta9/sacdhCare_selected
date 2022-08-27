@@ -59,41 +59,49 @@ function Login() {
     return (
         <React.Fragment>
             <form onSubmit={loginHandler}>
+                <div className="row">
+                    <div className="col-md-5 mx-auto col-12">
+                        <Input
+                            labelTitle="Email"
+                            type="email"
+                            name="email"
+                            {...bindField("email")}
+                            placeholder="Enter your email"
+                            id="emailfill"
+                            error={errors}
+                        // requried={true}
+                        />
+                        <Input
+                            labelTitle="Password"
+                            type="password"
+                            name="password"
+                            {...bindField("password")}
+                            placeholder="Enter your password"
+                            id="passwordfill"
+                            error={errors}
+                        // requried={true}
+                        />
+                    </div>
 
-                <Input
-                    labelTitle="Email"
-                    type="email"
-                    name="email"
-                    {...bindField("email")}
-                    placeholder="Enter your email"
-                    id="emailfill"
-                    error={errors}
-                // requried={true}
-                />
-
-                <Input
-                    labelTitle="Password"
-                    type="password"
-                    name="password"
-                    {...bindField("password")}
-                    placeholder="Enter your password"
-                    id="passwordfill"
-                    error={errors}
-                // requried={true}
-                />
+                </div>
 
                 <div className="row mb-4">
-                    <div className="col">
+                    <div className="col-md-5 mx-auto">
                         <Link to="/user/forgot-password">Forgot password?</Link>
                     </div>
                 </div>
+                <div className="row">
+                    <div className="col-md-2 mx-auto col-12">
+                        <button
+                            disabled={!isValid()}
+                            type="submit"
+                            className="btn btn-primary btn-block mb-4">
+                            Sign in
+                        </button>
+                    </div>
+                </div>
 
-                <button
-                    disabled={!isValid()}
-                    type="submit"
-                    className="btn btn-primary btn-block mb-4">
-                    Sign in
-                </button>
+
 
             </form >
             <div className="row mb-4">

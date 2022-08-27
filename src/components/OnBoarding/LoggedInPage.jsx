@@ -4,38 +4,15 @@ import { useNavigate } from "react-router-dom";
 import Auth from "../auth/Auth";
 import AppContext from "../context/AppContext";
 import "./loggedIn.scss";
-import { get, handleError, post } from "../httpService/http";
-import Input from "../widgets/Input";
-import { useForm } from "../helper/useForm";
+import { get, handleError } from "../httpService/http";
 import { toast } from "react-toastify";
+import LoggedUserProfile from "./LoggedUserProfile";
 
 function LoggedInPage({ userLogout }) {
 
     const [donationHistory, setHistoryDonation] = useState({});
-    const [isEdit, setIsEdit] = useState(false);
     const navigate = useNavigate();
-    const user = Auth.user()
     const { setPageTitle } = useContext(AppContext);
-
-    const { values, errors, bindField, isValid, setInitialValues } = useForm({
-        validations: {
-            name: {
-                required: true,
-            },
-            phone_number: {
-                minLength: {
-                    value: 10,
-                    message: "Enter vaild 10 digit phone no.",
-                },
-                maxLength: {
-                    value: 10,
-                    message: "Enter vaild 10 digit phone no.",
-                },
-                required: true,
-            },
-
-        },
-    });
 
     const logoutHandler = () => {
         Swal.fire({
@@ -57,18 +34,6 @@ function LoggedInPage({ userLogout }) {
         });
     }
 
-    const updateProfileHandler = async () => {
-        try {
-            const response = await handleError(await post(`update-profile`, values))
-            if (response.status === 200) {
-
-            }
-
-        } catch (err) {
-            console.error(err);
-        }
-    }
-
     const getDonationHandler = async () => {
         try {
             const response = await handleError(await get(`donate`))
@@ -87,13 +52,7 @@ function LoggedInPage({ userLogout }) {
             navigate('/user/login')
         }
         setPageTitle('My Account')
-        setInitialValues({
-            name: user.name,
-            phone_number: user.phone_number,
-            email: user.email
-        })
         getDonationHandler()
-
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
@@ -164,70 +123,7 @@ function LoggedInPage({ userLogout }) {
                                     id="v-pills-home"
                                     role="tabpanel"
                                     aria-labelledby="v-pills-home-tab">
-                                    <h4 className="font-italic d-flex mb-4">Personal information
-
-                                        {!isEdit && <button
-                                            type="button"
-                                            className="btn ml-auto btn-sm btn-dark"
-                                            onClick={() => setIsEdit(true)} >Edit</button>
-                                        }
-                                    </h4>
-
-                                    <div className="row">
-                                        <div className="col-md-6 col-12 mb-3">
-                                            <label className="font-weight-bold mb-0">Name </label>
-                                            {isEdit ?
-                                                <Input
-                                                    type="text"
-                                                    name="name"
-                                                    {...bindField("name")}
-                                                    placeholder="Enter your name"
-                                                    id="nameFill"
-                                                    error={errors}
-                                                />
-                                                :
-                                                <div className="">
-                                                    {values.name}
-                                                </div>
-                                            }
-                                        </div>
-                                        <div className="col-md-6 col-12 mb-3">
-                                            <label className="font-weight-bold mb-0">Email </label>
-                                            <div className="">
-                                                {values.email}
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6 col-12 mb-3">
-                                            <label className="font-weight-bold mb-0">Phone No </label>
-                                            {isEdit ?
-                                                <Input
-                                                    type="text"
-                                                    name="phone_number"
-                                                    {...bindField("phone_number")}
-                                                    placeholder="Enter your Phone"
-                                                    id="phone_number"
-                                                    error={errors}
-                                                />
-                                                :
-                                                <div className="">
-                                                    {values.phone_number}
-                                                </div>
-                                            }
-                                        </div>
-                                    </div>
-                                    {isEdit &&
-                                        <div className="row">
-                                            <button
-                                                onClick={updateProfileHandler}
-                                                disabled={!isValid()}
-                                                type="button"
-                                                className="btn btn-sm btn-primary mx-1">Submit</button>
-                                            <button
-                                                onClick={() => setIsEdit(false)}
-                                                type="button"
-                                                className="btn btn-sm btn-secondary mx-1">Cancel</button>
-                                        </div>
-                                    }
+                                    <LoggedUserProfile />
                                 </div>
 
                                 {/* Donation History */}

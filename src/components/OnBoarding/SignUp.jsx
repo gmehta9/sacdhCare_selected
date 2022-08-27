@@ -15,7 +15,10 @@ function SignUp() {
 
     const { values, errors, bindField, isValid, setInitialValues, setErrors } = useForm({
         validations: {
-            name: {
+            first_name: {
+                required: true,
+            },
+            last_name: {
                 required: true,
             },
             email: {
@@ -38,6 +41,9 @@ function SignUp() {
                     value: 10,
                     messag1e: "Enter vaild Phone no.",
                 },
+                required: true,
+            },
+            address: {
                 required: true,
             },
             password: {
@@ -102,26 +108,26 @@ function SignUp() {
                 <div className="row">
                     <div className="col-md-4 col-6">
                         <Input
-                            labelTitle="Name"
+                            labelTitle="First Name"
                             type="text"
                             name="first_name"
                             {...bindField("first_name")}
                             placeholder="Enter your First name"
                             id="namefill"
                             error={errors}
-                        // requried={true}
+                            requried={true}
                         />
                     </div>
                     <div className="col-md-4 col-6">
                         <Input
-                            labelTitle="Name"
+                            labelTitle="Last Name"
                             type="text"
                             name="last_name"
                             {...bindField("last_name")}
                             placeholder="Enter your last name"
                             id="namefill"
                             error={errors}
-                        // requried={true}
+                            requried={true}
                         />
                     </div>
                     <div className="col-md-4 col-6">
@@ -183,7 +189,7 @@ function SignUp() {
                             placeholder="Enter your address"
                             id="namefill"
                             error={errors}
-                        // requried={true}
+                            requried={true}
                         />
                     </div>
                     <div className="col-md-3 col-6">
@@ -234,12 +240,15 @@ function SignUp() {
                         // requried={true}
                         />
                     </div>
-                    <button
-                        type="submit"
-                        disabled={!isValid()}
-                        className="btn btn-primary btn-block mt-5 mb-4">
-                        Submit
-                    </button>
+                    <div className="col-md-2 mx-auto col-6">
+                        <button
+                            type="submit"
+                            disabled={!isValid()}
+                            className="btn btn-primary btn-block mt-5 mb-4">
+                            Submit
+                        </button>
+                    </div>
+
                 </div>
             </form>
             <div className="row mb-4">

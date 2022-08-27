@@ -47,7 +47,7 @@ function ForgotPassword() {
         if (Auth.isUserAuthenticated()) {
             navigate('/user/loggedInPage')
         }
-        setPageTitle(Auth.isUserAuthenticated() ? 'My Account' : 'Login')
+        setPageTitle('Forgot Password')
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
@@ -55,22 +55,26 @@ function ForgotPassword() {
     return (
         <React.Fragment>
             <form onSubmit={forgotPasswordHandler}>
-                <Input
-                    labelTitle="Email"
-                    type="email"
-                    name="email"
-                    {...bindField("email")}
-                    placeholder="Enter your email"
-                    id="emailfill"
-                    error={errors}
-                // requried={true}
-                />
-                <button
-                    disabled={!isValid()}
-                    type="submit"
-                    className="btn btn-primary btn-block mb-4">
-                    Submit
-                </button>
+                <div className="row">
+                    <div className="col-md-5 mx-auto col-12">
+                        <Input
+                            labelTitle="Email"
+                            type="email"
+                            name="email"
+                            {...bindField("email")}
+                            placeholder="Enter your email"
+                            id="emailfill"
+                            error={errors}
+                        // requried={true}
+                        />
+                        <button
+                            disabled={!isValid()}
+                            type="submit"
+                            className="btn btn-primary btn-block mb-4">
+                            Submit
+                        </button>
+                    </div>
+                </div>
             </form>
             <div className="row mb-4">
                 <div className="col text-center">
