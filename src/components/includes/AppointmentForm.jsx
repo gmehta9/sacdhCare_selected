@@ -42,7 +42,9 @@ function AppointmentForm() {
     });
     const formSubmitHandler = () => {
         setLoading(true)
-        emailjs.send('service_ewvvjr4', 'template_u1xgccc', values, 'TeqjHr8_9jOKqoOs0').then((response) => {
+        // Old 
+        // emailjs.send('service_ewvvjr4', 'template_u1xgccc', values, 'TeqjHr8_9jOKqoOs0').then((response) => {
+        emailjs.send('service_oylqjeo', 'template_hrtzlt8', values, 'KZwvZgpdWBJvF9RyL').then((response) => {
             console.log(response)
             Swal.fire(
                 'Appointment Form submitted Successfully!',
@@ -68,12 +70,14 @@ function AppointmentForm() {
         let dateFormate = `${date.getFullYear()}-${(date.getMonth() + 1).length === 2 ? (date.getMonth() + 1) : '0' + (date.getMonth() + 1)}-${date.getDate() + 1}`
         setMinDate(dateFormate)
     }
+
     useEffect(() => {
         setInitialValues({ service: 'service-2', age: 'male' })
         getminDate()
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
     return (
         <div className="contact-area pl-0 pl-lg-5">
             <div className="section-title">
