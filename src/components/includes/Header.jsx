@@ -44,7 +44,12 @@ function Header() {
                         <div className="col-xl-3 col-lg-3 col-5">
                             <div className="logo">
                                 <Link to="/">
-                                    <img loading="lazy" className="img-fluid" width={"110px"} src={mainLogo} alt="logo" />
+                                    <img
+                                        loading="auto"
+                                        className="img-fluid"
+                                        width={"110px"}
+                                        src={mainLogo}
+                                        alt="logo" />
                                 </Link>
                             </div>
                         </div>

@@ -6,7 +6,10 @@ function Beneficiaries() {
             <div className="container">
                 <div className="row">
                     <div className="col-sm-3 d-flex flex-column text-center p-3 mb-2">
-                        <img className="mx-auto my-3" src={`${process.env.PUBLIC_URL}/specialities/medical-symbol.png`} alt="" />
+                        <img
+                            loading="lazy"
+                            className="mx-auto my-3" src={`${process.env.PUBLIC_URL}/specialities/medical-symbol.png`}
+                            alt="" />
                         <div className="counter font-weight-bold my-2">
                             57178+
                         </div>
@@ -15,7 +18,11 @@ function Beneficiaries() {
                         </div>
                     </div>
                     <div className="col-sm-3 d-flex flex-column text-center p-3 mb-2">
-                        <img className="mx-auto my-3" src={`${process.env.PUBLIC_URL}/specialities/examination.png`} alt="" />
+                        <img
+                            loading="lazy"
+                            className="mx-auto my-3"
+                            src={`${process.env.PUBLIC_URL}/specialities/examination.png`} alt=""
+                        />
                         <div className="counter font-weight-bold my-2">
                             3564+
                         </div>
@@ -24,7 +31,10 @@ function Beneficiaries() {
                         </div>
                     </div>
                     <div className="col-sm-3 d-flex flex-column text-center p-3 mb-2">
-                        <img className="mx-auto my-3" src={`${process.env.PUBLIC_URL}/specialities/doctor.png`} alt="" />
+                        <img
+                            loading="lazy"
+                            className="mx-auto my-3"
+                            src={`${process.env.PUBLIC_URL}/specialities/doctor.png`} alt="" />
                         <div className="counter font-weight-bold my-2">
                             620+
                         </div>
@@ -33,7 +43,10 @@ function Beneficiaries() {
                         </div>
                     </div>
                     <div className="col-sm-3 d-flex flex-column text-center p-3 mb-2">
-                        <img className="mx-auto my-3" src={`${process.env.PUBLIC_URL}/specialities/baby.png`} alt="" />
+                        <img
+                            loading="lazy"
+                            className="mx-auto my-3"
+                            src={`${process.env.PUBLIC_URL}/specialities/baby.png`} alt="" />
                         <div className="counter font-weight-bold my-2">
                             190+
                         </div>

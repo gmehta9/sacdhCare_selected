@@ -54,7 +54,7 @@ function Donations() {
             currency: currency,
             name: first_name,
             description: "Donation",
-            image: 'http://localhost:3000/sadhcare/static/media/sadhcare.6750fc03a2ceabfd8392.png',
+            image: 'https://sadhcare.org/static/media/sadhcare.6750fc03a2ceabfd8392.png',
             order_id: order_id,
             handler: async function (response) {
 

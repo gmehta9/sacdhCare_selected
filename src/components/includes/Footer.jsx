@@ -15,7 +15,13 @@ function Footer() {
                                 <div className="footer-logo">
                                     <figure>
                                         <Link to="index.html">
-                                            <img loading="lazy" className="img-fluid" src={mainLogo} width="100px" alt="medic" />
+                                            <img
+                                                loading="auto"
+                                                className="img-fluid"
+                                                src={mainLogo}
+                                                width="100px"
+                                                alt="medic"
+                                            />
                                         </Link>
                                     </figure>
                                 </div>

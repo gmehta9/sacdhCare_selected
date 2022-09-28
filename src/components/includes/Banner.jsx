@@ -15,7 +15,10 @@ function Banner() {
         <>
             <Zoom easing="ease" className="hero-slider"  {...zoomInProperties}>
                 <div className="slider-item slide1">
-                    <img src={slide1} alt="" />
+                    <img
+                        loading="lazy"
+                        src={slide1} alt=""
+                    />
                     <div className="slider-content">
                         <div className="row justify-content-center">
                             <div className="col-12">
@@ -29,7 +32,9 @@ function Banner() {
                     </div>
                 </div>
                 <div className="slider-item slide1">
-                    <img src={slide2} alt="" />
+                    <img
+                        loading="lazy"
+                        src={slide2} alt="" />
                     <div className="slider-content">
                         <div className="row justify-content-center">
                             <div className="col-12">
@@ -42,47 +47,6 @@ function Banner() {
                         </div>
                     </div>
                 </div>
-
-                {/* <div className="slider-item slide1">
-                    <img src={slide3} alt="" />
-                    <div className="slider-content">
-                        <div className="row justify-content-center">
-                            <div className="col-12">
-                                <div className=" style text-center">
-                                    <p className="tag-text mb-2" data-animation-in="slideInRight"> Entrust your health our doctors </p>
-                                    <h2 className="text-white text-bold mb-2" data-animation-in="slideInLeft">Medical services that you can trust.</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="slider-item slide1" >
-                    <img src={slide2} alt="" />
-                    <div className="slider-content">
-                        <div className="row justify-content-center">
-                            <div className="col-12">
-                                <div className=" style text-center">
-                                    <p className="tag-text mb-2" data-animation-in="slideInRight"> Entrust your health our doctors </p>
-                                    <h2 className="text-white text-bold mb-2" data-animation-in="slideInLeft">Exceptional people. Exceptional care.</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="slider-item slide1">
-                    <img src={slide1} alt="" />
-                    <div className="slider-content">
-                        <div className="row justify-content-center">
-                            <div className="col-12">
-                                <div className=" style text-center">
-                                    <p className="tag-text mb-2" data-animation-in="slideInRight"> Entrust your health our doctors </p>
-                                    <h2 className="text-white text-bold mb-2" data-animation-in="slideInLeft">The Hospital of the Future, Today.</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
 
             </Zoom>
         </>

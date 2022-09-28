@@ -31,7 +31,7 @@ function Home() {
                 confirmButton: 'p-2 py-0'
             },
             confirmButtonText: 'X',
-            imageUrl: '/sadhcare/background/popup_free_opd-1.jpg',
+            imageUrl: '/background/popup_free_opd-1.jpg',
 
         })
     }
@@ -148,7 +148,12 @@ function Home() {
                                                     <div className="item text-center">
                                                         <div className="icon-box">
                                                             <figure>
-                                                                <img width={'50px'} height={'50px'} loading="lazy" src={`${process.env.PUBLIC_URL}/${ee.icon}`} alt="features" />
+                                                                <img
+                                                                    width={'50px'}
+                                                                    height={'50px'}
+                                                                    loading="lazy"
+                                                                    src={`${process.env.PUBLIC_URL}/${ee.icon}`}
+                                                                    alt="features" />
                                                             </figure>
                                                         </div>
                                                         <h6 className="mb-2">{ee.name}</h6>

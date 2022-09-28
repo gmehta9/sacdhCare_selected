@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.scss';
-import { Route, Routes, Navigate, HashRouter } from 'react-router-dom';
+import { Route, Routes, Navigate, HashRouter, BrowserRouter } from 'react-router-dom';
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -25,8 +25,8 @@ import Associates from './components/InnerPages/Associates';
 
 function App() {
   return (
-    // <BrowserRouter basename="/sadhcare">
-    <HashRouter>
+    <BrowserRouter>
+      {/* <HashRouter> */}
       <ToastContainer autoClose={3000} />
       <Routes>
 
@@ -56,7 +56,8 @@ function App() {
         <Route path="*" element={<Navigate to='/' replace />} />
 
       </Routes>
-    </HashRouter>
+      {/* </HashRouter> */}
+    </BrowserRouter>
   );
 }
 

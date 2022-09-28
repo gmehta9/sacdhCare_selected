@@ -31,7 +31,11 @@ function Gallery() {
                         {Departments.map((elm, index) =>
                             <div key={`gallery${index}`} className="col-lg-4 col-md-6">
                                 <div className="gallery-item">
-                                    <img loading="lazy" src={`${process.env.PUBLIC_URL}/${elm.image}`} className="img-fluid" alt="gallery" />
+                                    <img
+                                        loading="auto"
+                                        src={`${process.env.PUBLIC_URL}/${elm.image}`}
+                                        className="img-fluid"
+                                        alt="gallery" />
                                     <a data-fancybox="images" href={`${process.env.PUBLIC_URL}/${elm.image}`} >
                                         <h3>{elm.title}</h3>
                                         {/* <p>{elm.imageContent}</p> */}

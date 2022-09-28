@@ -1,5 +1,6 @@
 import React from "react";
 import { Slide } from 'react-slideshow-image';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import testimonials from "../jsonData/testimonial.json";
 
 function TestimonialsSlider() {
@@ -33,7 +34,12 @@ function TestimonialsSlider() {
                     <div className="inner-box text-center">
                         <div className="image-box">
                             <figure>
-                                <img loading="lazy" src={`${process.env.PUBLIC_URL}/${elm.image}`} alt="" />
+                                <LazyLoadImage
+                                    alt={""}
+                                    height="90px"
+                                    src={`${process.env.PUBLIC_URL}/${elm.image}`}
+                                    width="90px"
+                                />
                             </figure>
                         </div>
                         <h6>{elm.patientName}</h6>

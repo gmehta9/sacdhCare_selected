@@ -17,7 +17,11 @@ function AboutUs() {
                                 <div className="service-box" >
                                     <div className="row">
                                         <div className="col-lg-6">
-                                            <img loading="lazy" className="img-fluid" src={servicetwo} alt="service" />
+                                            <img
+                                                loading="auto"
+                                                className="img-fluid"
+                                                src={servicetwo}
+                                                alt="service" />
                                         </div>
                                         <div className="col-lg-6">
                                             <div className="contents">

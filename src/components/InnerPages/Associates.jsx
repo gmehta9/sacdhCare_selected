@@ -27,6 +27,7 @@ function Associates() {
                                 <img
                                     src="http://staging.beforegoinglive.com/sentiss1/wp-content/uploads/2020/10/Logo-in-white-bkg-1.png"
                                     alt=""
+                                    loading="auto"
                                     srcset=""
                                     className="mx-auto"
                                     style={{ width: '200px' }} />
