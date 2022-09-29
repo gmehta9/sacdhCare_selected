@@ -12,7 +12,7 @@ function Donations() {
     // const [registeredField, setRegisteredField] = useState(false)
     const user = Auth.user();
 
-    const { setPageTitle } = useContext(AppContext)
+    const { setPageTitle, setSpinnerShow } = useContext(AppContext)
 
     function loadScript(src) {
         return new Promise((resolve) => {
@@ -28,6 +28,14 @@ function Donations() {
         });
     }
     async function displayRazorpay() {
+
+        if (values.amount <= 0) {
+            toast.error("Please enter vaild amount.");
+            return
+        }
+
+        setSpinnerShow(true)
+
         const res = await loadScript(
             "https://checkout.razorpay.com/v1/checkout.js"
         );
@@ -49,7 +57,7 @@ function Donations() {
         const { amount, order_id, currency, first_name, email, phone_number } = orderObj.data;
 
         const options = {
-            key: "rzp_test_B9VhcroYHU7OF1", // Enter the Key ID generated from the Dashboard
+            key: process.env.RZP_BASE_URL_LIVE, // Enter the Key ID generated from the Dashboard
             amount: amount,
             currency: currency,
             name: first_name,
@@ -85,9 +93,20 @@ function Donations() {
                 color: "#61dafb",
             },
         };
-
+        setSpinnerShow(false)
         const paymentObject = new window.Razorpay(options);
         paymentObject.open();
+        paymentObject.on('payment.failed', function (response) {
+
+            // alert(response.error.code);
+            toast.error(response.error.description);
+            // alert(response.error.source);
+            // alert(response.error.step);
+            // alert(response.error.reason);
+            // alert(response.error.metadata.order_id);
+            // alert(response.error.metadata.payment_id);
+
+        });
     }
     const { values, errors, bindField, isValid, setInitialValues } = useForm({
         validations: {
@@ -164,6 +183,8 @@ function Donations() {
 
     useEffect(() => {
         setPageTitle('Donation')
+        document.title = 'Donation | Swami Amar Dev Hospital | Sadh Care Hospital';
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
@@ -286,39 +307,6 @@ function Donations() {
                         // requried={true}
                         />
                     </div>
-
-                    {/* <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                        <label className="custom-control-label" htmlFor="customCheck1">Check this custom checkbox</label>
-                    </div>
-                    {registeredField &&
-                        <>
-                            <div className="col-6">
-                                <Input
-                                    labelTitle="Password"
-                                    type="password"
-                                    name="password"
-                                    {...bindField("password")}
-                                    placeholder="Enter your password"
-                                    id="Password"
-                                    error={errors}
-                                // requried={true}
-                                />
-                            </div>
-                            <div className="col-6">
-                                <Input
-                                    labelTitle="Confirm Password"
-                                    type="password"
-                                    name="confirmPassword"
-                                    {...bindField("confirmPassword")}
-                                    placeholder="Enter your Confirm Password"
-                                    id="confirmPassword"
-                                    error={errors}
-                                // requried={true}
-                                />
-                            </div>
-                        </>
-                    } */}
 
                     <div className="col-6">
                         <Input

@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.scss';
-import { Route, Routes, Navigate, HashRouter, BrowserRouter } from 'react-router-dom';
+import { useContext } from 'react';
+import { Route, Routes, Navigate, BrowserRouter } from 'react-router-dom';
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -22,11 +23,15 @@ import OurProgrammes from './components/InnerPages/OurProgrammes';
 import LoggedInPage from './components/OnBoarding/LoggedInPage';
 import BookAppointment from './components/InnerPages/BookAppointment';
 import Associates from './components/InnerPages/Associates';
+import Spinner from './components/widgets/Spinner';
+import AppContext from './components/context/AppContext';
+
 
 function App() {
+  const { spinnerShow } = useContext(AppContext)
   return (
     <BrowserRouter>
-      {/* <HashRouter> */}
+      {spinnerShow && <Spinner />}
       <ToastContainer autoClose={3000} />
       <Routes>
 

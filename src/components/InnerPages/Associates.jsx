@@ -7,6 +7,8 @@ function Associates() {
 
     useEffect(() => {
         setPageTitle('Associates')
+        document.title = 'Associates | Swami Amar Dev Hospital | Sadh Care Hospital';
+
         window.scrollTo(0, 0);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])

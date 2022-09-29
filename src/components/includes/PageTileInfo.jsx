@@ -5,7 +5,7 @@ function PageTitleInfo({ pageTitle }) {
     return (
 
         <React.Fragment>
-            <section className="page-title text-center" style={{ backgroundImage: 'url(/sadhcare/background/3.jpg)' }}>
+            <section className="page-title text-center" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/background/3.jpg)` }}>
                 <div className="container">
                     <div className="title-text">
                         <h1>{pageTitle}</h1>

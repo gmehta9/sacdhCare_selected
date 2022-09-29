@@ -4,15 +4,15 @@ export const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
 
-    const [spinner, setSpinner] = useState();
+    const [spinnerShow, setSpinnerShow] = useState(false);
     const [pageTitle, setPageTitle] = useState();
     const [popShow, setPopShow] = useState(true);
 
     return (
         <AppContext.Provider
             value={{
-                spinner,
-                setSpinner,
+                spinnerShow,
+                setSpinnerShow,
                 pageTitle,
                 setPageTitle,
                 popShow,

@@ -8,7 +8,7 @@ import { handleError, post } from "../httpService/http";
 import Input from "../widgets/Input";
 
 function ForgotPassword() {
-    const { setPageTitle } = useContext(AppContext)
+    const { setPageTitle, setSpinnerShow } = useContext(AppContext)
 
     const navigate = useNavigate()
 
@@ -27,11 +27,13 @@ function ForgotPassword() {
     });
 
     const forgotPasswordHandler = async (e) => {
+        setSpinnerShow(true)
         e.preventDefault()
         try {
             const response = await handleError(await post(`forgot-password`, values))
             console.log(response);
             setInitialValues({})
+            setSpinnerShow(false)
             Swal.fire(
                 'Success!',
                 `Reset password link has been sent to your email (${values.email})!`,
@@ -40,6 +42,7 @@ function ForgotPassword() {
 
         } catch (err) {
             console.error(err);
+            setSpinnerShow(false)
         }
     }
 
@@ -48,6 +51,7 @@ function ForgotPassword() {
             navigate('/user/loggedInPage')
         }
         setPageTitle('Forgot Password')
+        document.title = 'Forgot Password | Swami Amar Dev Hospital | Sadh Care Hospital';
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])

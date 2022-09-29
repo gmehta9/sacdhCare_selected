@@ -8,6 +8,8 @@ function OurProgrammes() {
 
     useEffect(() => {
         setPageTitle('Our Programmes')
+        document.title = 'Our Programmes | Swami Amar Dev Hospital | Sadh Care Hospital';
+
         window.scrollTo(0, 0);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])

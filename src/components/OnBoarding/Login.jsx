@@ -8,7 +8,7 @@ import Input from "../widgets/Input";
 
 function Login() {
 
-    const { setPageTitle } = useContext(AppContext)
+    const { setPageTitle, setSpinnerShow } = useContext(AppContext)
 
     const navigate = useNavigate()
     const { values, errors, bindField, isValid } = useForm({
@@ -34,15 +34,18 @@ function Login() {
 
     const loginHandler = async (e) => {
         e.preventDefault()
+        setSpinnerShow(true)
         try {
             const response = await handleError(await post(`sign-in`, values))
             if (response.status === 200) {
                 Auth.login(response.data)
+                setSpinnerShow(false)
                 navigate('/user/logged')
             }
 
         } catch (err) {
             console.error(err);
+            setSpinnerShow(false)
         }
     }
 
@@ -52,6 +55,7 @@ function Login() {
             navigate('/user/logged')
         }
         setPageTitle(Auth.isUserAuthenticated() ? 'My Account' : 'Login')
+        document.title = 'Login | Swami Amar Dev Hospital | Sadh Care Hospital';
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])

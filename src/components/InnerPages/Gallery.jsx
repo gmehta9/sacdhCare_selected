@@ -3,11 +3,15 @@ import { AppContext } from "../context/AppContext";
 // import gallery from "../jsonData/gallery.json"
 import Departments from "../jsonData/Departments.json";
 
-function Gallery() {
+function Gallery({ showTitle }) {
 
     const { setPageTitle } = useContext(AppContext);
 
     useEffect(() => {
+        if (!showTitle) {
+            document.title = 'Gallery | Swami Amar Dev Hospital | Sadh Care Hospital';
+        }
+
         setPageTitle('Gallery')
         window.scrollTo(0, 0);
         // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -7,6 +7,8 @@ function ContactUs() {
 
     useEffect(() => {
         setPageTitle('Contact Us')
+        document.title = 'Contact Us | Swami Amar Dev Hospital | Sadh Care Hospital';
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 

@@ -7,6 +7,10 @@ function BookAppointment() {
 
     useEffect(() => {
         setPageTitle('Book Appointment')
+
+        document.title = 'Book Appointment | Swami Amar Dev Hospital | Sadh Care Hospital';
+
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 

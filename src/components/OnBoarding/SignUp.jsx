@@ -9,7 +9,7 @@ import Input from "../widgets/Input";
 
 function SignUp() {
 
-    const { setPageTitle } = useContext(AppContext)
+    const { setPageTitle, setSpinnerShow } = useContext(AppContext)
 
     const navigate = useNavigate()
 
@@ -65,13 +65,13 @@ function SignUp() {
 
     const signUpHandler = async (e) => {
         e.preventDefault()
-
+        setSpinnerShow(true)
         try {
             const response = await handleError(await post(`sign-up`, values))
 
             if (response.status === 200) {
                 setInitialValues({})
-
+                setSpinnerShow(false)
                 navigate('/user/login')
 
                 toast.success(response.message, {
@@ -80,6 +80,7 @@ function SignUp() {
             }
 
         } catch (err) {
+            setSpinnerShow(false)
             console.error(err);
         }
     }
@@ -98,6 +99,7 @@ function SignUp() {
             navigate('/user/loggedInPage')
         }
         setPageTitle(Auth.isUserAuthenticated() ? 'My Account' : 'Sign Up')
+        document.title = 'Sign-Up | Swami Amar Dev Hospital | Sadh Care Hospital';
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])

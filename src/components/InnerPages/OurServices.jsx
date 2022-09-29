@@ -6,6 +6,8 @@ function OurServices() {
 
     useEffect(() => {
         setPageTitle('Our Services')
+        document.title = 'Our Services | Swami Amar Dev Hospital | Sadh Care Hospital';
+
         window.scrollTo(0, 0);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])

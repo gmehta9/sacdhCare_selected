@@ -190,7 +190,7 @@ function Home() {
             </section> */}
             {/* End Service Section */}
 
-            <Gallery />
+            <Gallery showTitle={true} />
 
             {/* team section */}
             <section className="team-section section ">
