@@ -25,6 +25,9 @@ import BookAppointment from './components/InnerPages/BookAppointment';
 import Associates from './components/InnerPages/Associates';
 import Spinner from './components/widgets/Spinner';
 import AppContext from './components/context/AppContext';
+import PrivacyPolicy from './components/InnerPages/PrivacyPolicy';
+import TermsAndConditions from './components/InnerPages/TermsAndConditions';
+import CancellationRefundPolicy from './components/InnerPages/CancellationRefundPolicy';
 
 
 function App() {
@@ -56,6 +59,9 @@ function App() {
           <Route path="donations" element={<Donations />} />
           <Route path="book-appointment" element={<BookAppointment />} />
           <Route path="associates" element={<Associates />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="cancellation-refund-policy" element={<CancellationRefundPolicy />} />
         </Route>
 
         <Route path="*" element={<Navigate to='/' replace />} />
